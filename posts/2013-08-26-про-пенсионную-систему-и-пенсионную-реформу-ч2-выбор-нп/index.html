@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Марсель Салихов">
+<meta name="description" content="Первая часть, посвященная общим вопросам пенсионной реформы - здесь(http://quantviews.blogspot.ru/2013/08/blog-post.html). Итак, вы определились и решили">
+
+<title>Про пенсионную систему и пенсионную реформу - ч.2. Выбор НПФ или УК. – quantviews</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c0f4ad33c246a932906da45bcb3168fc.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2cc777d44eac7019516e29e3d231f5ef.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c0f4ad33c246a932906da45bcb3168fc.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-ec9ee3bc4b1df0b299c827e83c2aa79d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6aa595e24731588bd054dbcbccaddd90.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-ec9ee3bc4b1df0b299c827e83c2aa79d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Поиск не дал результатов",
+    "search-matching-documents-text": "Результаты поиска",
+    "search-copy-link-title": "Скопировать ссылку",
+    "search-hide-matches-text": "Скрыть дополнительные результаты",
+    "search-more-match-text": "дополнительный результат в этом документе",
+    "search-more-matches-text": "дополнительных результата(-ов) в этом документе",
+    "search-clear-button-title": "Очистить",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Отменить",
+    "search-submit-button-title": "Найти",
+    "search-label": "Поиск"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Про пенсионную систему и пенсионную реформу - ч.2. Выбор НПФ или УК. – quantviews">
+<meta property="og:description" content="Экономика, данные, финансы и аналитические системы">
+<meta property="og:image" content="https://quantviews.github.io/posts/2013-08-26-про-пенсионную-систему-и-пенсионную-реформу-ч2-выбор-нп/assets/img/salikhov-marcel-styled-picture.png">
+<meta property="og:site_name" content="quantviews">
+<meta name="twitter:title" content="Про пенсионную систему и пенсионную реформу - ч.2. Выбор НПФ или УК. – quantviews">
+<meta name="twitter:description" content="Первая часть, посвященная общим вопросам пенсионной реформы - здесь(http://quantviews.blogspot.ru/2013/08/blog-post.html). Итак, вы определились и решили">
+<meta name="twitter:image" content="https://quantviews.github.io/posts/2013-08-26-про-пенсионную-систему-и-пенсионную-реформу-ч2-выбор-нп/assets/img/salikhov-marcel-styled-picture.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets\icons\favicon.svg" alt="" class="navbar-logo light-content">
+    <img src="../../assets\icons\favicon.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">quantviews</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Поиск"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Переключить навигацию" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Блог</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Проекты</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../courses.html"> 
+<span class="menu-text">Курсы</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Выступления</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes.html"> 
+<span class="menu-text">Заметки</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Об авторе</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:marcel.salikhov@gmail.com"> <i class="bi bi-envelope" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://t.me/quantviews"> <i class="bi bi-telegram" role="img" aria-label="Telegram">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/quantviews"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../posts.xml"> <i class="bi bi-rss" role="img" aria-label="RSS">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Переключить темный режим"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Про пенсионную систему и пенсионную реформу - ч.2. Выбор НПФ или УК.</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">визуализация</div>
+    <div class="quarto-category">пенсии</div>
+    <div class="quarto-category">финансы</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Первая часть, посвященная общим вопросам пенсионной реформы - здесь(http://quantviews.blogspot.ru/2013/08/blog-post.html). Итак, вы определились и решили
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Автор</div>
+    <div class="quarto-title-meta-contents">
+             <p>Марсель Салихов </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Дата публикации</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">26 августа 2013 г.</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Первая часть, посвященная общим вопросам пенсионной реформы - <a href="http://quantviews.blogspot.ru/2013/08/blog-post.html">здесь</a>.</p>
+<p>Итак, вы определились и решили сохранить размер социальных отчислений на накопительную часть пенсии в пределах 6%. Что делать дальше? Предполагаем, что вы являетесь “молчуном”, то есть еще не писали никаких заявлений и не переводили свои пенсионные накопления.</p>
+<p>На укрупненном уровне выбор состоит из трех основных альтернатив:</p>
+<ol type="1">
+<li>Остаться в ВЭБе (официально это именуется ГУК - государственная управляющая компания), там где ваши пенсионные накопления находятся сейчас.</li>
+<li>Передать свои накопления управляющей компании (УК). Управление накопительным счетом остается в ПРФ.</li>
+<li>Передать свои накопления негосударственному пенсионному фонду (НПФ). Управление накопительным пенсионным счетом также передается в НПФ.</li>
+</ol>
+<p>Мы рассмотрим последовательно эти варианты. Можно не читать сразу много текста, а посмотреть итоговую таблицу сравнений в самом конце, чтобы получить примерное понимание, по каким критериям отличаются эти альтернативы, а потом уже вернуться к основному тексту.</p>
+<p>На мой взгляд, главным критерием выбора, разумеется, является <em>ожидаемая</em> доходность инвестирования ваших накоплений - а иначе зачем это вообще все нужно? Любой из этих управляющих будет размещать, получаемые от вашего работодателя средства, в различные финансовые инструменты. Доходность инвестиций (в отличие, к примеру, от банковского депозита) в общем случае неизвестна заранее. Но управляющие должны стремиться к тому, чтобы обеспечить максимальную доходность в складывающихся условиях.<br>
+Как можно ожидать, точно спрогнозировать <em>будущую</em> доходность невозможно в принципе. Можно только сделать некоторые разумные предположения по этому поводу. Одним из частых предположений является использование <em>прошлой</em> доходности, достигнутой управляющим, в качестве прокси его будущей доходности. Такой подход разумен, но отнюдь не гарантирует, что аналогичные результаты будут достигнуты будущем.<br>
+Мы внимательно изучим различные показатели доходности этих альтернатив, сосредоточившись на показателях последних 4 лет, с 2009 года. Мне кажется, такой подход более разумен в текущих условиях - так как условия работы финансовых до 2008 года сильно отличались. Поэтому не имеет смысла рассчитывать на доходности в 20%+, которые достигали отдельные НПФ или УК, в период, 2005-2007 гг. Жизнь для управляющих тогда была слишком другой.<br>
+Еще несколько вещей о доходности, которые хочется обозначить заранее. Доходность связана с риском. Как правило, б <em>о</em> льший уровень доходности означает б <em>о</em> льший уровень риска. В идеальном варианте управляющий обеспечивает максимальный уровень доходности на условную единицу риска.<br>
+Это может показаться, не совсем очевидным, но чем вы моложе, тем к <em>большему</em> уровню риска вам следует стремиться. Так как инвестиционный горизонт для человека 25-летнего возраста до выхода на пенсию - 35 лет, то в принципе, более “агрессивный” инвестиционный портфель позволит обеспечить большую степень доходности к 60 годам. Чем старше вы становитесь, тем более консервативными вы должны становиться. Определить степень “агрессивности” портфелей НПФ и УК на самом деле не так просто, так как имеющаяся отчетность не раскрывает конкретные ценные бумаги. Косвенно это можно оценить, например, по доле акций в инвестиционном портфеле.<br>
+Под риском здесь понимается риск финансовых инструментов, а не риски, к примеру, связанные с ненадежностью НПФ или УК. То есть тот риск, который потенциально дает вам возможность получить дополнительную доходность (upside).<br>
+Теперь рассмотрим подробнее три альтернативы.</p>
+<section id="вэб---государственная-управляющая-компания-гук" class="level3">
+<h3 class="anchored" data-anchor-id="вэб---государственная-управляющая-компания-гук">1. ВЭБ - государственная управляющая компания (ГУК)</h3>
+<p>Пенсионные накопления “молчунов” управляются ВЭБом, а ведение пенсионного счета и учета осуществляется Пенсионным фондом РФ (ПФР). Это все еще наиболее популярный способ распоряжения пенсионными накоплениями. В 2012 году ГУК управлял пенсионными накоплениями 56,5 млн человек, а это около 73% людей, имеющих накопительные пенсионные счета.</p>
+<p>Со следующего года можно сохранить эту опцию - необходимо написать заявление в ПФР соответствующее заявление с пометкой “ГУК ВЭБ 6%”.</p>
+<p>Один момент, о котором, наверняка, большая часть людей не знает. В настоящее время ГУК (ВЭБ) имеет два инвестиционных портфеля в рамках управления пенсионными накоплениями:</p>
+<ol type="1">
+<li>Расширенный инвестиционный портфель (по умолчанию)</li>
+<li>Инвестиционный портфель государственных ценных бумаг.</li>
+</ol>
+<p>Если вы не слышали об этом, то у вас именно расширенный портфель, для того, чтобы попасть в вариант №2 нужно писать отдельное заявление. В чем различие?<br>
+С 2010 года ВЭБ получил право вкладываться не только в гос.облигации. Для этого его портфель разделили на тот, в котором можно вкладывать и в другие бумаги (“расширенный”) и сделали его “по умолчанию”. Если же написать заявление, то можно выбрать портфель вложений только в гос.бумаги. Как и можно было ожидать, больше 99% средств под управлением ВЭБа находится именно в портфеле №1 “по умолчанию”, который не требует каких-либо телодвижений.</p>
+<section id="прошлая-доходность-вэб" class="level4">
+<h4 class="anchored" data-anchor-id="прошлая-доходность-вэб">Прошлая доходность ВЭБ</h4>
+<p>Доходность портфеля ВЭБ обычно является довольно низкой. За последние 8 лет портфель ВЭБа смог перекрыть инфляцию только два разу - в 2009 и в 2012 году. За последние 4 года (2009-2012) накопленная доходность составила 32% при накопленной за тот же период инфляции в 34%.</p>
+<p>Однако в прошлом году (2012) результаты были особенно удачны - 8.4% (по расширенному портфелю), что больше средних показателей и НПФ, и УК. Частично это единовременное событие, связанное с бумом на рынке гособлигаций (ОФЗ) из-за ожиданий либерализации рынка и прихода иностранных инвесторов.</p>
+<p>Традиционно считается, что ВЭБ использует сверхконсервативную инвестиционную стратегию и вкладывает средства преимущественно в государственные облигации. Но если посмотреть на изменение структуры расширенного инвестиционного портфеля ВЭБа (график выше), то видно, что структура вложений сильно изменилась за последние годы. Сейчас на вложения в госбумаги приходится только половина портфеля, остальная часть - на иные активы, в основном, это корпоративные облигации. Это означает, что постепенно различия в структуре портфелей между ВЭБ (ГУКом) и частными управляющими будут постепенно сокращаться, и можно ожидать, что различия в доходностях - тоже.</p>
+<p>Конечно, в случае любых катаклизмов ВЭБ будет первым “подставлять плечо” правительству и при необходимости может также легко изменить структуру портфеля в пользу гос.бумаг - особых ограничений нет. Есть риск в том, что в будущем государство “позаимствует” средства накоплений для отдельных “спецпрограмм”. К примеру, сейчас <a href="http://www.kommersant.ru/doc/2261348">обсуждается</a>идея вице-премьера О.Голодец использовать частично эти средства для кредитования малого и среднего бизнеса (?!) - идея, мягко говоря, странная.</p>
+<p>Но в принципе, это не самый плохой вариант - оставаться в ВЭБе, если вы настроены консервативно, не верите в частный сектор, но хотите сохранить 6%. Можно даже выбрать портфель гос.бумаг, чтобы быть ультра-консервативным. Однако необходимо понимать, что скорее всего портфель ВЭБ в долгосрочном периоде только покроет инфляцию и, по всей видимости, не обеспечит дополнительной доходности сверх того.</p>
+</section>
+</section>
+<section id="ук---управляющие-компании" class="level3">
+<h3 class="anchored" data-anchor-id="ук---управляющие-компании">2. УК - управляющие компании</h3>
+<p>Следующей альтернативой являются управляющие компании (УК). Выбор варианта УК означает, что управление вашим пенсионным счетом остается в обязанностях государственного ПФР. ПФР же будет продолжать информировать вас о состоянии пенсионного счета и в будущем - обеспечивать выплату накопительной части пенсии. Однако управление этими средствами (читай - выбор вложений в различные финансовые инструменты) будет осуществлять не ГУКом/ВЭБом как в первом варианте, а кем-либо из частных управляющих, с которыми у ПФР есть договор.</p>
+<p>По состоянию на начало 2012 года (более свежих данных не удалось обнаружить) таких управляющих компаний 52 штуки. В основном они аффилированны либо с банками, либо крупными финансовыми компаниями. Причем некоторые предлагают выбор из нескольких возможных инвестиционных портфелей. Поэтому нужно выбрать не только одну из этих УК, но инвестиционный портфель (если такой выбор есть). В прошлом году я <a href="http://quantviews.blogspot.ru/2012/08/blog-post.html">рассматривал</a> только этот сегмент рынка пенсионных накоплений - можно посмотреть на те результаты.</p>
+<p>Однако надо знать, что вложения пенсионных накоплений через УК является крайне непопулярным среди наших граждан. На все 52 УК по состоянию на конец 1 квартала 2013 года приходится лишь 1,3% рынка пенсионных накоплений (если учитывать ВЭБ) и 3,9%, если не учитывать. Совокупно все 52 УК управляют портфелем всего лишь около 33 млрд рублей, тогда как в НПФах находится свыше 800 млрд рублей (разница почти в 25 раз!). Пока только 500 тыс. человек выбрали именно опцию УК.<br>
+Чем вызвано такое недоверие к опции УК я, честно говоря, не очень понимаю. Скорее всего, это связано с тем, что граждане просто не в курсе этой возможности. УК сами, в отличие от НПФ, не ведут широких маркетинговых компаний. Практические те же самые УК все равно получают средства в управление от уже НПФов. Поэтому, видимо, у них нет особенной заинтересованности в том, чтобы привлекать к себе клиентов непосредственно через ПФР. ПФР по понятным причинам также не заинтересован в этом.</p>
+<p>Посмотрим на стоимость чистых активов (СЧА), которыми управляют управляющие компании, чтобы понять кто присутствует на этом рынке.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="http://public.tableausoftware.com/static/images/_8/_898/Dashboard1/1_rss.png" class="img-fluid figure-img"></p>
+<figcaption>Стоимость чистых активов (СЧА) пенсионных накоплений УК</figcaption>
+</figure>
+</div>
+<p><a href="http://www.tableausoftware.com/public/about-tableau-products?ref=http://public.tableausoftware.com/views/_898/Dashboard1">Learn About Tableau</a></p>
+<p>Как видно, лидерами рынке являются дочерних структуры крупных банков - ВТБ, Сбербанк, Уралсиб. Только около 10 компаний имеют портфели с СЧА более 1 млрд рублей. Однако так как крупные УК управляют сразу множеством различных портфелей для разных клиентов, то для них это не должно быть большим ограничением. В то же время “маленькие” УК с портфелями в десятки миллионов рублей непонятно каким образом в принципе могут обеспечить профессиональное управление.</p>
+<section id="прошлая-доходность-ук" class="level4">
+<h4 class="anchored" data-anchor-id="прошлая-доходность-ук">Прошлая доходность УК</h4>
+<p>Разумеется, доходность отличается в зависимости от УК. Я посчитал средневзвешенную (по размерам СЧА) доходность всех УК. За прошлый год средневзвешенная доходность составила 7,4%. За последние 4 года - 12,0%. Однако эти результаты сильно связаны только с одним годом. В 2009 году доходность составила 30,5% - после убытка в 27% в 2008 году. Если включить 2008 год, то средняя доходность сразу резко падает.<br>
+Видно, что вложения в УК характеризуются достаточно высоким уровнем риска. Частично это, видимо, связано с тем, что они имеют возможность начислять отрицательную доходность на ваши накопления - НПФы не имеют такой возможности.</p>
+<p>Теперь рассмотрим показатели доходности отдельных фондов. В таблице ниже можно посмотреть три показателя доходности: годовая доходность (к предыдущему года), накопленная доходность с соответствующего года (то есть в столбце “2009” - будет стоять накопленная доходность с 2009 по 2012 год, а в столбце “2005” - соответственно с 2005 по 2012), и ранг доходности (то есть место фонда по доходности за этот период, соответственно чем меньше, тем лучше).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="http://public.tableausoftware.com/static/images/20/2004-2012/Dashboard1/1_rss.png" class="img-fluid figure-img"></p>
+<figcaption>Показатели доходности УК, 2004-2012</figcaption>
+</figure>
+</div>
+<p><a href="http://www.tableausoftware.com/public/about-tableau-products?ref=http://public.tableausoftware.com/views/2004-2012/Dashboard1">Learn About Tableau</a></p>
+<p>Видно, что в прошлом году максимальная доходность (12,5%) была достигнута УК Росно Управление Активами (портфель - сбалансированный). Правда в 2011 году этот портфель потерял 5,7% стоимости. За более длительный период лучше смотреть накопленную доходность. Особенно обратите внимание на столбец 2009 или 2008 - то есть накопленная доходность с 2009 или 2008 года.</p>
+<p>Мне кажется, что в целом опцию УК стоит изучить достаточно внимательно. Управление вашим пенсионным счетом остается в рамках ПФР. Управляющие компании представляют ежеквартальную отчетность, в отличие от НПФ, которые сообщают о своих результатах только раз в год. Крупнейшие УК контролируются крупными финансовыми структурами, поэтому даже относительно небольшие инвестиционные портфели могут управляться вполне профессионально. Однако УК подразумевают достаточно высокий уровень риска. По таблице видно, что в 2011 году, когда не было никакого финансового кризиса, 27 портфелей УК (из 60!) показали отрицательную доходность. В 2012 году ситуация улучшилась. Если вы в принципе готовы к такому варианту, тогда вам стоит рассмотреть такую возможность.</p>
+</section>
+</section>
+<section id="негосударственные-пенсионные-фонды---нпф" class="level3">
+<h3 class="anchored" data-anchor-id="негосударственные-пенсионные-фонды---нпф">3. Негосударственные пенсионные фонды - НПФ</h3>
+<p>НПФ берут на себя все функции по вашему пенсионному обеспечению - управление вашим пенсионным счетом, выплата пенсии в будущем, выбор управляющих для управления накоплениями, предоставление необходимой информации и прочее. По сути НПФы выступают аналогом ПФР в плане накопительной части пенсии, только негосударственным.</p>
+<p>Несколько моментов, которые необходимо знать. Все крупные НПФ занимаются пенсионным обеспечением не только в рамках обязательных отчислений на накопительную часть, но и добровольным пенсионным обеспечением (корпоративные и индивидуальные программы). Часть активов по первому направлению называется “пенсионными накоплениями”, по второму - “пенсионные резервы”. Такая вот терминология.</p>
+<p>По состоянию на 31.07.2013 102 НПФа имеют лицензию на обязательное пенсионное обеспечение (ОПС), то есть управлять пенсионными накоплениями в пределах обязательных 6%. Примерно 20 млн человек выбрали именно опцию НПФ по состоянию на 2012 год. НПФ обеспечивают управление пенсионными накоплениями почти в 820 млрд рублей, что также довольно много.</p>
+<p>Посмотрим, что это за фонды на интерактивной визуализации.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="http://public.tableausoftware.com/static/images/-_/-_46/Dashboard1/1_rss.png" class="img-fluid figure-img"></p>
+<figcaption>Основные показатели деятельности НПФ</figcaption>
+</figure>
+</div>
+<p><a href="http://www.tableausoftware.com/public/about-tableau-products?ref=http://public.tableausoftware.com/views/-_46/Dashboard1">Learn About Tableau</a></p>
+<p>По умолчанию выбран показатель “Пенсионные накопления - тыс. рублей, балансовая стоимость”, чтобы посмотреть крупнейших компаний по объемам средств, которые им переданы в рамках обязательного пенсионного обеспечения. Но можно выбрать и другие показатели - количество клиентов и прочее.<br>
+Основная цель этой визуализации - просто показать какие НПФ представлены на рынке. Несмотря на, что НПФов много, больше половины - это непонятные мелкие фонды, в основном, связанные с отдельными работодателями. Крупных фондов, которые могут имеют устойчивые бизнес-модели не более 20-30 штук. На них и стоит ориентироваться. Не стоит связываться с фондами объем пенсионных накоплений меньше 1-2 млрд рублей. Не очень понятно, каким образом они могут поддерживать свои операционные расходы с таким портфелем. Более того, в последние годы рынок НПФов быстро рос и они не смогли воспользоваться этими возможностями. Это, видимо, также говорит о деловых качествах управляющих фонда.</p>
+<p>На этой визуализации можно посмотреть динамику показателей приглянувшихся фондов. Видно очень хорошо, что динамика клиентов и пенсионных накоплений начала сильно расти только в последние несколько лет.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="http://public.tableausoftware.com/static/images/-_/-_46/Dashboard2/1_rss.png" class="img-fluid figure-img"></p>
+<figcaption>Динамика показателей отдельного НПФ</figcaption>
+</figure>
+</div>
+<p><a href="http://www.tableausoftware.com/public/about-tableau-products?ref=http://public.tableausoftware.com/views/-_46/Dashboard2">Learn About Tableau</a></p>
+<p><em>Примечание: если выбрать кнопку с маленькой лупой (поиск), то можно найти НПФ по части его названия. Так удобнее, чем скроллить весь список. </em></p>
+<p>Текущим лидерам рынка в части ОПС является НПФ Лукойл-Гарант. Кстати, не стоит буквально воспринимать название фонда и его собственников. К примеру, логично предположить, что НПФ Лукойл-Гарант связан с нефтяной компанией Лукойл. Однако фактический владелец этого фонда <a href="http://www.vedomosti.ru/finance/news/7079451/fedun_bez_pensii">сменился</a>в конце прошлого года и сейчас его контролирует ФК Открытие, уже не имеющая отношения к нефтяной компании. Другой пример - НПФ Ренессанс Жизнь и Пенсии, похоже, уже <a href="http://kommersant.ru/doc/2259365">не имеет отношени</a>я к одноименной финансовой группе и, как пишет Ъ, “возможно, будет использоваться для финансирования собственных девелопеских проектов” (!)<br>
+Поэтому если вы рассматриваете один из НПФ имеет смысл погуглить новости по нему в деловой прессе, чтобы понять с кем он фактически связан. И в принципе, вы всегда можете сменить НПФ (сейчас это можно делать хоть каждый год) - не забывайте об этом.<br>
+Нынешние НПФы по своей организационно-правовой форме некоммерческие организации. Формально они не имеют собственников, только учредителей. По факту НПФ контролируется Советом Фонда - некими физическими лицами, которые связаны с той или иной компанией. В результате, это сильно снижает прозрачность и открытость рынка, так как часто невозможно четко определить, “чей” это фонд. Сейчас обсуждается возможность преобразования НПФов в “нормальные” акционерные общества с тем, чтобы не создавать дополнительную неопределенность. Однако, наверно, не имеет смысла связываться с НПФом, которые напрямую аффилированы лишь с одной крупней нефинансовой компанией. Юридически этот владелец НПФ не несет никаких обязательств по пенсионным накоплениям, в то же время он вполне может использовать пенсионные накопления для “финансирования собственных девелоперских проектов” (или каких иных). Судя по тому, как обстоят дела сейчас с регулированием отрасли, регуляторы узнают об этом, когда будет уже поздно. Крупнейшие убытки НПФов были связаны как раз с подобными вещами (к примеру, вот <a href="http://www.kommersant.ru/doc-rss/1593494">история</a>Ханты-Манскийского НПФ).</p>
+<section id="прошлая-доходность-нпф" class="level4">
+<h4 class="anchored" data-anchor-id="прошлая-доходность-нпф">Прошлая доходность НПФ</h4>
+<p>Как я уже говорил, главной целью и основным критерием для пенсионного фонда как и другого финансового института является доходность инвестирования. И в случае НПФ, к сожалению, с достигнутой доходностью все не очень понятно.<br>
+Во первых, родные регуляторы (раньше это был ФСФР, сейчас - ЦБ) <em>не предоставляют информации о доходности</em> , зачисленной на счет клиента НПФ. То есть каждому клиенту эта доходность сообщается, но так, чтобы регулятор в одном месте предоставлял информацию по всем фондам - такого нет (!). <a href="http://www.fcsm.ru/ru/contributors/polled_investment/npf/svedeniya/2012/8/">Информация</a> ФСФР о финансовых результатах не сравнима с начисленной доходностью для клиентов. Насколько я понял, это происходит из-за 2008 года. По итогам 2008 года все НПФ понесли убытки и по идее имели отрицательную доходность. Но закон запрещает указывать отрицательную доходность, поэтому фактически фонды “размазывали” (и возможно, продолжают размазывать) эти убытки в последующие доходы с одобрения регуляторов. Корректно реконструировать “правильную” доходность в принципе невозможно. Побочным следствием, видимо, стало то, что у НПФ, которые работали в 2008 году, при прочих равных доходность будет ниже чем у тех, кто начал работу после 2008 года.</p>
+<p>Сами НПФы не имеют каких-либо единых требований, в каком виде и как они предоставляют публично эту информацию. В результате, получается, “кто - в лес, кто - по дрова”. Кто-то честно рассказывает о начисленной доходности по всем годам существования НПФ. Так это делает, к примеру, <a href="http://gazfond.ru/node/294">НПФ Газфонд</a>. Большинство фондов говорят о накопленной доходности за какой-либо период времени. Причем периоды времени отличаются между фондами. Некоторые фонды дают накопленную доходность только от времени начала работы фонда, а не годовые показатели. Как мне подсказали, осведомленные источники, фонды иногда указывают “грязную” доходность на сайте, а не чистую, начисленную клиентам доходность, и так далее. Ну и я готов сказать отдельное спасибо, если кто-то найдет доходность, начисленную клиентам <a href="http://www.npf-transneft.ru/">НПФ Транснефт</a>ь (почти 50 тыс человек являются клиентам этого НПФ по ОПС!).<br>
+Поэтому доходность НПФом пришлось собирать вручную - по сайтам самих фондов и других источников (<a href="http://www.pensiamarket.ru/Partners.aspx?type=npf">pensiamarket.ru</a>). Спасибо еще недавно опубликованному <a href="http://p-a-c.ru/files/npf2013/%D0%9F%D0%B8%D0%90%D0%9A.%20%D0%94%D0%BE%D1%85%D0%BE%D0%B4%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D0%B5%D0%BD%D1%81%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D1%84%D0%BE%D0%BD%D0%B4%D0%BE%D0%B2%20%D0%BF%D0%BE%20%D0%9E%D0%9F%D0%A1%20%D0%B7%D0%B0%202012%20%D0%B3%D0%BE%D0%B4.pdf">обзору</a> компании “Пенсионные и Актуарные Консультации”- частично информация по НПФ взята оттуда (в этом обзоре кстати, еще много других показателей, в частности, по структуре инвестиционных портфелей НПФ, поэтому имеет смысл ознакомиться с этим обзором).</p>
+<p>Посмотрим же на с трудом собранные данные по доходности. По моим расчетам средневзвешенная (по объемам пенсионных накоплений) доходность по всем НПФам, по которым есть данные, составила 7,4% в 2012 году. В среднем, за период с 2009 по 2012 год - 9,1%.</p>
+<p>Так же, как и по таблице УК, мы рассматриваем ежегодную доходность и накопленную доходность. Аналогичным образом показатель накопленной доходности за 2009 года обозначает накопленную доходность в период с 2009 по 2012 год.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="http://public.tableausoftware.com/static/images/20/2005-2012/Dashboard1/1_rss.png" class="img-fluid figure-img"></p>
+<figcaption>Показатели начисленной клиентам доходности НПФ, 2005-2012</figcaption>
+</figure>
+</div>
+<p><a href="http://www.tableausoftware.com/public/about-tableau-products?ref=http://public.tableausoftware.com/views/2005-2012/Dashboard1">Learn About Tableau</a></p>
+<p>Таблица показывает, что в 2012, к примеру, максимальную доходность в 10% показал НПФ Адекта-пенсия. Правда это только первый год имеющихся результатов, поэтому сложно делать выводы по этому НПФ. В целом, видно, что разброс показателей доходности НПФ гораздо менее выражен, чем у УК. Особенно сильно это видно по показателям последних трех лет.</p>
+<p><strong>Распределение доходностей НПФ по годам, 2005-2012</strong></p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjc4e616jFePXRjVT-TwQEGGjsmPwpcVWdx_pIudHdy77zTpOF0ehpi4BEAubBL1DnuDqZIcEN0oprLVCc6x1emOaaIOrGcM-lNo05FjvSpC70nls2p87frCaWz2evY70FLr5sAXzbDf3nb/s1600/%D0%B4%D0%BE%D1%85%D0%BE%D0%B4%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%BD%D0%BF%D1%84-2005-2012.png"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjc4e616jFePXRjVT-TwQEGGjsmPwpcVWdx_pIudHdy77zTpOF0ehpi4BEAubBL1DnuDqZIcEN0oprLVCc6x1emOaaIOrGcM-lNo05FjvSpC70nls2p87frCaWz2evY70FLr5sAXzbDf3nb/s1600/%D0%B4%D0%BE%D1%85%D0%BE%D0%B4%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%BD%D0%BF%D1%84-2005-2012.png" class="img-fluid"></a></p>
+<p>Также имейте в виду, что для всех управляющих имеет значение размер управляемых активов. Как правило, легче добиваться б <em>о</em> льшей доходности относительно небольшими средствами. Чем больше активов находится в управлении, тем сложнее добиваться высокой доходности. Даже крупные НПФы сильно увеличили объем пенсионных накоплений только за последние 2-3 года. Поэтому большие доходности ранних лет, когда накоплений было мало, не вполне характеризуют способности к управлению.</p>
+</section>
+</section>
+<section id="что-же-все-таки-делать" class="level3">
+<h3 class="anchored" data-anchor-id="что-же-все-таки-делать">Что же все-таки делать?</h3>
+<p>Ок, скажете вы. Все это конечно очень интересно, но кого выбрать - куда нести свои деньги?</p>
+<p>Сначала приведу сравнительную таблицу, которая обобщает в емком виде сказанное и представленные выше.</p>
+<p><strong>Краткое сравнение альтернатив пенсионных накоплений</strong><br>
+| <strong>Критерий</strong> | <strong>ВЭБ (ГУК)</strong> | <strong>УК</strong> | <strong>НПФ</strong><br>
+—|—|—|—<br>
+Управление пенсионным счетом | ПФР | ПФР | НПФ<br>
+Инвестиционная стратегия | Консервативная | Наиболее рискованная | Зависит от НПФ. Скорее всего, менее рискованная чем УК<br>
+Доходность в 2012 году, % (средневзвешенная по объемам активов) | 8.4 | 7.4 | 7.2<br>
+Среднегодовая доходность за 2009-2012 гг. | 7.1 | 12.0% (Однако если включить 2008 год, то средняя доходность падает до 2.8%!) | 9.1<br>
+Получение отрицательной доходности за период (год) | Возможно, на маловероятно | Возможно | НПФ не имеют права начислять отрицательную доходность, но по факту могут нести скрытые убытки.<br>
+Комиссия/расходы | Низкие. Около 0.1% от СЧА | Зависят от полученный доходности. Предельный размер не может превышать 1,1% от СЧА (ст. 16 п.5 ФЗ 111)+ 10% от инвестиционного дохода. Средняя комиссия за 2009-2012 гг. составила 1,6% | Не более 15% от инвестиционного дохода + расходы УК. По имеющейся отчетности сложно оценить суммарные фактические расходы НПФ<br>
+Популярность среди клиентов | Высокая (56,6 млн клиентов) | Низкая (500 тыс. клиентов) | Высокая (20 млн клиентов)<br>
+Открытость | Средняя (информация по отдельным бумагам в портфеле не предоставляется) | Средняя (информация по отдельным бумагам в портфеле не предоставляется) | В целом, низкая. У НПФ нет обязательств раскрывать публично начисленную клиентам доходность (!!!). Расходы по ОПС зависят от учетной политики фондов и их сложно оценить. Кто, контролирует тот или иной НПФ, также не всегда понятно.<br>
+Периодичность отчетности по доходности | Ежеквартально | Ежеквартально | Ежегодно</p>
+<div class="line-block"><br>
+</div>
+<div class="line-block"><br>
+<br>
+Ежегодно</div>
+<p>Мне кажется, что выбор процесс принятия решения может быть таким. Если вы не хотите связываться с частными компаниями, но хотите сохранить отчисления в 6% - оставайтесь в расширенном портфеле ВЭБа. Если вы не хотите доверять управление пенсионным счетом кому-либо кроме ПФР И готовы при этом взять на себя дополнительные риски (в том числе и начисления отрицательной доходности) - изучайте опцию УК. Наверно, для всех остальных лучше смотреть на НПФ. Различия в их доходностях относительно небольшие, поэтому выбор конкретного НПФ менее важен, чем в случае УК. Ну и в данном случае больше внимание стоит уделить надежности и структуре собственности фонда - информационная открытость отрасли явно страдает. Хотя я, честно говоря, считаю, что новый регулятор - ЦБ - сможет за несколько лет навести порядок в этом отношении.</p>
+<p>Теперь небольшой шорт-лист кандидатов, которые кажутся достойными рассмотрения и изучения:</p>
+<ol type="1">
+<li>ВЭБ: Расширенный портфель (по умолчанию).</li>
+<li>УК: ВТБ Капитал Управление Активами, УК Лидер, Солид Менеджмент, УК МДМ<br>
+</li>
+<li>НПФ: либо крупняк (Лукойкл-Гарант, Сбербанк, Газфонд), либо лидеры по доходности последних лет (Европейский пенсионный фонд, РГС), не связанные с нефинансовыми компаниями-учредителями.</li>
+</ol>
+<p>Вы определились с вашим кандидатом. Что дальше? Все очень просто - надо сходить либо в территориальное отделение ПФР (вот <a href="http://www.pfrf.ru/ot_moscow/cont_up/">адреса</a> по Москве) и написать простое одностраничное заявление. Возможно, выбранный НПФ имеет соглашение ПФР о взаимном удостоверении подписей (проверить можно <a href="http://www.pfrf.ru/list_organization_agents_inv/">здесь</a>). Тогда можно все решить в офисе НПФ, либо его агентов - подписать аналогичное заявление, и его передадут в ПФР. Практических проблем это не должно представлять. Если вы не уверены, что происходит с вашими накоплениями - проверить можно через gosuslugi.ru</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Скопировано");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Скопировано");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/quantviews\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 quantviews</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Экономика · Данные · Финансы · Аналитические системы</p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://t.me/quantviews">
+      <i class="bi bi-telegram" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:marcel.salikhov@gmail.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/quantviews">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<nav class="qv-post-nav">
+  <a href="../../posts.html">← Все публикации</a>
+</nav>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
