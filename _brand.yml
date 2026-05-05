@@ -1,0 +1,66 @@
+meta:
+  name: quantviews
+  link:
+    home: https://quantviews.github.io/
+    github: https://github.com/quantviews
+
+logo:
+  images:
+    icon: assets/icons/favicon.svg
+  small: icon
+  medium: icon
+
+color:
+  palette:
+    qv-blue: "#334155"
+    qv-deep-blue: "#0F172A"
+    qv-accent-blue: "#475569"
+    qv-burgundy: "#64748B"
+    qv-gold: "#94A3B8"
+    qv-graphite: "#0F172A"
+    qv-muted: "#64748B"
+    qv-light-bg: "#F8FAFC"
+    qv-card-bg: "#FFFFFF"
+    qv-border: "#E2E8F0"
+  foreground: qv-graphite
+  background: "#FFFFFF"
+  primary: qv-blue
+  secondary: qv-muted
+  info: qv-accent-blue
+  light: qv-light-bg
+  dark: qv-deep-blue
+
+typography:
+  fonts:
+    - family: "Open Sans"
+      source: google
+    - family: "JetBrains Mono"
+      source: google
+  base:
+    family: "Open Sans"
+    line-height: 1.65
+    weight: 400
+  headings:
+    family: "Open Sans"
+    weight: 600
+    color: primary
+  monospace:
+    family: "JetBrains Mono"
+    size: 0.92em
+  link:
+    color: qv-blue
+    background-color: "#00000000"
+    decoration: underline
+
+defaults:
+  bootstrap:
+    defaults:
+      navbar-bg: "#FFFFFF"
+      navbar-fg: "#0F172A"
+      navbar-hl: "#334155"
+      body-bg: "#FFFFFF"
+      body-color: "#0F172A"
+      card-bg: "#FFFFFF"
+      card-border-color: "#E2E8F0"
+      border-color: "#E2E8F0"
+      code-color: "#334155"

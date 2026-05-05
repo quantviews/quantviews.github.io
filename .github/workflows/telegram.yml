@@ -1,0 +1,98 @@
+name: Post to Telegram
+
+on:
+  push:
+    branches: [main]
+    paths: ["posts/**/index.qmd"]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find new post
+        id: post
+        run: |
+          NEW=$(git diff --name-only --diff-filter=A HEAD~1 HEAD \
+            | grep '^posts/.*/index\.qmd$' | head -1)
+          echo "file=$NEW" >> $GITHUB_OUTPUT
+          [ -n "$NEW" ] && echo "found=true" >> $GITHUB_OUTPUT \
+                        || echo "found=false" >> $GITHUB_OUTPUT
+
+      - name: Send to Telegram
+        if: steps.post.outputs.found == 'true'
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          POST_FILE: ${{ steps.post.outputs.file }}
+        run: |
+          python3 << 'EOF'
+          import os, re, urllib.request, urllib.parse, json, html
+
+          post_file = os.environ["POST_FILE"]
+          token     = os.environ["BOT_TOKEN"]
+
+          with open(post_file, encoding="utf-8") as f:
+              content = f.read()
+
+          # Parse YAML frontmatter
+          fm_match = re.search(r"^---\n(.*?)\n---", content, re.DOTALL)
+          fm = fm_match.group(1) if fm_match else ""
+
+          def fm_get(key):
+              m = re.search(rf'^{key}:\s*["\']?(.*?)["\']?\s*$', fm, re.MULTILINE)
+              return m.group(1).strip() if m else ""
+
+          title    = fm_get("title")   or "Новый пост"
+          desc     = fm_get("description")
+          date_str = fm_get("date")
+
+          cats_raw = re.search(r'^categories:\s*\[(.*?)\]', fm, re.MULTILINE)
+          cats = re.findall(r'"([^"]+)"', cats_raw.group(1)) if cats_raw else []
+          tags = " ".join(
+              "#" + re.sub(r'[^a-zA-Zа-яА-Я0-9]', '_', c.lower())
+              for c in cats[:5]
+          )
+
+          # Build post URL from file path
+          # posts/2026-05-05-slug/index.qmd → posts/2026-05-05-slug/
+          slug = os.path.dirname(post_file).replace("posts/", "", 1)
+          url  = f"https://quantviews.github.io/posts/{slug}/"
+
+          # Compose message (HTML parse mode — no escaping headaches)
+          lines = []
+          lines.append(f"<b>{html.escape(title)}</b>")
+          if date_str:
+              lines.append(f"<i>{html.escape(date_str)}</i>")
+          if desc:
+              # Truncate description to 300 chars to stay well inside 4096
+              short = desc[:300].rsplit(" ", 1)[0] + ("…" if len(desc) > 300 else "")
+              lines.append(html.escape(short))
+          lines.append(f'<a href="{url}">Читать →</a>')
+          if tags:
+              lines.append(tags)
+
+          message = "\n\n".join(lines)
+
+          # Telegram Bot API
+          data = urllib.parse.urlencode({
+              "chat_id":                  "@quantviews",
+              "text":                     message,
+              "parse_mode":               "HTML",
+              "disable_web_page_preview": "false",
+          }).encode()
+
+          req = urllib.request.Request(
+              f"https://api.telegram.org/bot{token}/sendMessage",
+              data=data,
+          )
+          with urllib.request.urlopen(req) as r:
+              resp = json.loads(r.read())
+              if resp.get("ok"):
+                  print(f"✓ Sent: {title}")
+              else:
+                  print(f"✗ Error: {resp}")
+                  exit(1)
+          EOF

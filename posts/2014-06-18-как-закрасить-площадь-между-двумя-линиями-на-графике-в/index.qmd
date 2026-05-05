@@ -1,0 +1,69 @@
+---
+title: "Как закрасить площадь между двумя линиями на графике в Excel? "
+date: 2014-06-18
+author: "Марсель Салихов"
+categories: ["excel", "визуализация"]
+description: "Я уже рассматривал (http://quantviews.blogspot.ru/2013/08/y-excel.html)некоторые хитрости построения графиков в Excel - график с двумя осями Y и прочие"
+---
+
+Я уже [рассматривал ](http://quantviews.blogspot.ru/2013/08/y-excel.html)некоторые хитрости построения графиков в Excel - график с двумя осями Y и прочие довольно простые вещи. Можно поговорить о чуть более сложных вещах.  
+Возьмем стандартный график с линиями (line chart). Зачем нужно закрашивать площадь между этими линиями? Часто площадь закрашивают для того, чтобы акцентировать внимание читателя на различии/расстоянии между двумя линиями. Другой вариант, который встречается в моей деятельности - построение совмещенных графиков показателей, имеющих сильные сезонные колебания.  
+К примеру, вот такой вот график. На нем изображены недельные данные по объемам хранимого в подземных хранилищах  природного газа (ПХГ) в США. Показатель имеет сильную сезонность, поэтому в таком представлении сложно понять, что происходит на "конце" графика и соотнести последние точки с предыдущими периодами.  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg89nTQ4fUI0NxUPd1pa8vSAgmQAhKHYDK83Yf9xYDu0zK6B2190Ay1aapFjU1XdYOefz2XjwiTeYgHkFMU9oyqc0zkXSZCjKz5Gv5eDNLrxUfUZTDv_RzMdo8LrgnQ7ZZdI1goUPyuQvlH/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(11\).png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg89nTQ4fUI0NxUPd1pa8vSAgmQAhKHYDK83Yf9xYDu0zK6B2190Ay1aapFjU1XdYOefz2XjwiTeYgHkFMU9oyqc0zkXSZCjKz5Gv5eDNLrxUfUZTDv_RzMdo8LrgnQ7ZZdI1goUPyuQvlH/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(11\).png)
+
+  
+В совмещенном же виде график будет выглядеть вот таким вот образом. По оси Х отображен только один год - 52 недели для недельных данных. Данные по разным годам совмещены в линиях - в данном представлении показывается только текущий (2014), серой линией обозначен среднее значение за пятилетний период, светло-серым закрашенным участком выделен диапазон между минимальным и максимальным значением за соответствующий период.  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYAiK2TydoZmLkn3_ccmeaVXVWunMfTBSxrYxPJE7aj64H2meFCk6jkuC5t7Vmv9Ut_lBRG1rMvvjc8yHnTWFpZmjpHxAHH3yAbrG8iZPzzV8TEq7UQHpfLsS3bW7Oz8AgSFL1A4AGNqvi/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(18\).png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYAiK2TydoZmLkn3_ccmeaVXVWunMfTBSxrYxPJE7aj64H2meFCk6jkuC5t7Vmv9Ut_lBRG1rMvvjc8yHnTWFpZmjpHxAHH3yAbrG8iZPzzV8TEq7UQHpfLsS3bW7Oz8AgSFL1A4AGNqvi/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(18\).png)
+
+  
+Рассмотрим только построение закрашенной светло-серой площади, которая показывает диапазон. Сначала строим обычный линейный график для максимума и минимума - предполагается, что исходные данные (обычный временной ряд) уже преобразованы для такого представления и у нас есть ряд Max и Min.  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7htCz_5Mr1-BSY1pGep5XQTK-INtugxf_MfIUnR2L5JYY5f8F75kJFs2YYn0rTo6FCUXH8p2HR8i18TxtGsZ7JsDulQElTTkpb38Y7MI529FQ4uf_TSMQOhOxbDkM0lqBGwtiPcu9DHss/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(14\).png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7htCz_5Mr1-BSY1pGep5XQTK-INtugxf_MfIUnR2L5JYY5f8F75kJFs2YYn0rTo6FCUXH8p2HR8i18TxtGsZ7JsDulQElTTkpb38Y7MI529FQ4uf_TSMQOhOxbDkM0lqBGwtiPcu9DHss/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(14\).png)
+
+  
+Сначала нужно закрасить площадь между двумя линиями. "Трюк" состоит в том, чтобы добавить на графику гистограмму с накоплением, которая будет состоять из двух частей. Верхняя часть гистограммы будет соответствовать расстоянию между графиками и будет видимой. Нижняя часть будет занимать площадь от линии Min до 0 и будет невидимой на графике.  
+Для этого нужно в расчетной таблице добавить два дополнительных расчетных столбца к двум имеющимся (Max и Min).  
+Нижняя часть = Min  
+Разница = Max - Min.  
+
+
+  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhThgpsZp53hzVvu8sBLj0PUBC27dGsNDV3jD9KyqGPhhcVUFwXGKf8c3teP-XClU3AFY9k8zsxkF5Uf79Z3bZIbq-rp8aLHC0uwwrt6UlTjhwWj0zio-f0Fqd0iNWUVtOgTdABgLuy7S1q/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(4\).bmp)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhThgpsZp53hzVvu8sBLj0PUBC27dGsNDV3jD9KyqGPhhcVUFwXGKf8c3teP-XClU3AFY9k8zsxkF5Uf79Z3bZIbq-rp8aLHC0uwwrt6UlTjhwWj0zio-f0Fqd0iNWUVtOgTdABgLuy7S1q/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(4\).bmp)
+
+  
+  
+Теперь нужно выделить полностью два дополнительных столбца -> _Копировать_. Перейти на уже имеющийся график с линиями и нажать _Ctrl-V_. Две дополнительных линии появятся на графике.  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtKQ5O2LcbuDU4ftsX_cIeoqL84xvqvUQD8HbJTWDBAU-3oxSO0TFXrCWieVUuDuZm8Ywh660kaytPOeLVYSqY-gj4mCDSCzVGgJEFZWkUERA2glPHp02PYzQyDwd5JKhVuxVoxOims7LU/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(15\).png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtKQ5O2LcbuDU4ftsX_cIeoqL84xvqvUQD8HbJTWDBAU-3oxSO0TFXrCWieVUuDuZm8Ywh660kaytPOeLVYSqY-gj4mCDSCzVGgJEFZWkUERA2glPHp02PYzQyDwd5JKhVuxVoxOims7LU/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(15\).png)
+
+  
+Выглядит правда все еще не очень похоже. Теперь нужно изменить вид диаграммы на гистограмму с накоплением. Соответственно выбираем сначала ряд _"Разница"_ -> _"Изменить тип диаграммы для ряда"_ -> _"С областями и накоплением"_(если выбрать просто гистограмму с накоплением, то будут "зубцы"). Тоже самое делается для для ряда "Нижняя часть".  
+Обратите внимание, что два ряда "Min" и "Нижняя часть" имеют одинаковые значения и наложены друг на друга. Удостоверьтесь, что вы выбираете нужный ряд. После этих манипуляций должно стать понятнее, что происходит. Фактически на графике совмещены две диаграммы.  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisIzc2Fcvy1vHIulZT8Fa1KxXqAILLd_MDgMpuz_DOn9mqkjyLHRGzEDMmtkUMM4hU-Ho0MBEYT_fDv3cu6-PZDpBjAirBsnMdgc3E1AYfOjQsSGkHyPoPEPWpjP_RCI7ZAdU9W6cOJTNg/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(19\).png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisIzc2Fcvy1vHIulZT8Fa1KxXqAILLd_MDgMpuz_DOn9mqkjyLHRGzEDMmtkUMM4hU-Ho0MBEYT_fDv3cu6-PZDpBjAirBsnMdgc3E1AYfOjQsSGkHyPoPEPWpjP_RCI7ZAdU9W6cOJTNg/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(19\).png)
+
+  
+
+
+  
+В дальнейшем остается только доработать все "напильником", чтобы получить желаемый результат.  
+\- Установить "Нет заливки" для нижней части гистограммы с накоплением. Это приведет к тому, что нижняя часть гистограммы станет невидимой.  
+\- Поменять цвет для верхней части области на нужный.  
+Можно убрать сами линии Max и Min, чтобы они не отвлекали внимание, добавить дополнительные ряды ("2014" и "Среднее за 2009-2013"), чтобы получился итоговый результат (второй график) - но это уже дело вкуса и итоговый целей представления данных.  
+~~Единственное, что плохо с моей точки зрения - площадь получается с "зубцами", я пока не нашел способа, как можно обеспечивать"сглаживание" для такого графика. Если знаете - расскажите!~~  
+  
+Дополнительная тонкость - чтобы убрать из легенды ненужные элементы (Нижняя часть, Разница), можно просто выделять их и нажимать Del - только нужно убедиться, чтобы вы выделили не всю легенду, а отдельный ее элемент (тогда отдельный элементы будет в выделенном треугольнике.  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvrhqI3qdrasbo6AKHEhaMQJ6mIIy6GaY9Xh6E6vIkS3GS0dCjvOdMPCpdAGyv8cCTXF92MCQNazd8qJVQE1KMJDhTOsIcn9hsyi52njGWyXE5HSrmiuQSefFMz4TP3GxTKbEIGWY6rhKP/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(17\).png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvrhqI3qdrasbo6AKHEhaMQJ6mIIy6GaY9Xh6E6vIkS3GS0dCjvOdMPCpdAGyv8cCTXF92MCQNazd8qJVQE1KMJDhTOsIcn9hsyi52njGWyXE5HSrmiuQSefFMz4TP3GxTKbEIGWY6rhKP/s1600/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA+\(17\).png)
+
+Вот [ссылка ](https://drive.google.com/file/d/0BwmSbblXaJ73QmpYclZQazZadEU/edit?usp=sharing)на файл с данными и итоговым графиком.

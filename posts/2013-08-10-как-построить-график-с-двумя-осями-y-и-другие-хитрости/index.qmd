@@ -1,0 +1,183 @@
+---
+title: " Как построить график с двумя осями Y и другие хитрости построения графиков в Excel"
+date: 2013-08-10
+author: "Марсель Салихов"
+categories: ["excel", "tips", "не-экономика"]
+description: "Некоторое время назад с удивлением обнаружил, что довольно много посетителей с поисковых систем попадают сюда(http://quantviews.blogspot.ru/2012/12/y-r.html) с"
+---
+
+Некоторое время назад с удивлением обнаружил, что довольно много посетителей с поисковых систем попадают [сюда](http://quantviews.blogspot.ru/2012/12/y-r.html) с запросами типа "построить график с двумя осями y excel". А там речь идет про R :)  
+  
+Поэтому специально  решил написать про то, как все же построить такой график именно в Excel, и заодно поделиться другими тонкостями, которые накопились за 10 лет работы с этой программой.  
+  
+  
+  
+
+
+###  1\. Как построить график с двумя осями Y в Excel?
+
+По всей видимости, корни недоразумений кроются в том, что в разных версиях Excel это может происходить по разному. Поэтому пользователи, которые все еще переходят с Excel 2003 могут столкнуться с тем, что в новых версиях (2007 и позднее), известная методика не работает. На самом деле все просто - нужно сначала построить необходимый график с одной осью Y. А потом уже задать вторую ось, она называется "вспомогательная".  
+К примеру, имеется такой набор данных (это объемы экспорта нефти из России):  
+  
+Год | Объем экспорта сырой нефти, млн т | Средняя экспортная цена, $/баррель  
+---|---|---  
+2000 | 144.4 | 23.9  
+2001 | 164.5 | 20.8  
+2002 | 189.5 | 21.0  
+2003 | 228.0 | 23.8  
+2004 | 260.3 | 31.0  
+2005 | 252.5 | 45.2  
+2006 | 248.4 | 56.3  
+2007 | 258.6 | 64.3  
+2008 | 243.1 | 90.7  
+2009 | 247.5 | 55.6  
+2010 | 250.7 | 74.1  
+2011 | 244.5 | 101.7  
+2012 | 240.0 | 103.1  
+  
+ Логично построить график с двумя осями. Одна для - млн тонн, вторая - для цен.  
+Сначала строим просто график с линиями:  
+  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8haOmn2L_JITdi1fYi7QRgBjexOlJMv-RY_X5wjaT-6kN3Mo0Vu6HRtNdqZ2hBRathza0YLx6LXMota8BK34dZh2pnHZPmM7_VlUr3wb1tgiNN7OpQu9ANVztWYrO-qbmHEIG8qNis6d3/s1600/excel3.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8haOmn2L_JITdi1fYi7QRgBjexOlJMv-RY_X5wjaT-6kN3Mo0Vu6HRtNdqZ2hBRathza0YLx6LXMota8BK34dZh2pnHZPmM7_VlUr3wb1tgiNN7OpQu9ANVztWYrO-qbmHEIG8qNis6d3/s1600/excel3.png)
+
+Щелкаем мышкой на нижний ряд. Появляется окно "Формат ряда данных". Во вкладке параметры ряда выбираем "По вспомогательной оси" и получаем итоговый результат (с некоторыми дополнительными манипуляциями, о которых речь пойдет ниже).  
+  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlLy1uYFS3-7D0OYnYKSxHedFSIJlCftX_aesBzzXRTNyrOoqcK8eAwkok3QyqaKbouDBR0dDN8Fx44QhqGThIU3-K2GgMgk-qkxwJMZWp7BPy1pdkzMpBLlwb9ZMG-GZFHE6nRxb4DWTV/s1600/excel4.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlLy1uYFS3-7D0OYnYKSxHedFSIJlCftX_aesBzzXRTNyrOoqcK8eAwkok3QyqaKbouDBR0dDN8Fx44QhqGThIU3-K2GgMgk-qkxwJMZWp7BPy1pdkzMpBLlwb9ZMG-GZFHE6nRxb4DWTV/s1600/excel4.png)
+
+  
+
+
+###  2\.  Используйте собственные шаблоны графиков в Excel
+
+Нет ничего страшнее экселевских графиков, которые создаются "по умолчанию". Никогда их не используйте, если хотите, чтобы ваши результаты воспринимались серьезно. Честно. Вот, как к примеру, выглядит график по умолчанию с другим набором данных (это цены на нефть разных сортов).  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEii4l6mR0CTrl8Urea2LTSBbsatJWDbhEvGiYSTmqo6uZEzWK6OQ6AK-i9fHahk7Wn8HT0TaItA86zWE1Aw2bjTd4anzk72ibOzphphp84Py7r_PUdTrC_o17bF8uo4bxBSTE0oC1lRk1bW/s1600/excel5.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEii4l6mR0CTrl8Urea2LTSBbsatJWDbhEvGiYSTmqo6uZEzWK6OQ6AK-i9fHahk7Wn8HT0TaItA86zWE1Aw2bjTd4anzk72ibOzphphp84Py7r_PUdTrC_o17bF8uo4bxBSTE0oC1lRk1bW/s1600/excel5.png)
+
+  
+Для рабочего использования - посмотреть на данные подойдет, но для использования в отчетах/презентациях - нет. 
+
+В Excel есть отличный инструмент отказаться от стандартных настроек построения графиков - собственные шаблоны. Пользоваться ими очень просто. Создайте типовой график - выставьте необходимые шрифты, цвета линий и заполнения, оформите оси и прочие параметры. Обратите внимание, что эти параметры не должны являться уникальными для этого конкретного графика, а подходить ко всему классу графиков подобного вида. Еще обратите внимание, что можно выставить типовые размеры для графика (к примеру 8 х  6 см). Потом идете в меню Конструктор - Сохранить как шаблон. Появляется новое окно "Сохранение шаблона диаграмма".  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcAXB-cZ812VBBtizZUHlmcrc_Pu1OjpzomJamV9ulHryKtsMNJ7_RNTF5bZEzJD50_ZEi0mucDbl9ut3b1Mb5bCTUmgmIjEh6WZ66Tju2knUL1b18aOkVYYyIdGOTY4WOvzPghPaDEnQI/s1600/excel1.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcAXB-cZ812VBBtizZUHlmcrc_Pu1OjpzomJamV9ulHryKtsMNJ7_RNTF5bZEzJD50_ZEi0mucDbl9ut3b1Mb5bCTUmgmIjEh6WZ66Tju2knUL1b18aOkVYYyIdGOTY4WOvzPghPaDEnQI/s1600/excel1.png)
+
+  
+
+
+И сохраняете свой шаблон в формате .crtx Как видно по рисунку, у меня сохранено около 10 шаблонов - на разные варианты оформления, тип графиков и используемую цветовую палитру.  
+Теперь, чтобы создать график на новых данных с тем же оформлением необходимо сделать лишь одно дополнительное движение: Вставка - маленькая стрелка в нижем правом углу меню диалогового меню "Диаграммы". Появляется окно "Вставка диаграммы", которое выглядит вот так:  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim0Ow1QYr12euP2RpeD-A5oYqtRDhFwzkeyTslyEUriMnfdYXZpJ4ZlkrdycsWIrUXCRKMgDbIUftfT3y3FzEJEXINuPGvwpu7lfS7bAxyHv__wq2Yox6AjfGhHy0CCc8yawG_Y-S5WIWF/s1600/excel2.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim0Ow1QYr12euP2RpeD-A5oYqtRDhFwzkeyTslyEUriMnfdYXZpJ4ZlkrdycsWIrUXCRKMgDbIUftfT3y3FzEJEXINuPGvwpu7lfS7bAxyHv__wq2Yox6AjfGhHy0CCc8yawG_Y-S5WIWF/s1600/excel2.png)
+
+  
+Самая верхняя вкладка - "Шаблоны" - показывает как раз сохраненные вами шаблоны. Выбираете нужный и строите график. Обратите внимание на нижнюю кнопку "Управлением шаблонами". Если нажать на нее откроется новое окно Проводника с папкой, содержащей сохраненные шаблоны в виде отдельных файлов. Вы можете их скопировать, чтобы потом вставить в аналогичную папку на другом компьютере (к примеру, ноутбук/домашний компьютер или поделиться с коллегами с тем, чтобы вы использовали идентичные шаблоны). Тогда на всех ваших компьютерах будут предлагаться одинаковые к использованию шаблоны графиков. Вуаля!  
+  
+
+
+###  3\. Используйте нестандартные палитры цветов. 
+
+Стандартная палитра цветов, которая используется в Excel по умолчанию всем хорошо известна и порядком надоела. Создайте свою палитру (или несколько палитр - для разных типов данных) или позаимствуйте. Если в вашей компании существует корпоративная палитра цветов, вы можете внести ее коды RGB и удобно использовать ее для построения графиков. Вам не придется каждый раз менять цвета для каждого отдельного графика.  
+Заходим в раздел "Другие цвета" - вкладки "Цвет линии" (или другой аналогичной вкладки), забиваем свои коды по RGB или HSL, сохраняем как шаблон.  
+  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgo03tT-ldPGrUfUsGz3oxPiYkpeUMLPXI4TPnzSDG1w5dRFzcTgnAtI9vS7r_p1LY6eiQDFyuBz6Jd54v4xIBbhaXP0pvxko2eiTS58VsCNEag9_UixEcP0yrwEuTEYDzb-LxyfaExHKoX/s1600/excel6.bmp)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgo03tT-ldPGrUfUsGz3oxPiYkpeUMLPXI4TPnzSDG1w5dRFzcTgnAtI9vS7r_p1LY6eiQDFyuBz6Jd54v4xIBbhaXP0pvxko2eiTS58VsCNEag9_UixEcP0yrwEuTEYDzb-LxyfaExHKoX/s1600/excel6.bmp)
+
+  
+
+
+[Вот](http://colorbrewer2.org/) еще один полезный бесплатный ресурс, с помощью которого можно "позаимствовать" палитры цветов. Изначально эти палитры создавались для карт, но ничто не мешает их использовать и для обычных графиков. 
+
+Еще один рецепт - если вы увидели понравившуюся вам палитру цветов в Сети, вы легко можете посмотреть точные коды цветов, которые в ней используются. Для этого подойдет специальная надстройка для браузера. Я пользуюсь[ Eye Dropper](https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CCgQFjAA&url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Feye-dropper%2Fhmdcmlfkchdmnmnmheododdhjedfccka%3Fhl%3Den&ei=OSAGUum-N8PV4gSPxIC4DA&usg=AFQjCNGBe6DJ5e080lwi7frpidyoB33jpQ&sig2=aqILci_tjVNSANH8-4k_Lw&bvm=bv.50500085,d.bGE&cad=rjt) для Chrome. 
+
+###  4\. Обязательно убирайте лишние знаки после запятой 
+
+При создании графика Excel часто оставляет лишние знаки после запятой (к примеру, повторяющиеся нули). Эти знаки не несут никакой смысловой нагрузки и только "засоряют" пространство графика лишней информацией.  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYzUnDDdjj8r_8rNUKZJlr3Ua46brPzS-BaE7JMjrLMNt2wEUKPQCAHdnKuR8RR4flLGqQrjL-z832Q94XMaZdbVFRkgaARIJo-qXFbnHT2Fyr5ilsf3x2KaF6yoDz089_75viYP_hxHO5/s1600/excel7.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYzUnDDdjj8r_8rNUKZJlr3Ua46brPzS-BaE7JMjrLMNt2wEUKPQCAHdnKuR8RR4flLGqQrjL-z832Q94XMaZdbVFRkgaARIJo-qXFbnHT2Fyr5ilsf3x2KaF6yoDz089_75viYP_hxHO5/s1600/excel7.png)
+
+  
+Поэтому в обязательном порядке убирайте лишние знаки после запятой. Делается это очень просто. Заходите в "Формат оси" - вкладка "Число". Выбираете нужный числовой формат и правильно число десятичных знаков (в данном случае это 0). Это относится и к единицам измерениям - переводите тонны в миллионы тонн, если у вас шестизначные цифры. В той же вкладке "Формат оси" - "Параметры оси", если удобная опция "Цена деления". Можно изменить размерность единицы измерения, не меняя исходные данные на рабочем листе.  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJkDEuhc13dIyTudgjnXqi2XQfAjz074ZkUTabtGBW5nCpfB2rzghxVfb0yt9jWR8kpFr7blo4aMfGAVBUE8oo54ONXUgeGyDKFO1RFnM7Tamds8vIrtz2RrkuUp-m4rUlGD-LmZmNkSlh/s1600/excel12.bmp)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJkDEuhc13dIyTudgjnXqi2XQfAjz074ZkUTabtGBW5nCpfB2rzghxVfb0yt9jWR8kpFr7blo4aMfGAVBUE8oo54ONXUgeGyDKFO1RFnM7Tamds8vIrtz2RrkuUp-m4rUlGD-LmZmNkSlh/s1600/excel12.bmp)
+
+  
+  
+
+
+  
+
+
+###  5\. Корректируйте максимальное/минимальное значение по оси при необходимости 
+
+Excel пытается по умолчанию автоматически определить оптимальное максимальное и минимальное значение по оси. Часто у него получается вполне нормально, но иногда он ошибается. Если такое произошло, скорректируйте эти значения вручную.  
+К примеру, для графика с ценами на нефть имеет смысл увеличить минимальное значение. Excel всегда начинает его от 0 в подобных случаях. В данном случае из-за этого появляется пустое пространство и изменения цен становятся мало различимыми. 
+
+Формат оси  \- вкладка "Параметры оси" - меняем минимальное значение с "авто" на фиксированное = 60.  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEineo1YO0OgninZqEHfAvF3l2a3pU-mCHvMVmV_1GjBLHS1Je2glzYedj1kisJBXRxhXWA0sURgsu0orkggAU7-TWOWLW6h3XXERm_JNdLOeghYcu-z9LTcatkWLgTUmUE8fEZE1c9pRHAe/s1600/excel8.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEineo1YO0OgninZqEHfAvF3l2a3pU-mCHvMVmV_1GjBLHS1Je2glzYedj1kisJBXRxhXWA0sURgsu0orkggAU7-TWOWLW6h3XXERm_JNdLOeghYcu-z9LTcatkWLgTUmUE8fEZE1c9pRHAe/s1600/excel8.png)
+
+Изменения стали более выраженными. Хотя верхние три линии все равно сильно сливаются, возможно, надо уменьшить толщину линий или убрать одну из них. 
+
+  
+
+
+###  6\. Не засоряйте ось X на временных рядах
+
+В экономике и финансах один из наиболее часто встречающихся типов графиков - временные ряды. По оси Х - время, по оси Y - какое-то значение. Можно по разному представлять ось времени, выбирайте то представление, которое наилучшим образом отражает ваши цели.  
+К примеру, можно нарисовать вот вот так:  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWT6E2offJDUjvEJqe55uwwSZMyIh5CKsqHUsXUb-FDaS0RfzdlPs0Kl_XiO9HtVrrPM3eYFAUbQ1V2s0vgu67cidD0By8b0HuH5Ztb-7H2JnK6VLWF4KRFgXvQSLIFwKAqd6zYmy2ecE_/s1600/excel10.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWT6E2offJDUjvEJqe55uwwSZMyIh5CKsqHUsXUb-FDaS0RfzdlPs0Kl_XiO9HtVrrPM3eYFAUbQ1V2s0vgu67cidD0By8b0HuH5Ztb-7H2JnK6VLWF4KRFgXvQSLIFwKAqd6zYmy2ecE_/s1600/excel10.png)
+
+или так (для подобной двойной оси, нужно выбрать две строки/столбца в качестве подписи по горизонтальной оси).  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibUjm-Qhjyhdpl7HmeqMXSkFJmJvaUClosdTnOGcyE8ohY9a3TreNImyPBIbzaOVNMCOxexnPj6HPbcZIjItor41JF7GNoWCEXbsa47z3lMiPlrdSeQqpzBi17LVynkzvNDRvjjaTBVD6h/s1600/excel11.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibUjm-Qhjyhdpl7HmeqMXSkFJmJvaUClosdTnOGcyE8ohY9a3TreNImyPBIbzaOVNMCOxexnPj6HPbcZIjItor41JF7GNoWCEXbsa47z3lMiPlrdSeQqpzBi17LVynkzvNDRvjjaTBVD6h/s1600/excel11.png)
+
+  
+
+
+### 
+
+###  7\. Вставляйте графики Excel в векторном виде в Word/Powerpoint
+
+Зачастую графики Excel создаются для того, чтобы использовать их в других программах - документах Word, либо презентациях PowerPoint. В большинстве случаев наиболее оптимальный вариант вставки - векторный формат emf или wmf. 
+
+  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnLdJfJFnfl0HTP8cFfWSamGm2UExsHfCGxriQx5dCHhZlL_vJ3-Bg6Rx4vgUUpH70lxQjrue13i5ipTGZqzNmNZe0u8IA7NSaOYpSiyNu6yLPfcAldCa6w97Hwu5hRMZXL63pP05Zk1pT/s1600/excel9.bmp)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnLdJfJFnfl0HTP8cFfWSamGm2UExsHfCGxriQx5dCHhZlL_vJ3-Bg6Rx4vgUUpH70lxQjrue13i5ipTGZqzNmNZe0u8IA7NSaOYpSiyNu6yLPfcAldCa6w97Hwu5hRMZXL63pP05Zk1pT/s1600/excel9.bmp)
+
+  
+По умолчанию графики вставляются как объекты Office (первая строка в окне наверху). Это приводит к тому, что их можно бы потом редактировать в Word или Powerpoint. Но в результате, увеличиваются размеры файлов (при больших файлах Excel), а также то, что весь ваш рабочий лист становится виден читателям Word/Powerpoint (возможно, это не тот результат, который вы желаете получить). Если использовать вставку в растровом формате (gif/png/jpeg), сильно ухудшается качество графики. Это особенно заметно при печати на бумаге - графики становятся "смазанными". Поэтому удобным является формат EMF/WMF. Он векторный, поэтому качество графики не уменьшается при изменении масштабов, а файлы занимают не очень много места. Единственная проблема в том, что его поддерживают в основном только программное обеспечение Microsoft. К сожалению, даже новейший MS Office 2013 не поддерживает альтернативные векторные форматы - тот же SVG.  
+  
+
+
+###  8\. Подгоняйте правильные размеры графиков в Excel 
+
+Удобство иногда идет не на пользу. После вставки в Word размеры графиков можно поменять с помощью мыши. Вроде бы удобно, но в результате могут получиться вот такие вот графики:  
+  
+
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ7mxJIL5BAmcBtWQGmGBXEq1lopzwh-hlxLdexeKHsZ3yvR3f3Cjfsc-gE_ohp7mcIYxeb3LL9HDYppA2zcJlg36iaT_Z0fq3AR3MHI0csSuyjDHldxv27dls0a9Zq3CEvbVzmm5b5xDa/s1600/excel13.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ7mxJIL5BAmcBtWQGmGBXEq1lopzwh-hlxLdexeKHsZ3yvR3f3Cjfsc-gE_ohp7mcIYxeb3LL9HDYppA2zcJlg36iaT_Z0fq3AR3MHI0csSuyjDHldxv27dls0a9Zq3CEvbVzmm5b5xDa/s1600/excel13.png)
+
+  
+
+
+Смотрятся они некрасиво. Поэтому лучше выставить "правильные" размеры графиков непосредственно в Excel.  К примеру, в Word вы можете точно оценить необходимую ширину графика (с учетом всех отступов) и задать эту ширину сразу в Excel. При вставке в Word график будет точно подогнан по ширине. 
+
+  
+  
+  
+Вот и все, что я вспомнил. В Excel можно делать очень многое, в том числе и с точки зрения графических возможностей. Ограничения стандартных представлений можно расширить с помощью собственных макросов VBA или отдельных хаков. К примеру, вот [хак](http://peltiertech.com/WordPress/excel-waterfall-charts-bridge-charts/) как строить waterfall charts в Excel.  
+Но имейте в виду следующее.  Если вы уже достигли хорошего уровня в Excel - не имеет смысл на нем зацикливаться. Есть и другие пути. Графические возможности того же R на порядок выше того, что может дать Excel, и, как правило, требуют меньше мороки.

@@ -1,0 +1,229 @@
+/*-- scss:rules --*/
+
+$qv-text-measure: 72ch;
+
+body {
+  background: #ffffff;
+  color: #20242A;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.015em;
+}
+
+.navbar-title {
+  font-weight: 700;
+  font-size: 1.0rem;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 1.65rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+h3 {
+  margin-top: 1.2rem;
+}
+
+p, li {
+  line-height: 1.6;
+}
+
+.quarto-title-block .quarto-title .title {
+  font-size: clamp(1.6rem, 2.2vw, 2.0rem);
+  line-height: 1.2;
+  max-width: $qv-text-measure;
+}
+
+/* Logo-style on full-page layouts (homepage, sections) */
+body.page-layout-full .quarto-title-block .quarto-title .title {
+  font-weight: 300;
+  font-size: 1.75rem;
+  letter-spacing: -0.03em;
+  color: #0F172A;
+}
+
+/* Compact inline meta: "Марсель Салихов · 8 августа 2018 г." */
+.quarto-title-meta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #64748B;
+}
+
+.quarto-title-meta-heading {
+  display: none;
+}
+
+.quarto-title-meta > div {
+  display: inline-flex;
+  align-items: center;
+}
+
+.quarto-title-meta > div + div::before {
+  content: "·";
+  margin: 0 0.45rem;
+  color: #CBD5E1;
+}
+
+.quarto-title-meta-contents p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748B;
+}
+
+/* Align headings with body text width */
+main.content article h2,
+main.content article h3 {
+  max-width: $qv-text-measure;
+}
+
+main.content > section > p,
+main.content article p,
+main.content article li {
+  max-width: $qv-text-measure;
+}
+
+main.content article > p:first-of-type {
+  font-size: 1.03rem;
+  color: #334155;
+}
+
+.column-body-outset-right,
+.column-body-outset-left {
+  max-width: none;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.navbar .nav-link {
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.navbar .nav-link:hover {
+  color: #0F172A !important;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link[aria-current="page"] {
+  color: #0F172A !important;
+  font-weight: 600;
+}
+
+.navbar .nav-link.active::after,
+.navbar .nav-link[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 2px;
+  background: #334155;
+  border-radius: 1px;
+}
+
+a {
+  text-underline-offset: 0.12em;
+  text-decoration-thickness: 0.05em;
+  color: #334155;
+}
+
+pre, code {
+  font-feature-settings: "calt" 1, "liga" 1;
+}
+
+blockquote {
+  border-left: 2px solid #CBD5E1;
+  background: #F8FAFC;
+  border-radius: 0 6px 6px 0;
+  padding: 0.62rem 0.9rem;
+}
+
+hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid rgba(11, 31, 58, 0.12);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background: #F8FAFC;
+}
+
+th {
+  color: #0B1F3A;
+  font-weight: 700;
+}
+
+td, th {
+  border-bottom: 1px solid #E1E5EA;
+  padding: 0.5rem 0.62rem;
+}
+
+.quarto-listing-default .listing-item {
+  padding: 0.72rem 0.1rem 0.8rem 0.1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.quarto-listing-default .listing-title {
+  margin-bottom: 0.3rem;
+}
+
+.quarto-listing-default .listing-title a {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #0F172A;
+}
+
+.quarto-listing-default .listing-description {
+  color: #475569;
+  max-width: 78ch;
+}
+
+.quarto-listing-default .listing-date,
+.quarto-listing-default .listing-categories {
+  font-size: 0.83rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #6B7280;
+}
+
+.quarto-listing-category {
+  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  color: #334155;
+  border-radius: 4px;
+  padding: 0.08rem 0.4rem;
+}
+
+#TOC {
+  font-size: 0.86rem;
+}
+
+#TOC .nav-link {
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+  color: #64748B;
+}

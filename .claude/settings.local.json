@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"h:\\\\Dropbox\\\\config\\\\quantviews.github.io\")",
+      "WebFetch(domain:kieranhealy.org)",
+      "WebFetch(domain:quantviews.blogspot.com)",
+      "Bash(python fix_yaml.py)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

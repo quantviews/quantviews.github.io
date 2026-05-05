@@ -1,0 +1,77 @@
+project:
+  type: website
+  output-dir: _site
+
+execute:
+  enabled: false
+
+brand: _brand.yml
+
+website:
+  title: "quantviews"
+  site-url: "https://quantviews.github.io"
+  description: "Экономика, данные, финансы и аналитические системы"
+  favicon: assets/icons/favicon.svg
+
+  page-navigation: true
+
+  open-graph:
+    image: assets/img/salikhov-marcel-styled-picture.png
+    description: "Экономика, данные, финансы и аналитические системы"
+
+  twitter-card:
+    image: assets/img/salikhov-marcel-styled-picture.png
+
+  navbar:
+    title: "quantviews"
+    left:
+      - text: "Блог"
+        href: posts.qmd
+      - text: "Проекты"
+        href: projects.qmd
+      - text: "Курсы"
+        href: courses.qmd
+      - text: "Выступления"
+        href: talks.qmd
+      - text: "Заметки"
+        href: notes.qmd
+      - text: "Об авторе"
+        href: about.qmd
+    right:
+      - icon: envelope
+        href: mailto:marcel.salikhov@gmail.com
+        aria-label: "Email"
+      - icon: telegram
+        href: https://t.me/quantviews
+        aria-label: "Telegram"
+      - icon: github
+        href: https://github.com/quantviews
+        aria-label: "GitHub"
+      - icon: rss
+        href: posts.xml
+        aria-label: "RSS"
+
+  page-footer:
+    left: "© 2026 quantviews"
+    center: "Экономика · Данные · Финансы · Аналитические системы"
+    right:
+      - icon: telegram
+        href: https://t.me/quantviews
+      - icon: envelope
+        href: mailto:marcel.salikhov@gmail.com
+      - icon: github
+        href: https://github.com/quantviews
+
+format:
+  html:
+    lang: ru
+    theme:
+      light: [cosmo, brand, styles.scss]
+      dark: [darkly, brand, styles.scss]
+    css: styles.css
+    toc: false
+    number-sections: false
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true
+    link-external-newwindow: true

@@ -1,0 +1,8 @@
+---
+title: "Нечеткое сравнение строк (fuzzy string match) в Excel с помощью Fuzzy Lookup"
+date: 2012-05-02
+author: "Марсель Салихов"
+categories: ["excel", "инструменты", "обработка данных"]
+---
+
+

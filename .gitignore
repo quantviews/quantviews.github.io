@@ -1,0 +1,36 @@
+# Quarto build output
+_site/
+_site_*/
+_freeze/
+.quarto/
+*.aux
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+.env
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+/.quarto/
+**/*.quarto_ipynb

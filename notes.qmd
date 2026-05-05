@@ -1,0 +1,27 @@
+---
+title: "Технические заметки"
+---
+
+Короткие рабочие заметки по инструментам и инфраструктуре.
+
+## Темы
+
+- Quarto
+- Superset
+- DuckDB
+- Parquet
+- Shiny
+- Docker
+- GitHub Pages
+- Python
+- R
+- Julia
+- Linux / VPS
+
+Список черновиков: [notes/index.qmd](notes/index.qmd).
+
+## Примеры заметок
+
+- Quarto: шаблон long-form статьи с формулами и таблицами.
+- DuckDB + Parquet: быстрый локальный аналитический контур.
+- Superset: рекомендации по структуре dashboard-проектов.

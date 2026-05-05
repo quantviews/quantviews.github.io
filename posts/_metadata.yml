@@ -1,0 +1,7 @@
+format:
+  html:
+    include-after-body:
+      text: |
+        <nav class="qv-post-nav">
+          <a href="/posts.html">← Все публикации</a>
+        </nav>

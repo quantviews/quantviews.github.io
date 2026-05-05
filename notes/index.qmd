@@ -1,0 +1,9 @@
+﻿---
+title: "Каталог технических заметок"
+---
+
+- Quarto workflow и шаблоны.
+- Superset + DuckDB.
+- Parquet и организация дата-слоя.
+- Docker и деплой.
+- Python / R / Julia заметки.

@@ -1,0 +1,99 @@
+---
+title: "quantviews"
+page-layout: full
+listing:
+  - id: recent-posts
+    contents: posts
+    sort: "date desc"
+    type: table
+    max-items: 5
+    fields: [date, title]
+    date-format: "D MMMM YYYY"
+    filter-ui: false
+    sort-ui: false
+---
+
+::: {.qv-hero}
+::: {.qv-hero-grid}
+![](assets/img/salikhov-marcel-original-picture.png){.qv-portrait fig-alt="Марсель Салихов"}
+
+::: {.qv-hero-copy}
+## Марсель Салихов
+
+Экономика, данные, финансы и аналитические системы.
+
+::: {.qv-hero-meta}
+[Институт энергетики и финансов](https://fief.ru/about/our-team/our-team_experts/salikhov-marsel-robertovich/) · [Высшая школа экономики](https://www.hse.ru/org/persons/26780297/)
+:::
+:::
+:::
+:::
+
+## Разделы
+
+::: {.qv-card-grid}
+::: {.qv-card}
+### Блог
+
+Короткие аналитические заметки по экономике, рынкам, данным и технологиям.
+
+[Перейти](posts.qmd)
+:::
+
+::: {.qv-card}
+### Проекты
+
+Дашборды, модели, исследовательские прототипы и BI-инфраструктура.
+
+[Смотреть](projects.qmd)
+:::
+
+::: {.qv-card}
+### Курсы
+
+Материалы по количественным финансам, Python, R, Superset и эконометрике.
+
+[Изучить](courses.qmd)
+:::
+
+::: {.qv-card}
+### Выступления
+
+Конференции, академические семинары и презентации по экономике, энергетике и финансам.
+
+[Смотреть](talks.qmd)
+:::
+
+::: {.qv-card}
+### Комментарии в СМИ
+
+Экспертные комментарии и интервью для деловых изданий и медиа.
+
+[Ознакомиться](talks.qmd#медиа)
+:::
+
+::: {.qv-card}
+### Технические заметки
+
+Практические заметки по Quarto, DuckDB, Shiny, Docker и GitHub Pages.
+
+[Открыть](notes.qmd)
+:::
+:::
+
+## Темы
+
+<span class="qv-badge">Макроэкономика</span>
+<span class="qv-badge">Отраслевые рынки</span>
+<span class="qv-badge">Энергетика</span>
+<span class="qv-badge">Финансы</span>
+<span class="qv-badge">Эконометрика</span>
+<span class="qv-badge">Superset / DuckDB / Shiny</span>
+<span class="qv-badge">Python / R / Julia</span>
+
+## Последние публикации
+
+:::{#recent-posts}
+:::
+
+[Все публикации →](posts.qmd)

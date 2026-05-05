@@ -1,0 +1,18 @@
+---
+title: "Блог"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: table
+  categories: true
+  feed: true
+  filter-ui: false
+  sort-ui: false
+  fields: [date, title, categories]
+  date-format: "D MMMM YYYY"
+page-layout: full
+---
+
+::: {.qv-editorial-intro}
+Аналитические и технические заметки по экономике, данным, финансам и BI-инфраструктуре.
+:::
