@@ -10,13 +10,10 @@ description: "Росстат утверждает(http://www.gks.ru/bgd/free/b04
 
 Означает ли это, что Росстат измеряет совсем не ту инфляцию, которая актуальна для населения - что его методики неадекватны, а результаты бессмысленны? А ведь именно на этот показатель инфляции ориентируется вся политика Центробанка, ставя в прямую зависимость от него важнейший для экономики параметр ключевой ставки.
 
-###  Показатели инфляции по Росстату (ИПЦ) и по опросам населения (медианное значение) [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRTCuzqoS1xPSQcV2QB8IilpRdW3KGAJzIlHY3WH8-3ZTWkiAnwr67uW0x_WOS8K2cjNqQB-GtotwV9ylxiHEfyDfZAoBMb68k2kwkfBzldtO8I1nAOkUnQI7UaibWkt5rlZCu3fEl99lP/s640/infl-expectations.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRTCuzqoS1xPSQcV2QB8IilpRdW3KGAJzIlHY3WH8-3ZTWkiAnwr67uW0x_WOS8K2cjNqQB-GtotwV9ylxiHEfyDfZAoBMb68k2kwkfBzldtO8I1nAOkUnQI7UaibWkt5rlZCu3fEl99lP/s1600/infl-expectations.png)
+###  Показатели инфляции по Росстату (ИПЦ) и по опросам населения (медианное значение)
 
 _Источник: Банк России, Росстат_  
 
-
-_  
-_
 
 ###  **Откуда нестыковки?**
 
@@ -45,15 +42,11 @@ _
 
 ####  **Индекс потребительских цен (ИПЦ) – основные составляющие**
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJnUMeP6HyCLgMuuwD05TMz5tQ8PTFNbHc_NMX5zMnr0TwXEF6mx_ZwjK3VFFVR_tXpSFK7s6i_2ubihNfvp5D718oekU_vysGOf2aulKfxpej_53ALjqStL0Qe8odCnHGTY2RNQsVHGos/s640/cpi-groups.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJnUMeP6HyCLgMuuwD05TMz5tQ8PTFNbHc_NMX5zMnr0TwXEF6mx_ZwjK3VFFVR_tXpSFK7s6i_2ubihNfvp5D718oekU_vysGOf2aulKfxpej_53ALjqStL0Qe8odCnHGTY2RNQsVHGos/s1600/cpi-groups.png)
-
 **  
 **
 
 _Источник:   Росстат_
 
-_  
-_
 
 В-четвертых, доказано, что мы обращаем больше внимания на рост цен, чем на их снижение. Это связано с присущим большинству людей **«неприятием убытков»** (loss aversion). Многочисленные [исследования](http://www.jstor.org/stable/1942711?seq=1#page_scan_tab_contents) показывают, что люди воспринимают потерю 1 рубля острее, чем радуются выигрышу того же рубля. По тому же принципу мы ужасаемся ценам на гречку, выросшим в 2,5 раза за последние три года, но не обращаем внимания на цены на лук и свеклу, которые почти не изменились за это время, на то, что аренда квартир подешевела, а наш домашний интернет за это время стал быстрее в три раза  и на 20% дешевле.
 
