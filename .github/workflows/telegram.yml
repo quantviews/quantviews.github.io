@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths: ["posts/**/index.qmd"]
+  workflow_dispatch:
 
 jobs:
   notify:
@@ -13,7 +14,23 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Send test message (manual trigger only)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          python3 -c "
+          import os, urllib.request, urllib.parse, json
+          token = os.environ['BOT_TOKEN']
+          data = urllib.parse.urlencode({'chat_id': '@quantviews', 'text': '✅ Тест: бот работает корректно. quantviews.github.io'}).encode()
+          req = urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage', data=data)
+          with urllib.request.urlopen(req) as r:
+              resp = json.loads(r.read())
+              print('OK' if resp.get('ok') else resp)
+          "
+
       - name: Find new post
+        if: github.event_name == 'push'
         id: post
         run: |
           NEW=$(git diff --name-only --diff-filter=A HEAD~1 HEAD \
@@ -23,7 +40,7 @@ jobs:
                         || echo "found=false" >> $GITHUB_OUTPUT
 
       - name: Send to Telegram
-        if: steps.post.outputs.found == 'true'
+        if: github.event_name == 'push' && steps.post.outputs.found == 'true'
         env:
           BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           POST_FILE: ${{ steps.post.outputs.file }}
