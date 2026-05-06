@@ -27,6 +27,11 @@
   line-height: 1.55;
 }
 
+/* Hide description on post pages — it duplicates the first paragraph */
+.quarto-title-block .description {
+  display: none;
+}
+
 :root {
   --qv-blue: #1D3557;
   --qv-deep-blue: #0B1F3A;
