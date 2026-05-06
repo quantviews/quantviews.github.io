@@ -10,7 +10,7 @@
 <atom:link href="https://quantviews.github.io/posts.xml" rel="self" type="application/rss+xml"/>
 <description>Экономика, данные, финансы и аналитические системы</description>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Mon, 04 May 2026 21:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 05 May 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Зачем нужен quantviews</title>
   <dc:creator>Марсель Салихов</dc:creator>
@@ -80,7 +80,7 @@ font-style: inherit;">4</span>]</span>
   <category>data</category>
   <category>economics</category>
   <guid>https://quantviews.github.io/posts/2026-05-05-first-post/</guid>
-  <pubDate>Mon, 04 May 2026 21:00:00 GMT</pubDate>
+  <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Ожидаемая продолжительность жизни: какова моя вероятность дожить до возраста X?</title>
@@ -123,7 +123,7 @@ font-style: inherit;">4</span>]</span>
   <category>графики</category>
   <category>пенсии</category>
   <guid>https://quantviews.github.io/posts/2018-08-08-ожидаемая-продолжительность-жизни-какова-моя-вероятност/</guid>
-  <pubDate>Tue, 07 Aug 2018 21:00:00 GMT</pubDate>
+  <pubDate>Wed, 08 Aug 2018 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Nowcast российского ВВП или как следить за тем, что происходит в экономике</title>
@@ -188,7 +188,7 @@ font-style: inherit;">4</span>]</span>
   <category>ввп</category>
   <category>макроэкономика</category>
   <guid>https://quantviews.github.io/posts/2018-02-22-nowcast-российского-ввп-или-как-следить-за-тем-что-прои/</guid>
-  <pubDate>Wed, 21 Feb 2018 21:00:00 GMT</pubDate>
+  <pubDate>Thu, 22 Feb 2018 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Почему BEER - это не про пиво, а про ‘справедливый’ курс валюты</title>
@@ -215,7 +215,7 @@ font-style: inherit;">4</span>]</span>
   <category>макроэкономика</category>
   <category>рубль</category>
   <guid>https://quantviews.github.io/posts/2018-01-25-почему-beer-это-не-про-пиво-а-про-справедливый-курс-вал/</guid>
-  <pubDate>Wed, 24 Jan 2018 21:00:00 GMT</pubDate>
+  <pubDate>Thu, 25 Jan 2018 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Почему нам кажется, что цены растут быстрее инфляции?</title>
@@ -270,7 +270,7 @@ _</p>
   <category>инфляция</category>
   <category>макроэкономика</category>
   <guid>https://quantviews.github.io/posts/2017-03-03-почему-нам-кажется-что-цены-растут-быстрее-инфляции/</guid>
-  <pubDate>Thu, 02 Mar 2017 21:00:00 GMT</pubDate>
+  <pubDate>Fri, 03 Mar 2017 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Восемь лет без ОПЕК. Почему картель решил вернуться?</title>
@@ -304,7 +304,7 @@ _</p>
   <category>нефть</category>
   <category>энергетика</category>
   <guid>https://quantviews.github.io/posts/2016-12-01-восемь-лет-без-опек-почему-картель-решил-вернуться/</guid>
-  <pubDate>Wed, 30 Nov 2016 21:00:00 GMT</pubDate>
+  <pubDate>Thu, 01 Dec 2016 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Экономическая ситуация в России: актуальные тенденции и прогнозы развития</title>
@@ -325,7 +325,7 @@ _</p>
   <category>бюджет</category>
   <category>макроэкономика</category>
   <guid>https://quantviews.github.io/posts/2016-06-02-экономическая-ситуация-в-россии-актуальные-тенденции-и/</guid>
-  <pubDate>Wed, 01 Jun 2016 21:00:00 GMT</pubDate>
+  <pubDate>Thu, 02 Jun 2016 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Нефть после Дохи: восхождение или откат?</title>
@@ -354,7 +354,7 @@ _</p>
   <category>нефть</category>
   <category>энергетика</category>
   <guid>https://quantviews.github.io/posts/2016-04-25-нефть-после-дохи-восхождение-или-откат/</guid>
-  <pubDate>Sun, 24 Apr 2016 21:00:00 GMT</pubDate>
+  <pubDate>Mon, 25 Apr 2016 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Обзор книг по R</title>
@@ -412,7 +412,7 @@ _</p>
   <category>книги</category>
   <category>статистика</category>
   <guid>https://quantviews.github.io/posts/2014-06-26-обзор-книг-по-r/</guid>
-  <pubDate>Wed, 25 Jun 2014 20:00:00 GMT</pubDate>
+  <pubDate>Thu, 26 Jun 2014 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>‘Потому что на десять девчонок по статистике девять ребят’ - так ли это на самом деле?</title>
@@ -493,7 +493,7 @@ _</p>
   <category>демография</category>
   <category>регионы</category>
   <guid>https://quantviews.github.io/posts/2014-06-21-потому-что-на-десять-девчонок-по-статистике-девять-ребя/</guid>
-  <pubDate>Fri, 20 Jun 2014 20:00:00 GMT</pubDate>
+  <pubDate>Sat, 21 Jun 2014 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Как закрасить площадь между двумя линиями на графике в Excel?</title>
@@ -538,7 +538,7 @@ _</p>
   <category>excel</category>
   <category>визуализация</category>
   <guid>https://quantviews.github.io/posts/2014-06-18-как-закрасить-площадь-между-двумя-линиями-на-графике-в/</guid>
-  <pubDate>Tue, 17 Jun 2014 20:00:00 GMT</pubDate>
+  <pubDate>Wed, 18 Jun 2014 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Результаты голосования Государственной Думы по реформе РАН (три чтения)</title>
@@ -572,7 +572,7 @@ _</p>
   <category>дума</category>
   <category>статистика</category>
   <guid>https://quantviews.github.io/posts/2013-09-23-результаты-голосования-государственной-думы-по-реформе/</guid>
-  <pubDate>Sun, 22 Sep 2013 20:00:00 GMT</pubDate>
+  <pubDate>Mon, 23 Sep 2013 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Интерактивная карта результатов выборов мэра г. Москвы (8 сентября 2013 года) по отдельным УИКам</title>
@@ -613,7 +613,7 @@ _</p>
   <category>не-экономика</category>
   <category>обработка данных</category>
   <guid>https://quantviews.github.io/posts/2013-09-11-интерактивная-карта-результатов-выборов-мэра-г-москвы-8/</guid>
-  <pubDate>Tue, 10 Sep 2013 20:00:00 GMT</pubDate>
+  <pubDate>Wed, 11 Sep 2013 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Про пенсионную систему и пенсионную реформу - ч.2. Выбор НПФ или УК.</title>
@@ -779,7 +779,7 @@ _</p>
   <category>пенсии</category>
   <category>финансы</category>
   <guid>https://quantviews.github.io/posts/2013-08-26-про-пенсионную-систему-и-пенсионную-реформу-ч2-выбор-нп/</guid>
-  <pubDate>Sun, 25 Aug 2013 20:00:00 GMT</pubDate>
+  <pubDate>Mon, 26 Aug 2013 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Как построить график с двумя осями Y и другие хитрости построения графиков в Excel</title>
@@ -952,7 +952,7 @@ _</p>
   <category>tips</category>
   <category>не-экономика</category>
   <guid>https://quantviews.github.io/posts/2013-08-10-как-построить-график-с-двумя-осями-y-и-другие-хитрости/</guid>
-  <pubDate>Fri, 09 Aug 2013 20:00:00 GMT</pubDate>
+  <pubDate>Sat, 10 Aug 2013 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Про пенсионную реформу и пенсионные накопления. Что делать?</title>
@@ -1078,7 +1078,7 @@ _</p>
   <category>макроэкономика</category>
   <category>пенсии</category>
   <guid>https://quantviews.github.io/posts/2013-08-08-про-пенсионную-реформу-и-пенсионные-накопления-что-дела/</guid>
-  <pubDate>Wed, 07 Aug 2013 20:00:00 GMT</pubDate>
+  <pubDate>Thu, 08 Aug 2013 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Результаты голосования в Думе о реформе РАН - первое и второе чтения</title>
@@ -1110,7 +1110,7 @@ _</p>
   <category>дума</category>
   <category>не-экономика</category>
   <guid>https://quantviews.github.io/posts/2013-07-14-результаты-голосования-в-думе-о-реформе-ран-первое-и-вт/</guid>
-  <pubDate>Sat, 13 Jul 2013 20:00:00 GMT</pubDate>
+  <pubDate>Sun, 14 Jul 2013 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Результаты голосования Думы по ‘анти-пиратскому закону’ - первое чтение</title>
@@ -1139,7 +1139,7 @@ _</p>
   <category>дума</category>
   <category>не-экономика</category>
   <guid>https://quantviews.github.io/posts/2013-06-15-результаты-голосования-думы-по-анти-пиратскому-закону-п/</guid>
-  <pubDate>Fri, 14 Jun 2013 20:00:00 GMT</pubDate>
+  <pubDate>Sat, 15 Jun 2013 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Расписание подмосковных электричек на диаграмме Маре (Marey’s Trains) c помощью d3.js</title>
@@ -1295,7 +1295,7 @@ _</p>
   <category>визуализация</category>
   <category>не-экономика</category>
   <guid>https://quantviews.github.io/posts/2013-06-13-расписание-подмосковных-электричек-на-диаграмме-маре-ma/</guid>
-  <pubDate>Wed, 12 Jun 2013 20:00:00 GMT</pubDate>
+  <pubDate>Thu, 13 Jun 2013 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Закон об оскорблении чувств верующих - результаты голосований по чтениям</title>
@@ -1320,7 +1320,7 @@ _</p>
   <category>дума</category>
   <category>не-экономика</category>
   <guid>https://quantviews.github.io/posts/2013-06-12-закон-об-оскорблении-чувств-верующих-результаты-голосов/</guid>
-  <pubDate>Tue, 11 Jun 2013 20:00:00 GMT</pubDate>
+  <pubDate>Wed, 12 Jun 2013 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
