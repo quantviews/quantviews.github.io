@@ -24,6 +24,8 @@ listing:
 
 ::: {.qv-hero-meta}
 [Институт энергетики и финансов](https://fief.ru/about/our-team/our-team_experts/salikhov-marsel-robertovich/) · [Высшая школа экономики](https://www.hse.ru/org/persons/26780297/)
+
+Пишу учебник по курсу "Количественные финансы". 
 :::
 :::
 :::
@@ -49,9 +51,9 @@ listing:
 :::
 
 ::: {.qv-card}
-### Курсы
+### Преподование
 
-Материалы по количественным финансам, Python, R, Superset и эконометрике.
+Материалы по преподаваемым курсам и семинарам.
 
 [Изучить](courses.qmd)
 :::
@@ -69,13 +71,13 @@ listing:
 
 Экспертные комментарии и интервью для деловых изданий и медиа.
 
-[Ознакомиться](talks.qmd#медиа)
+[Ознакомиться](media.qmd)
 :::
 
 ::: {.qv-card}
 ### Технические заметки
 
-Практические заметки по Quarto, DuckDB, Shiny, Docker и GitHub Pages.
+Практические заметки по R, Python, BI, DuckDB, Shiny, Docker.
 
 [Открыть](notes.qmd)
 :::

@@ -9,8 +9,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.015em;
+  text-align: left;
+  hyphens: none;
 }
 
 .navbar-title {
@@ -40,7 +42,6 @@ p, li {
 .quarto-title-block .quarto-title .title {
   font-size: clamp(1.6rem, 2.2vw, 2.0rem);
   line-height: 1.2;
-  max-width: $qv-text-measure;
 }
 
 /* Logo-style on full-page layouts (homepage, sections) */
@@ -51,14 +52,13 @@ body.page-layout-full .quarto-title-block .quarto-title .title {
   color: #0F172A;
 }
 
-/* Compact inline meta: "Марсель Салихов · 8 августа 2018 г." */
+/* Post meta: author and date stacked, left-aligned */
 .quarto-title-meta {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
   gap: 0;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
   font-size: 0.85rem;
   color: #64748B;
 }
@@ -84,19 +84,29 @@ body.page-layout-full .quarto-title-block .quarto-title .title {
   color: #64748B;
 }
 
-/* Align headings with body text width */
-main.content article h2,
-main.content article h3 {
-  max-width: $qv-text-measure;
+
+/* Justify all body text in posts */
+main.content p,
+main.content li {
+  text-align: justify;
+  hyphens: auto;
 }
 
-main.content > section > p,
-main.content article p,
-main.content article li {
-  max-width: $qv-text-measure;
+/* Restore left-align for non-article elements */
+.quarto-title-meta-contents p,
+main.content .quarto-listing-default p,
+main.content .quarto-listing-table p,
+main.content .qv-card p,
+main.content .qv-hero p,
+main.content .qv-project-card p,
+main.content .qv-editorial-intro p,
+footer p {
+  text-align: left;
+  hyphens: none;
 }
 
-main.content article > p:first-of-type {
+main.content article > p:first-of-type,
+main.content section > p:first-of-type {
   font-size: 1.03rem;
   color: #334155;
 }

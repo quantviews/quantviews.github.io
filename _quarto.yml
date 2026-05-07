@@ -1,6 +1,14 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "!README.md"
+    - "!.claude/**"
+    - "!.git/**"
+    - "!.venv/**"
+    - "!renv/**"
+    - "!node_modules/**"
 
 execute:
   enabled: false
@@ -33,6 +41,8 @@ website:
         href: courses.qmd
       - text: "Выступления"
         href: talks.qmd
+      - text: "Комментарии"
+        href: media.qmd
       - text: "Заметки"
         href: notes.qmd
       - text: "Об авторе"
@@ -75,3 +85,7 @@ format:
     code-overflow: wrap
     smooth-scroll: true
     link-external-newwindow: true
+    grid:
+      body-width: 700px
+      sidebar-width: 220px
+      margin-width: 220px

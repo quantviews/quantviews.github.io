@@ -34,3 +34,8 @@ desktop.ini
 
 /.quarto/
 **/*.quarto_ipynb
+
+.claude/
+.venv/
+renv/
+node_modules/

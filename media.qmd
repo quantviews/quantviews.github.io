@@ -1,0 +1,18 @@
+---
+title: "Комментарии в СМИ"
+page-layout: full
+listing:
+  id: media-list
+  contents: media
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories]
+  date-format: "D MMMM YYYY"
+  filter-ui: false
+  sort-ui: false
+---
+
+Экспертные комментарии и интервью для деловых изданий, агентств и медиа.
+
+:::{#media-list}
+:::
