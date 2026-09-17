@@ -1,9 +1,11 @@
 ---
-title: "Работа Государственной Думы РФ в 2012 году "
+title: "Работа Государственной Думы РФ в 2012 году"
 date: 2013-02-27
 author: "Марсель Салихов"
 categories: ["R", "дума", "статистика"]
-description: "Я уже объяснял(http://quantviews.blogspot.ru/2013/01/1_16.html), в чем причина интереса к статистике по голосованиям в Госдуме и о том, что планирую собрать и"
+description: "Я уже объяснял, в чем причина интереса к статистике по голосованиям в Госдуме и о том, что планирую собрать и проанализировать не просто результаты голосований по отдельным законопроектам (это и…"
+aliases:
+  - "/posts/2013-02-27-работа-государственной-думы-рф-в-2012-году/"
 ---
 
 Я уже [объяснял](http://quantviews.blogspot.ru/2013/01/1_16.html), в чем причина интереса к статистике по голосованиям в Госдуме и о том, что планирую собрать и проанализировать не просто результаты голосований по отдельным законопроектам (это и сейчас вполне удобно можно сделать на vote.duma.gov.ru), а собрать и проанализировать достаточно большой массив данных и посмотреть, можно ли извлечь из этого какие-то выводы.  
@@ -24,7 +26,7 @@ description: "Я уже объяснял(http://quantviews.blogspot.ru/2013/01/1
 **График. Распределение голосований в Госдуме по времени в 2012 году  **  
 
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGNbrnUT2L7fMwIB-5BjgCOEtgWhhbBWACQ-syoR1Kbo-9IkbWvkoE8Koz8lO4hteKxP7u4UeN9k7n_8GG7r5hgvx0wT09Zc8VbDckZncVR9IgSs7I0hWRmBlwKg11wEzCUxkiEu92CCGA/s1600/vote-timeline.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGNbrnUT2L7fMwIB-5BjgCOEtgWhhbBWACQ-syoR1Kbo-9IkbWvkoE8Koz8lO4hteKxP7u4UeN9k7n_8GG7r5hgvx0wT09Zc8VbDckZncVR9IgSs7I0hWRmBlwKg11wEzCUxkiEu92CCGA/s1600/vote-timeline.png)
+![](images/01-vote-timeline.png)
 
 _Источник: анализ по данным Государственной Думы РФ_
 
@@ -36,7 +38,7 @@ _Источник: анализ по данным Государственной
 **График. Распределение законопроектов по количеству голосований в 2012 году  **  
 
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWqvTRGRVeZ52ZGCW_kyFk53aHINvNTHzxB37AQ_XQ-hFyrWhG6i08BOvlgRHud-u05P0Dl4uT2iun9rNhYOOysN18bf9rcB6vdigZg4JRETswD4gah-pPePgUrCgPvKAxYc5lEfrQJLXh/s1600/votes-sum.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWqvTRGRVeZ52ZGCW_kyFk53aHINvNTHzxB37AQ_XQ-hFyrWhG6i08BOvlgRHud-u05P0Dl4uT2iun9rNhYOOysN18bf9rcB6vdigZg4JRETswD4gah-pPePgUrCgPvKAxYc5lEfrQJLXh/s1600/votes-sum.png)
+![](images/02-votes-sum.png)
 
 Источник: анализ по данным Государственной Думы РФ
 
@@ -50,8 +52,8 @@ _Источник: анализ по данным Государственной
   * На втором месте идет закон "Об образовании" (законопроект № 121965-6) с 89 голосованиями. Ну и на третьем месте - Закон о бюджете, который похоже, не слишком волнует депутатов (или они понимают, что практически ни на что повлиять в бюджете не могут). За бюджет на 2013 год и поправки к нему депутаты голосовали 52 раза. 
   * Достаточно любопытно смотрится распределение голосов, когда Дума голосует "за" или "против" по законопроектым голосованиям. Отклонение поправок происходит по причине отсутствия отсутствия кворума - по этой причине было отклонено 913 голосований из 1023 отклоненных. Остальные отклоненные голосования, как правило, смогли привлечь только несколько голосов (см. красные линии на графике внизу). Зато при положительном  голосовании у депутатов часто наблюдается полное единодушие:  475 голосований из 1372 имели поддержку более чем 90%, а в 71 голосованиях - поддержку более 99% депутатов. 
 
-**График. Распределение поддержки в зависимости от принятия/отклонения по голосованиям Государственной думы РФ в 2012 году**   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8sDi71k-X-mtdPbQ8HT4EdNPaCmye9hCTkVm-x39WNbt2qpj0Ztq46yU0Rj7DUwmMbfUolmbCM-V9HF1Jm0CkxM1s4XMt_1ED5Ecq6hjqK-PqQrkmSSsCImuH0sw8H4eYHOsoQ9GMKnMY/s1600/vote-histogram.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8sDi71k-X-mtdPbQ8HT4EdNPaCmye9hCTkVm-x39WNbt2qpj0Ztq46yU0Rj7DUwmMbfUolmbCM-V9HF1Jm0CkxM1s4XMt_1ED5Ecq6hjqK-PqQrkmSSsCImuH0sw8H4eYHOsoQ9GMKnMY/s1600/vote-histogram.png)  
+**График. Распределение поддержки в зависимости от принятия/отклонения по голосованиям Государственной думы РФ в 2012 году**  
+![](images/03-vote-histogram.png)  
 ---  
 Добавьте подпись  
   

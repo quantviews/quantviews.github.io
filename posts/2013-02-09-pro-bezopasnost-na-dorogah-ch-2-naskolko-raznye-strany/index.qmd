@@ -1,9 +1,11 @@
 ---
-title: "Про безопасность на дорогах (ч. 2). Насколько разные страны отличаются друг от друга?   "
+title: "Про безопасность на дорогах (ч. 2). Насколько разные страны отличаются друг от друга?"
 date: 2013-02-09
 author: "Марсель Салихов"
 categories: ["R", "аварийность", "не-экономика", "статистика"]
-description: "Первая часть(http://quantviews.blogspot.ru/2013/01/1.html)      В первой части я вкратце описал, откуда родилась идея заниматься статистикой безопасности на"
+description: "В первой части я вкратце описал, откуда родилась идея заниматься статистикой безопасности на дорогах и описал некоторые источники, которые мне удалось найти. Во второй части я опишу основные…"
+aliases:
+  - "/posts/2013-02-09-про-безопасность-на-дорогах-ч-2-насколько-разные-страны/"
 ---
 
 [Первая часть](http://quantviews.blogspot.ru/2013/01/1.html)  
@@ -18,7 +20,7 @@ description: "Первая часть(http://quantviews.blogspot.ru/2013/01/1.ht
 **График. Уровень смертности в ДТП по странам с населением более 10 млн человек, 2007**  
 
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_1utfwFR7R3O7edUkHCmgSwMt5NLiSMqxbOIB7iTJ5wkfD8XXqcV_8-Dg36sGzeTRgFxygSiG05azecTYId05hJkuoxEBrdo_fdtYGOK8C1xv0Vfq8EFTuaEwl29_xP9Qa5QtEvZlFZrH/s1600/road-death-rates-2007.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_1utfwFR7R3O7edUkHCmgSwMt5NLiSMqxbOIB7iTJ5wkfD8XXqcV_8-Dg36sGzeTRgFxygSiG05azecTYId05hJkuoxEBrdo_fdtYGOK8C1xv0Vfq8EFTuaEwl29_xP9Qa5QtEvZlFZrH/s1600/road-death-rates-2007.png)
+![](images/01-road-death-rates-2007.jpg)
 
   
 
@@ -34,11 +36,11 @@ description: "Первая часть(http://quantviews.blogspot.ru/2013/01/1.ht
 
   
 _Примечание: карта интерактивная. При наведении мышкой на страну показываются значения смертности (чел на 100 тыс. населения) в 2007 году._  
-Мы посмотрели на межстрановой срез данных - имеет смысл взглянуть и на длинную историю, хотя бы некоторому списку стран (Германия, Франция, Ирландия, Япония, Южная Корея, Польша, Россия, Украина, США). Это максимально длинная история, которую я смог найти.   
+Мы посмотрели на межстрановой срез данных - имеет смысл взглянуть и на длинную историю, хотя бы некоторому списку стран (Германия, Франция, Ирландия, Япония, Южная Корея, Польша, Россия, Украина, США). Это максимально длинная история, которую я смог найти.  
 **График. Динамика уровня смертности в ДТП по некоторым странам, 1970-2010**  
 
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLDekJp-U4hgh8PeXdzhhpr5faQbtU1KYvaaCy6LGoLCyOesM9ehzo3gqhHrm4D-bskRstXJootduyfLXUMlHdWwGMCx36ojZ2fu3ld6lETGNtss-yDbgrD3TCwXIjgKbW-gfq6KJXOtkg/s1600/oecd-history-fatality.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLDekJp-U4hgh8PeXdzhhpr5faQbtU1KYvaaCy6LGoLCyOesM9ehzo3gqhHrm4D-bskRstXJootduyfLXUMlHdWwGMCx36ojZ2fu3ld6lETGNtss-yDbgrD3TCwXIjgKbW-gfq6KJXOtkg/s1600/oecd-history-fatality.png)
+![](images/02-oecd-history-fatality.png)
 
  Хотя в целом по развитым странам уровень дорожной смертности снижается, есть некоторые интересные паттерны. Южная Корея (верхняя зеленая линия) испытала всплеск смертности в начале 90-х годов, которая потом стала снижаться. Данные по Польше показывают аналогичную тенденцию, хотя и с меньшим размахом. По России (я нашел пока данные с 1984 года) также наблюдался всплеск смертности в начале 90-х годов, который достиг сошел на нет к 1997 году, а затем снова пошел вверх. С 2006-2007 годов показатели российской смертности снижаются. Довольно странная тенденция - возможно, это связано с нашими российскими особенностями учета (или недоучета в 90-е годы) - надо будет поподробнее изучить этот вопрос.  
 Продолжение последует.

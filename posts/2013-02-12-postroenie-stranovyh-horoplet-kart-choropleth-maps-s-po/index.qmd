@@ -1,16 +1,18 @@
 ---
-title: "Построение страновых хороплет-карт (choropleth maps) с помощью пакета rworldmap в статистическом пакете R "
+title: "Построение страновых хороплет-карт (choropleth maps) с помощью пакета rworldmap в статистическом пакете R"
 date: 2013-02-12
 author: "Марсель Салихов"
 categories: ["R", "география", "программирование", "статистика"]
 description: "Довольно часто социально-экономические данные удобно визуализировать с помощью карт. Стандартным является представление в форме так называемых choropleth maps"
+aliases:
+  - "/posts/2013-02-12-построение-страновых-хороплет-карт-choropleth-maps-с-по/"
 ---
 
 Довольно часто социально-экономические данные удобно визуализировать с помощью карт. Стандартным является представление в форме так называемых choropleth maps (похоже, на русском они так и называются - хороплет-карты). Хороплет - это такая карта, на которой с помощью визуального оформления (обычно цвета, но может быть и к примеру, точками или линиями разной густоты/толщины) отображается интенсивность какого-либо показателя для географических регионов. Такие карты очень легко позволяют наглядно отобразить данные по большому количеству географических объектов.  
 Вот для примера такая карта - правда, наглядно? На ней изображена доля курильщиков среди мужчин по почти 150 странам. Создание такой карты в R заняло 8 строк кода, включая загрузку данных из Сети.  
 
 
-[![Smoking prevalence, males \(% of adults\)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi10svo6ATkwCB_xvruNGPbP4lkvnod5SabCWroIb8HagnQmSt1KExogF9ZIUrCZn6cXQ5t7xhk3Ubm1CbdZkh3MHXSotG1WL2cfvd9fisnskSzyoSkbc3MfH7Ne48Y9PX6I0xdJXm79WtB/s1600/male-smoker-2009.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi10svo6ATkwCB_xvruNGPbP4lkvnod5SabCWroIb8HagnQmSt1KExogF9ZIUrCZn6cXQ5t7xhk3Ubm1CbdZkh3MHXSotG1WL2cfvd9fisnskSzyoSkbc3MfH7Ne48Y9PX6I0xdJXm79WtB/s1600/male-smoker-2009.jpg)
+![Smoking prevalence, males \(% of adults\)](images/01-male-smoker-2009.jpg)
 
   
 Как создавать подобные карты?  
@@ -28,16 +30,16 @@ description: "Довольно часто социально-экономиче�
   3. Выбор показателя, который мы хотим отобразить на карте с помощью функции mapCountryData. Здесь все понятно  nameColumnToPlot соответственно название показателя, который хотим отобразить. Важными являются также параметры catMethod (определяет методы для категоризации данных, то есть деления их на группы одного цвета), а также colourPalette, который определяет цветовую палитру. Для палитры удобно использовать имеющиеся варианты из пакета RColorBrewer. Как выглядят сами палитры удобно смотреть на специальном [сайте](http://colorbrewer2.org/). 
   4. Дополнительно. Функция mapCountryData сразу же отображает карту, но если вы хотите внести некоторые изменения - в нашем случае немного поправить легенду с помощью addMapLegend. 
 
-Вот код , который уже нарисует долю курильщиков-женщин по странам мира:  
+Вот код, который уже нарисует долю курильщиков-женщин по странам мира:  
   
   
 
-    
-    
+  
+  
     require(WDI)
     require(rworldmap)
     require(RColorBrewer)
-    
+  
     smoker <- WDI(country = "all", indicator = "SH.PRV.SMOK.FE", start = 2009, end = 2009, 
         extra = TRUE, cache = NULL)
     # получить данные из WDI
@@ -50,12 +52,12 @@ description: "Довольно часто социально-экономиче�
     # добавить легенду
     do.call(addMapLegend, c(mapParams, legendLabels = "all", labelFontSize = 0.8, 
         legendWidth = 0.5, sigFigs = 0))
-    
-    
+  
+  
 
 \--> А вот и результат его выполнения:  
 
 
-[![Smoking prevalence, females \(% of adults\)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgz8rpWF0dDz_7tdtl1PY-RPnvM-ErMjwJtd2yaPdrj5ZNeGLZGpEynNVWv7LHnShIbl0tbjHIDbkmbSkCnPR_kk5eh8v8hdhlgp1Eck5lSPlJmLzlX1QNEPcdykc38DL4iKjxGsNtyE7sx/s1600/female-smoker.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgz8rpWF0dDz_7tdtl1PY-RPnvM-ErMjwJtd2yaPdrj5ZNeGLZGpEynNVWv7LHnShIbl0tbjHIDbkmbSkCnPR_kk5eh8v8hdhlgp1Eck5lSPlJmLzlX1QNEPcdykc38DL4iKjxGsNtyE7sx/s1600/female-smoker.jpeg)
+![Smoking prevalence, females \(% of adults\)](images/02-female-smoker.jpg)
 
 По картам можно сразу же сделать несколько наблюдений. Среди мужчин больше всего курят Россия, Китай, Восточная Европа и Малайзия с Индонезией. Среди женщин все по другому - здесь в лидерах жительницы стран Западной Европы (Австрия на первом месте), Чили и  Папуа-Новая Гвинея.
