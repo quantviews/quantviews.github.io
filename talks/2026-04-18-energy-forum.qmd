@@ -1,7 +1,10 @@
 ---
 title: "Выступление: Энергорынки и макроэкономическая динамика"
 date: 2026-04-18
+subtitle: "Отраслевой форум по энергетике"
 categories: [talk, energy, macroeconomics]
+image: /assets/covers/talk-default.svg
+image-alt: "Обложка выступления quantviews"
 description: "Краткий конспект выступления на отраслевой конференции."
 ---
 

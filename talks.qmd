@@ -1,31 +1,23 @@
 ---
 title: "Выступления и презентации"
 page-layout: full
+listing:
+  id: talks-list
+  contents: talks
+  sort: "date desc"
+  type: grid
+  grid-columns: 3
+  image-height: "180px"
+  fields: [image, date, title, subtitle, description]
+  date-format: "D MMMM YYYY"
+  filter-ui: false
+  sort-ui: false
+  feed: false
 ---
 
-Конференции, отраслевые форумы, академические семинары и публичные панели.
-
-::: {.qv-presentation-grid}
-
-::: {.qv-presentation-card}
-
-![](assets/covers/2026-02-10-neft-posle-venezuely.png){.qv-presentation-cover}
-
-::: {.qv-presentation-body}
-### Нефть после Венесуэлы: последствия для России
-
-::: {.qv-presentation-meta}
-10 февраля 2026 · Публичная лекция · Noodome (ИЭФ)
+::: {.qv-editorial-intro}
+Конференции, отраслевые форумы, академические семинары и публичные панели. Слайды и конспекты — на странице каждого выступления.
 :::
 
-::: {.qv-presentation-desc}
-Последствия венесуэльского кризиса для российских нефтяных рынков и экспортной политики.
-:::
-
-::: {.qv-presentation-links}
-[PDF](/assets/publications/2026-02-10-neft-posle-venezuely.pdf) · [Конспект](talks/2026-02-10-neft-posle-venezuely.qmd) · [ИЭФ](https://fief.ru/media/presentations/neft-posle-venesuely-posledstviya-dlya-rossii/)
-:::
-:::
-:::
-
+:::{#talks-list}
 :::

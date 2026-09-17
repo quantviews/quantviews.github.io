@@ -1,7 +1,10 @@
 ---
 title: "Нефть после Венесуэлы: последствия для России"
 date: 2026-02-10
+subtitle: "Публичная лекция · Noodome (ИЭФ)"
 categories: [talk, energy, oil]
+image: /assets/covers/2026-02-10-neft-posle-venezuely.png
+image-alt: "Обложка лекции «Нефть после Венесуэлы»"
 description: "Лекция на платформе Noodome о последствиях венесуэльского кризиса для российских нефтяных рынков."
 ---
 
