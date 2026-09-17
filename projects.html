@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -40,14 +43,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c0f4ad33c246a932906da45bcb3168fc.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2cc777d44eac7019516e29e3d231f5ef.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c0f4ad33c246a932906da45bcb3168fc.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b3c6aa4260d5a34d247316e1ae39f911.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-bd0bd88ed4ad03a76515bd55d3526c6f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-b3c6aa4260d5a34d247316e1ae39f911.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3761498e1b2ff6610d2ea4ef7d93e638.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-da42c0514e34fb1d02c10617100fc923.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3761498e1b2ff6610d2ea4ef7d93e638.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -362,42 +365,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="категории" class="level2">
-<h2 class="anchored" data-anchor-id="категории">Категории</h2>
-<ul>
-<li>Аналитические дашборды</li>
-<li>Методологии индексов</li>
-<li>Экономические модели</li>
-<li>BI-инфраструктура</li>
-<li>Учебные материалы</li>
-<li>Исследовательские прототипы</li>
-</ul>
+<div class="qv-editorial-intro">
+<p>Аналитические сервисы, дата-инфраструктура и исследовательские прототипы.</p>
+</div>
+<section id="действующие-проекты" class="level2">
+<h2 class="anchored" data-anchor-id="действующие-проекты">Действующие проекты</h2>
+<section id="rustata.ru-поиск-по-российской-статистике" class="level3 qv-project-card">
+<h3 class="anchored" data-anchor-id="rustata.ru-поиск-по-российской-статистике">rustata.ru — поиск по российской статистике</h3>
+<p>Публичный сервис для работы с экономической статистикой РФ: ряды Росстата по регионам, товарам и периодам, с учётом пересмотров и выгрузкой в CSV. Я — создатель проекта.</p>
+<p>Статус: <span class="qv-status">Работает</span> Ссылка: <a href="https://rustata.ru">rustata.ru</a></p>
 </section>
-<section id="активные-карточки" class="level2">
-<h2 class="anchored" data-anchor-id="активные-карточки">Активные карточки</h2>
+<section id="статистика-внешней-торговли-мгимо" class="level3 qv-project-card">
+<h3 class="anchored" data-anchor-id="статистика-внешней-торговли-мгимо">Статистика внешней торговли (МГИМО)</h3>
+<p>ETL-пайплайн для сборки, гармонизации и публикации статистики внешней торговли: загрузка источников (включая UN Comtrade), единая модель данных в DuckDB, витрины в Superset, расчёт индексов физических объёмов и nowcast. Оркестрация — Prefect 3, программный доступ к данным — read-only API на FastAPI с токен-авторизацией.</p>
+<p>Статус: <span class="qv-status">Работает</span> Технологии: Python, DuckDB, Parquet, Prefect 3, FastAPI, Superset Репозиторий: <a href="https://github.com/quantviews/mgimo-foreign-trade">github.com/quantviews/mgimo-foreign-trade</a></p>
+</section>
+</section>
+<section id="в-разработке" class="level2">
+<h2 class="anchored" data-anchor-id="в-разработке">В разработке</h2>
 <section id="макроэкономический-обзорный-дашборд" class="level3 qv-project-card">
 <h3 class="anchored" data-anchor-id="макроэкономический-обзорный-дашборд">Макроэкономический обзорный дашборд</h3>
-<p>Краткое описание: панель мониторинга по инфляции, ВВП, ставкам и рынку труда.</p>
-<p>Статус: <span class="qv-status">В разработке</span><br>
-Технологии: DuckDB, Superset, Quarto<br>
-Ссылка: будет добавлена после публикации.</p>
+<p>Панель мониторинга по инфляции, ВВП, ставкам и рынку труда.</p>
+<p>Статус: <span class="qv-status">В разработке</span> Технологии: DuckDB, Superset, Quarto Ссылка: будет добавлена после публикации.</p>
 </section>
 <section id="индекс-отраслевой-динамики" class="level3 qv-project-card">
 <h3 class="anchored" data-anchor-id="индекс-отраслевой-динамики">Индекс отраслевой динамики</h3>
-<p>Краткое описание: прототип методологии составного индикатора по отраслевым метрикам.</p>
-<p>Статус: <span class="qv-status">Черновик</span><br>
-Технологии: Python, pandas, statsmodels<br>
-Ссылка: в подготовке.</p>
+<p>Прототип методологии составного индикатора по отраслевым метрикам.</p>
+<p>Статус: <span class="qv-status">Черновик</span> Технологии: Python, pandas, statsmodels Ссылка: в подготовке.</p>
 </section>
-<p>Подробнее по структуре и статусам - в <a href="./projects/index.html">каталоге проектов</a>.</p>
-</section>
-<section id="примеры-материалов" class="level2">
-<h2 class="anchored" data-anchor-id="примеры-материалов">Примеры материалов</h2>
-<ul>
-<li>Макроэкономический дашборд (прототип): weekly update + сценарные заметки.</li>
-<li>Индекс отраслевой динамики: методология + версия расчета.</li>
-<li>BI-конвейер для мониторинга показателей: ingestion, QC, витрины.</li>
-</ul>
+<p>Сводная таблица по всем проектам — в <a href="./projects/index.html">каталоге проектов</a>.</p>
 
 
 </section>

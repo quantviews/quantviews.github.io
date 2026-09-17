@@ -286,7 +286,7 @@ footer.footer {
 .qv-presentation-cover-placeholder {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #1D3557 0%, #2F5DA8 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
   display: flex;
   align-items: center;
   justify-content: center;

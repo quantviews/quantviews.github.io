@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -40,14 +43,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c0f4ad33c246a932906da45bcb3168fc.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2cc777d44eac7019516e29e3d231f5ef.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c0f4ad33c246a932906da45bcb3168fc.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ad7a70ee837950f74c3137b2b7f1bb4b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b3c6aa4260d5a34d247316e1ae39f911.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-bd0bd88ed4ad03a76515bd55d3526c6f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-b3c6aa4260d5a34d247316e1ae39f911.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3761498e1b2ff6610d2ea4ef7d93e638.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-da42c0514e34fb1d02c10617100fc923.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3761498e1b2ff6610d2ea4ef7d93e638.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -368,7 +371,11 @@ ul.task-list li input[type="checkbox"] {
 <div class="qv-bio-grid">
 <p><img src="assets/img/salikhov-marcel-styled-picture.png" class="qv-portrait-bio img-fluid"></p>
 <div class="qv-bio-text">
-<p>Меня зовут Салихов Марсель. Работаю в Институте энергетики и финансов (ИЭФ) и в Высшей школе экономики (ВШЭ). Свыше 20 лет опыта работы в аналитике. Этот сайт одновременно и профессиональная витрина, и личный блог: здесь публикуются как исследовательские материалы, так и короткие рабочие заметки по аналитическим инструментам.</p>
+<p>Меня зовут Салихов Марсель. Свыше 20 лет опыта работы в аналитике. Создатель проекта <a href="https://rustata.ru">rustata.ru</a> — поиска по экономической статистике РФ.</p>
+<div class="qv-hero-meta">
+<p><a href="https://fief.ru/about/our-team/our-team_experts/salikhov-marsel-robertovich/">Институт энергетики и финансов</a> · <a href="https://www.hse.ru/org/persons/26780297/">НИУ ВШЭ</a></p>
+</div>
+<p>Этот сайт одновременно и профессиональная витрина, и личный блог: здесь публикуются как исследовательские материалы, так и короткие рабочие заметки по аналитическим инструментам.</p>
 <p>Фокус проекта — прикладная аналитика и исследовательская работа: от экономических сюжетов и отраслевых рынков до инженерии данных и BI-систем.</p>
 </div>
 </div>
@@ -393,10 +400,15 @@ ul.task-list li input[type="checkbox"] {
 <li>Git и reproducible workflows.</li>
 </ul>
 </section>
+<section id="преподавание" class="level2">
+<h2 class="anchored" data-anchor-id="преподавание">Преподавание</h2>
+<p>Читаю курсы по количественным финансам и финансовым рынкам в НИУ ВШЭ и ВШМ СПбГУ, по BI и Superset — в МГИМО. Сейчас пишу учебник по курсу «Количественные финансы».</p>
+<p>Подробнее: <a href="./courses.html">Преподавание</a>.</p>
+</section>
 <section id="выступления-и-медиа" class="level2">
 <h2 class="anchored" data-anchor-id="выступления-и-медиа">Выступления и медиа</h2>
-<p>Публичные выступления и презентации на конференциях, экспертные комментарии в СМИ по темам экономики, энергетики, финансов и аналитических систем.</p>
-<p>Архив: <a href="./talks.html">Выступления и презентации</a>.</p>
+<p>Публичные выступления и презентации на конференциях, экспертные комментарии в СМИ по темам экономики, энергетики, финансов и аналитических систем. Эксперт международного дискуссионного клуба «Валдай».</p>
+<p>Архивы: <a href="./talks.html">Выступления и презентации</a> · <a href="./media.html">Комментарии в СМИ</a>.</p>
 </section>
 <section id="контакты" class="level2">
 <h2 class="anchored" data-anchor-id="контакты">Контакты</h2>
@@ -407,12 +419,24 @@ ul.task-list li input[type="checkbox"] {
 <td><a href="mailto:marcel.salikhov@gmail.com">marcel.salikhov@gmail.com</a></td>
 </tr>
 <tr class="even">
+<td>Telegram</td>
+<td><a href="https://t.me/quantviews">t.me/quantviews</a></td>
+</tr>
+<tr class="odd">
 <td>GitHub</td>
 <td><a href="https://github.com/quantviews">github.com/quantviews</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Сайт</td>
 <td><a href="https://quantviews.github.io">quantviews.github.io</a></td>
+</tr>
+<tr class="odd">
+<td>rustata</td>
+<td><a href="https://rustata.ru">rustata.ru</a></td>
+</tr>
+<tr class="even">
+<td>Валдай</td>
+<td><a href="https://valdaiclub.com/about/experts/marcel_salikhov">профиль эксперта</a></td>
 </tr>
 </tbody>
 </table>
