@@ -1,0 +1,19 @@
+---
+title: "От глобальной паутины к региональным крепостям: какая карта мира ждёт энергетику?"
+date: 2025-10-16
+subtitle: "Российская энергетическая неделя · деловая программа"
+categories: [talk, energy, geopolitics, global-markets]
+image: /assets/covers/talk-default.svg
+image-alt: "Обложка выступления quantviews"
+description: "Сессия деловой программы РЭН о фрагментации мировых энергетических рынков и переходе от глобальных связей к региональным блокам."
+---
+
+## Контекст
+
+Участие в сессии деловой программы Российской энергетической недели (РЭН).
+
+Дата: 16 октября 2025 г.
+
+## Материалы
+
+- Страница сессии и трансляция: [roscongress.org](https://roscongress.org/sessions/rew-2025-delovaya-programma-ot-globalnoy-pautiny-k-regionalnym-krepostyam-kakaya-karta-mira-zhdet-energetiku/translation/)

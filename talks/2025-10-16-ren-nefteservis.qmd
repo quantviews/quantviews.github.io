@@ -1,0 +1,19 @@
+---
+title: "Нефтесервис в России — как помочь помощнику отрасли?"
+date: 2025-10-16
+subtitle: "Российская энергетическая неделя · деловая программа"
+categories: [talk, energy, oil, oilfield-services]
+image: /assets/covers/talk-default.svg
+image-alt: "Обложка выступления quantviews"
+description: "Сессия деловой программы РЭН о состоянии российского нефтесервиса и мерах поддержки отрасли."
+---
+
+## Контекст
+
+Участие в сессии деловой программы Российской энергетической недели (РЭН).
+
+Дата: 16 октября 2025 г.
+
+## Материалы
+
+- Страница сессии: [roscongress.org](https://roscongress.org/sessions/rew-2025-delovaya-programma-nefteservis-v-rossii-kak-pomoch-pomoshchniku-otrasli/)
