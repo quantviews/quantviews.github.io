@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3761498e1b2ff6610d2ea4ef7d93e638.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-da42c0514e34fb1d02c10617100fc923.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-3761498e1b2ff6610d2ea4ef7d93e638.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8546ff03f3c6be340fe8f25a2933306b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-d0461091eb5344a1e3076479d6cf7ae5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8546ff03f3c6be340fe8f25a2933306b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -400,13 +400,13 @@ ul.task-list li input[type="checkbox"] {
 <li>На севере - в районах Сокол, Аэропорт, Полежаевская.</li>
 <li>На юге-западе в районах Ломоновский и Академический.</li>
 </ol>
-<p>Вот данные, которые я обработал для того, чтобы построить эту карту. Желающие могут скачать их и самостоятельно с ними поиграться. Вот <a href="https://www.google.com/fusiontables/DataSource?docid=1rzXosrRsjAVxoH6jMCA9vjcYXvdONU1HNVAt2vw">ссылка</a>на данные для скачивания из Google Fusion Tables.</p>
+<p>Вот данные, которые я обработал для того, чтобы построить эту карту. Желающие могут скачать их и самостоятельно с ними поиграться. Вот <a href="https://www.google.com/fusiontables/DataSource?docid=1rzXosrRsjAVxoH6jMCA9vjcYXvdONU1HNVAt2vw">ссылка</a> на данные для скачивания из Google Fusion Tables.</p>
 <p>Максимальный результат Навального на УИК №202 (Кочновский проезд, 4, корп 1) - почти 63%.<br>
-Собянин получил же максимальные 98,46% (!!!) на УИК №335 (Талдомская улица, д 6) - <a href="http://xn--25-vlctj.xn--p1ai/">судя</a>по всему, это государственное бюджетное учреждение “Психоневрологический диспансер №25”. Интересная метафора, которую уже много где обсудили. На втором месте с результатом 88,15% за Собянина УИК №388 (Правобережная улица, д 4), в котором находится “Пансионат №1 для ветеранов войны и труда”. Правда, больше УИКом с результатам больше 70% за Собянина нет.<br>
+Собянин получил же максимальные 98,46% (!!!) на УИК №335 (Талдомская улица, д 6) - <a href="http://xn--25-vlctj.xn--p1ai/">судя</a> по всему, это государственное бюджетное учреждение “Психоневрологический диспансер №25”. Интересная метафора, которую уже много где обсудили. На втором месте с результатом 88,15% за Собянина УИК №388 (Правобережная улица, д 4), в котором находится “Пансионат №1 для ветеранов войны и труда”. Правда, больше УИКом с результатам больше 70% за Собянина нет.<br>
 Наверно, еще много чего можно найти по данным - напишите, если что удалось обнаружить. Максимальный результат “за” Мельникова (18,24%) на УИК №61.</p>
 <p>Теперь вкратце об исходных данных для карты и как она была сделана.<br>
 Исходные данные по результатам голосований получены из <a href="http://www.moscow_city.vybory.izbirkom.ru/region/region/moscow_city?action=show&amp;root=1&amp;tvd=27720001368293&amp;vrn=27720001368289&amp;region=77&amp;global=&amp;sub_region=77&amp;prver=0&amp;pronetvd=null&amp;vibid=27720001368293&amp;type=222">“Сводной таблицы предварительных итогов голосований”</a> Московской городской избирательной комиссии. Они там выложены в не очень удобном виде (сначала по районам, а потом уже - по УИКам). Поэтому был написан скрипт на R, который скачивает и перерабатывает данные. Для карты я использовал только процентные итоги голосовать, хотя можно визуализировать и любые другие показатели, которые есть в исходных таблицах.<br>
-Географические расположение УИКов <a href="http://gis-lab.info/data/uik_geo/mgik_uiks_all_20130826.zip">взята</a>с замечательного <a href="http://gis-lab.ru/">gis-lab.ru</a></p>
+Географические расположение УИКов <a href="http://gis-lab.info/data/uik_geo/mgik_uiks_all_20130826.zip">взята</a> с замечательного <a href="http://gis-lab.ru/">gis-lab.ru</a></p>
 <p>Для создания непосредственно карты использовался отличный пакет <a href="https://github.com/ramnathv/rCharts">rCharts</a>, который позволяет обращаться к картографическому сервису <a href="http://leafletjs.com/">Leaflet JS</a> и строить интерактивные карты непосредственно в R. Пакет еще в стадии разработки, поэтому я переработал готовый <a href="http://ramnathv.github.io/bikeshare/">пример</a> от автора rCharts.</p>
 
 
