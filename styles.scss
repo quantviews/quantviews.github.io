@@ -26,9 +26,10 @@ h1 {
 }
 
 h2 {
-  margin-top: 1.65rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  margin-top: 2.4rem;
+  padding-bottom: 0.3rem;
+  font-size: 1.22rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
 }
 
 h3 {
@@ -52,8 +53,10 @@ body.page-layout-full .quarto-title-block .quarto-title .title {
   color: #0F172A;
 }
 
-/* Post meta: author and date stacked, left-aligned */
-.quarto-title-meta {
+/* Post meta: author and date stacked, left-aligned.
+   Quarto scopes its own two-column grid behind #title-block-header, so the
+   override has to carry the same specificity. */
+#title-block-header.quarto-title-block.default .quarto-title-meta {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -78,22 +81,9 @@ body.page-layout-full .quarto-title-block .quarto-title .title {
 }
 
 
-/* Justify all body text in posts */
+/* Body text stays ragged-right */
 main.content p,
 main.content li {
-  text-align: justify;
-  hyphens: auto;
-}
-
-/* Restore left-align for non-article elements */
-.quarto-title-meta-contents p,
-main.content .quarto-listing-default p,
-main.content .quarto-listing-table p,
-main.content .qv-card p,
-main.content .qv-hero p,
-main.content .qv-project-card p,
-main.content .qv-editorial-intro p,
-footer p {
   text-align: left;
   hyphens: none;
 }
@@ -153,10 +143,10 @@ pre, code {
 }
 
 blockquote {
-  border-left: 2px solid #CBD5E1;
-  background: #F8FAFC;
-  border-radius: 0 6px 6px 0;
-  padding: 0.62rem 0.9rem;
+  border-left: 2px solid #E2E8F0;
+  background: none;
+  padding: 0.1rem 0 0.1rem 1.1rem;
+  color: #475569;
 }
 
 hr {
@@ -171,7 +161,11 @@ table {
 }
 
 thead {
-  background: #F8FAFC;
+  background: none;
+}
+
+thead th {
+  border-bottom: 1px solid #CBD5E1;
 }
 
 th {
@@ -214,11 +208,11 @@ td, th {
 }
 
 .quarto-listing-category {
-  border: 1px solid #E2E8F0;
-  background: #FFFFFF;
-  color: #334155;
-  border-radius: 4px;
-  padding: 0.08rem 0.4rem;
+  border: none;
+  background: none;
+  color: #64748B;
+  padding: 0.08rem 0;
+  margin-right: 0.8rem;
 }
 
 #TOC {
@@ -233,45 +227,59 @@ td, th {
 
 /* Placeholder for post images whose original source is gone (see scripts/retry_wayback.py) */
 .qv-missing-image {
-  margin: 1rem 0;
-  padding: 0.7rem 0.9rem;
-  border: 1px dashed #CBD5E1;
-  border-radius: 6px;
-  background: #F8FAFC;
-  color: #64748B;
+  margin: 1.2rem 0;
+  padding: 0.1rem 0 0.1rem 1.1rem;
+  border-left: 2px solid #E2E8F0;
+  color: #94A3B8;
   font-size: 0.86rem;
+  font-style: italic;
   text-align: left;
 }
 
 /* Listing grid cards (talks) */
-.quarto-listing-grid .card {
-  border: 1px solid #E2E8F0;
-  border-radius: 6px;
+.quarto-grid-item.card {
+  border: none;
+  border-radius: 0;
+  background: none;
   overflow: hidden;
-  transition: border-color 0.15s ease;
 }
 
-.quarto-listing-grid .card:hover {
-  border-color: #CBD5E1;
+.quarto-grid-item .card-body {
+  padding: 0.7rem 0 0;
 }
 
-.quarto-listing-grid .card-img-top {
+.quarto-grid-item .card-img-top {
   object-fit: cover;
+  border-radius: 3px;
 }
 
-.quarto-listing-grid .card-title {
+.quarto-grid-item .card-title {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
 }
 
-.quarto-listing-grid .card-subtitle,
-.quarto-listing-grid .listing-subtitle {
-  font-size: 0.82rem;
+.quarto-grid-item .card-subtitle,
+.quarto-grid-item .listing-subtitle {
+  font-size: 0.83rem;
   color: #64748B;
+  margin-bottom: 0.45rem;
 }
 
-.quarto-listing-grid .listing-date {
+.quarto-grid-item .listing-description {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.quarto-grid-item .card-attribution {
+  padding-top: 0.6rem;
+}
+
+.quarto-grid-item .card-attribution.end {
+  justify-content: flex-start;
+}
+
+.quarto-grid-item .listing-date {
   font-size: 0.78rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;

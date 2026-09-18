@@ -15,8 +15,9 @@ page-layout: full
 Публичный сервис для работы с экономической статистикой РФ: ряды Росстата по регионам,
 товарам и периодам, с учётом пересмотров и выгрузкой в CSV. Я — создатель проекта.
 
-Статус: <span class="qv-status">Работает</span>
-Ссылка: [rustata.ru](https://rustata.ru)
+::: {.qv-project-meta}
+[rustata.ru](https://rustata.ru) · <span class="qv-status">Работает</span>
+:::
 :::
 
 ::: {.qv-project-card}
@@ -27,9 +28,9 @@ ETL-пайплайн для сборки, гармонизации и публи
 Superset, расчёт индексов физических объёмов и nowcast. Оркестрация — Prefect 3,
 программный доступ к данным — read-only API на FastAPI с токен-авторизацией.
 
-Статус: <span class="qv-status">Работает</span>
-Технологии: Python, DuckDB, Parquet, Prefect 3, FastAPI, Superset
-Репозиторий: [github.com/quantviews/mgimo-foreign-trade](https://github.com/quantviews/mgimo-foreign-trade)
+::: {.qv-project-meta}
+[github.com/quantviews/mgimo-foreign-trade](https://github.com/quantviews/mgimo-foreign-trade) · <span class="qv-status">Работает</span> · Python, DuckDB, Parquet, Prefect 3, FastAPI, Superset
+:::
 :::
 
 ## В разработке
@@ -39,9 +40,9 @@ Superset, расчёт индексов физических объёмов и n
 
 Панель мониторинга по инфляции, ВВП, ставкам и рынку труда.
 
-Статус: <span class="qv-status">В разработке</span>
-Технологии: DuckDB, Superset, Quarto
-Ссылка: будет добавлена после публикации.
+::: {.qv-project-meta}
+<span class="qv-status">В разработке</span> · DuckDB, Superset, Quarto
+:::
 :::
 
 ::: {.qv-project-card}
@@ -49,9 +50,9 @@ Superset, расчёт индексов физических объёмов и n
 
 Прототип методологии составного индикатора по отраслевым метрикам.
 
-Статус: <span class="qv-status">Черновик</span>
-Технологии: Python, pandas, statsmodels
-Ссылка: в подготовке.
+::: {.qv-project-meta}
+<span class="qv-status">Черновик</span> · Python, pandas, statsmodels
+:::
 :::
 
 Сводная таблица по всем проектам — в [каталоге проектов](projects/index.qmd).
