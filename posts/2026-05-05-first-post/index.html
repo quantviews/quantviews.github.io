@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Марсель Салихов">
-<meta name="description" content="quantviews вернулся после долгого молчания — уже не на Blogspot. Зачем нужна личная площадка, что уцелело из архива 2012–2018 годов и что ломается при переезде блога, которому четырнадцать лет.">
+<meta name="description" content="quantviews вернулся после долгого молчания — уже не на Blogspot. Зачем нужна личная площадка, что уцелело из архива 2012–2018 годов и как сайт устроен внутри.">
 
 <title>Про этот сайт: зачем он и как устроен – quantviews</title>
 <style>
@@ -124,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image" content="https://quantviews.github.io/posts/2026-05-05-first-post/assets/img/salikhov-marcel-styled-picture.png">
 <meta property="og:site_name" content="quantviews">
 <meta name="twitter:title" content="Про этот сайт: зачем он и как устроен – quantviews">
-<meta name="twitter:description" content="quantviews вернулся после долгого молчания — уже не на Blogspot. Зачем нужна личная площадка, что уцелело из архива 2012–2018 годов и что ломается при переезде блога, которому четырнадцать лет.">
+<meta name="twitter:description" content="quantviews вернулся после долгого молчания — уже не на Blogspot. Зачем нужна личная площадка, что уцелело из архива 2012–2018 годов и как сайт устроен внутри.">
 <meta name="twitter:image" content="https://quantviews.github.io/posts/2026-05-05-first-post/assets/img/salikhov-marcel-styled-picture.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -381,7 +381,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#зачем-отдельная-площадка" id="toc-зачем-отдельная-площадка" class="nav-link active" data-scroll-target="#зачем-отдельная-площадка">Зачем отдельная площадка</a></li>
   <li><a href="#что-уцелело-из-архива" id="toc-что-уцелело-из-архива" class="nav-link" data-scroll-target="#что-уцелело-из-архива">Что уцелело из архива</a></li>
-  <li><a href="#что-ломается-при-переезде" id="toc-что-ломается-при-переезде" class="nav-link" data-scroll-target="#что-ломается-при-переезде">Что ломается при переезде</a></li>
   <li><a href="#как-всё-устроено-сейчас" id="toc-как-всё-устроено-сейчас" class="nav-link" data-scroll-target="#как-всё-устроено-сейчас">Как всё устроено сейчас</a></li>
   <li><a href="#про-оформление" id="toc-про-оформление" class="nav-link" data-scroll-target="#про-оформление">Про оформление</a></li>
   <li><a href="#что-дальше" id="toc-что-дальше" class="nav-link" data-scroll-target="#что-дальше">Что дальше</a></li>
@@ -404,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    quantviews вернулся после долгого молчания — уже не на Blogspot. Зачем нужна личная площадка, что уцелело из архива 2012–2018 годов и что ломается при переезде блога, которому четырнадцать лет.
+    quantviews вернулся после долгого молчания — уже не на Blogspot. Зачем нужна личная площадка, что уцелело из архива 2012–2018 годов и как сайт устроен внутри.
   </div>
 </div>
 
@@ -434,7 +433,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Этот блог я завёл в апреле 2012 года на Blogspot. Писал про статистику ДТП, результаты голосований в Госдуме, пенсионную реформу, хитрости построения графиков в R и Excel. Потом писал всё реже, а к концу 2018-го перестал совсем: рабочих текстов стало много, а сил на ещё один канал — нет.</p>
-<p>Сейчас блог вернулся, уже на своём домене и на другом движке. Заодно я перетащил сюда весь архив. Ниже — зачем мне это и что выяснилось по дороге.</p>
+<p>Сейчас блог вернулся, уже на своём домене и на другом движке. Заодно я перетащил сюда весь архив. Ниже — зачем мне это и как здесь всё устроено.</p>
 <section id="зачем-отдельная-площадка" class="level2">
 <h2 class="anchored" data-anchor-id="зачем-отдельная-площадка">Зачем отдельная площадка</h2>
 <p>У меня есть места, где выходят рабочие тексты: <a href="https://fief.ru/">сайт ИЭФ</a>, комментарии в СМИ, презентации на конференциях. Всё это — форматы с чужими рамками: объём, дедлайн, редактура, тема, которая интересна редакции.</p>
@@ -453,25 +452,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Перечитывать собственные тексты десятилетней давности — занятие отрезвляющее. Часть постарела ожидаемо: разборы конкретных законопроектов интересны теперь разве что как слепок времени. Часть держится лучше, чем я думал, — например, история про то, <a href="../../posts/2017-03-03-pochemu-nam-kazhetsya-chto-ceny-rastut-bystree-inflyacii/">почему нам кажется, что цены растут быстрее инфляции</a>, или <a href="../../posts/2013-02-09-pro-bezopasnost-na-dorogah-ch-2-naskolko-raznye-strany/">разбор аварийности на дорогах</a> с межстрановыми сопоставлениями.</p>
 <p>Я ничего не переписывал и не подчищал задним числом. Тексты остались как были, включая прогнозы, которые не сбылись.</p>
 </section>
-<section id="что-ломается-при-переезде" class="level2">
-<h2 class="anchored" data-anchor-id="что-ломается-при-переезде">Что ломается при переезде</h2>
-<p>Вот это оказалось самой поучительной частью, поэтому остановлюсь подробнее. Если соберётесь вытаскивать свой блог с чужой платформы — имейте в виду.</p>
-<p><strong>Картинки живут не у вас.</strong> Все графики в старых постах лежали на <code>blogger.googleusercontent.com</code>. Пока блог на Blogspot, это незаметно. После переезда у вас сайт, который при каждом открытии ходит за картинками на инфраструктуру Google, и работает он ровно до тех пор, пока Google не решит иначе. Шестьдесят два изображения я выкачал и положил рядом с постами.</p>
-<p><strong>Часть картинок вернуть уже нельзя.</strong> Графики к трём колонкам, которые я писал для Slon, лежали на слоновском хостинге. Slon стал Republic, файлы не отдаются. Интерактивные визуализации по НПФ были собраны на Tableau Public — сервис их не хранит. Archive.org в нужный момент лежал и возвращал 429. Три поста, от которых без графиков остаётся пересказ чужой статьи, я удалил; в одном посте про пенсионные фонды вместо визуализаций теперь стоит пометка, что их больше нет.</p>
-<p>Мораль простая и неоригинальная: если материал вам дорог, файлы должны лежать у вас.</p>
-<p><strong>Экспорт даёт грязный текст.</strong> Blogspot отдаёт HTML, конвертер превращает его в Markdown, и в тексте остаются следы: ссылки, склеенные со следующим словом, потому что пробел уехал внутрь скобок; заголовок, проглотивший целый абзац и утащивший его в оглавление; якоря комментариев из Word, ведущие на <code>file:///G:/Dropbox/...</code> — то есть прямо на мой диск. Описания постов автоматика собрала из начала текста вместе с разметкой, и в анонсах красовалось что-то вроде «Первая часть(http://quantviews.blogspot.ru/…)».</p>
-<p><strong>Кириллица в адресах.</strong> Blogspot делал адреса из заголовков, так что на выходе получились директории вида <code>посты/про-безопасность-на-дорогах-ч-2/</code>. Работает, но в мессенджере такая ссылка разворачивается в полсотни процентов и знаков. Я перевёл все адреса на латиницу, а на старые повесил редиректы — они уже были проиндексированы, и ронять их нельзя.</p>
-</section>
 <section id="как-всё-устроено-сейчас" class="level2">
 <h2 class="anchored" data-anchor-id="как-всё-устроено-сейчас">Как всё устроено сейчас</h2>
 <p>Сайт собран на <a href="https://quarto.org">Quarto</a> — той же системе, в которой я делаю отчёты и презентации, так что отдельный движок изучать не пришлось. Исходники — обычные Markdown-файлы, пост это папка:</p>
-<pre><code>posts/2026-09-19-nazvanie-posta/
+<pre><code>posts/2026-05-20-nazvanie-posta/
   index.qmd       # текст и метаданные
   images/         # картинки лежат рядом с текстом</code></pre>
 <p>Метаданные — в начале файла:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Заголовок"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2026-09-19</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2026-05-20</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Марсель Салихов"</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"макроэкономика"</span><span class="kw">,</span><span class="at"> </span><span class="st">"нефть"</span><span class="kw">]</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Одно предложение для листинга и для анонса."</span></span>
