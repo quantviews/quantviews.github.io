@@ -7,7 +7,7 @@ quantviews — личная площадка для публикации ана�
 ## Кто я и чем занимаюсь
 
 ::: {.qv-bio-grid}
-![](assets/img/salikhov-marcel-styled-picture.png){.qv-portrait-bio}
+![](assets/img/salikhov-marcel-original-picture.png){.qv-portrait-bio fig-alt="Марсель Салихов"}
 
 ::: {.qv-bio-text}
 Меня зовут Салихов Марсель. Свыше 20 лет опыта работы в аналитике. Создатель проекта [rustata.ru](https://rustata.ru) — поиска по экономической статистике РФ.
