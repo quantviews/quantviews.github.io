@@ -16,13 +16,13 @@ GitHub Pages.
 | Выступления | `talks/` | Quarto listing (grid) |
 | Комментарии в СМИ | `media/` | Quarto listing |
 | Технические заметки | `notes/` | Заметки по инструментам |
-| Об авторе | `about.qmd` | — |
+| Об авторе | `about.qmd` | - |
 
 ## Оформление
 
-- `_brand.yml` — палитра, шрифты, логотип (Quarto brand).
-- `styles.scss` — правила, компилируемые вместе с темой (основное место для стилей).
-- `styles.css` — правила, подключаемые после темы; используется для точечных
+- `_brand.yml` - палитра, шрифты, логотип (Quarto brand).
+- `styles.scss` - правила, компилируемые вместе с темой (основное место для стилей).
+- `styles.css` - правила, подключаемые после темы; используется для точечных
   переопределений, которых нельзя добиться в `styles.scss`.
 
 Темы: `cosmo` (светлая) и `darkly` (тёмная).
@@ -34,7 +34,7 @@ quarto preview     # живой предпросмотр
 quarto render      # сборка в _site/
 ```
 
-Выполнение кода в документах отключено (`execute: enabled: false`) — `.qmd`
+Выполнение кода в документах отключено (`execute: enabled: false`) - `.qmd`
 рендерятся как разметка.
 
 ## Новый пост
@@ -46,13 +46,13 @@ posts/YYYY-MM-DD-latinskiy-slug/
 ```
 
 Обязательные поля frontmatter: `title`, `date`, `author`, `categories`,
-`description`. Слаги — латиницей: посты, перенесённые с Blogspot, сохраняют
+`description`. Слаги - латиницей: посты, перенесённые с Blogspot, сохраняют
 старые кириллические адреса через `aliases:`, поэтому такие поля трогать не нужно.
 
 ## Публикация
 
-- `.github/workflows/publish.yml` — рендер и деплой в ветку `gh-pages` при push в `main`.
-- `.github/workflows/telegram.yml` — анонс нового поста в [@quantviews](https://t.me/quantviews).
+- `.github/workflows/publish.yml` - рендер и деплой в ветку `gh-pages` при push в `main`.
+- `.github/workflows/telegram.yml` - анонс нового поста в [@quantviews](https://t.me/quantviews).
   Требует секрет `TELEGRAM_BOT_TOKEN`; ручной запуск отправляет тестовое сообщение.
 
 ## Служебные скрипты

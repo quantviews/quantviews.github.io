@@ -23,10 +23,10 @@ page-layout: full
 :::
 
 ::: {.qv-project-card}
-### rustata.ru — поиск по российской статистике
+### rustata.ru - поиск по российской статистике
 
 Публичный сервис для работы с экономической статистикой РФ: ряды Росстата по регионам,
-товарам и периодам, с учётом пересмотров и выгрузкой в CSV. Я — создатель проекта.
+товарам и периодам, с учётом пересмотров и выгрузкой в CSV. Я - создатель проекта.
 
 ::: {.qv-project-meta}
 [rustata.ru](https://rustata.ru) · <span class="qv-status">Работает</span>
@@ -37,7 +37,7 @@ page-layout: full
 ### Статистика внешней торговли (МГИМО)
 
 Актуальная статистика внешней торговли в одном месте. Данные приходят из разных
-источников, живут в разных классификациях и постоянно пересматриваются задним числом —
+источников, живут в разных классификациях и постоянно пересматриваются задним числом -
 собрать из них сопоставимый ряд вручную стоит дороже, чем проанализировать.
 
 Проект сводит источники в единую модель, ведёт учёт пересмотров, считает индексы
@@ -73,25 +73,25 @@ page-layout: full
 
 ## Данные и инструменты
 
-Небольшие открытые проекты — обёртки над источниками данных и разборы отдельных
+Небольшие открытые проекты - обёртки над источниками данных и разборы отдельных
 наборов. Почти все выросли из рабочих задач: понадобилось один раз, пригодилось ещё
 несколько.
 
 | Что | Репозиторий |
 |---|---|
-| Дивиденды российских публичных компаний — история выплат | [russian_dividends](https://github.com/quantviews/russian_dividends) |
+| Дивиденды российских публичных компаний - история выплат | [russian_dividends](https://github.com/quantviews/russian_dividends) |
 | Данные Московской биржи через MOEX API | [moexutils](https://github.com/quantviews/moexutils) |
-| Внешняя торговля Турции — загрузка данных | [turkey-foreign-trade](https://github.com/quantviews/turkey-foreign-trade) |
-| Веб-сервисы Банка России — получение рядов | [CBR](https://github.com/quantviews/CBR) |
+| Внешняя торговля Турции - загрузка данных | [turkey-foreign-trade](https://github.com/quantviews/turkey-foreign-trade) |
+| Веб-сервисы Банка России - получение рядов | [CBR](https://github.com/quantviews/CBR) |
 | Отчётность отдельных коммерческих банков с cbr.ru | [CBR-Banks](https://github.com/quantviews/CBR-Banks) |
-| Исполнение федерального бюджета РФ — обработка данных | [FederalBudget](https://github.com/quantviews/FederalBudget) |
+| Исполнение федерального бюджета РФ - обработка данных | [FederalBudget](https://github.com/quantviews/FederalBudget) |
 | Ипотека: данные Единой информационной системы жилищного строительства (Дом.РФ) | [russsian-mortgage-data](https://github.com/quantviews/russsian-mortgage-data) |
 | Ценовые индикаторы реального времени (ВТБ / РАНХиГС), обёртка для R | [RTPI](https://github.com/quantviews/RTPI) |
-| Финансовые данные в R — модификация пакета rusquant | [rusquant](https://github.com/quantviews/rusquant) |
-| Голосования Государственной думы — сбор и анализ | [Duma](https://github.com/quantviews/Duma) |
+| Финансовые данные в R - модификация пакета rusquant | [rusquant](https://github.com/quantviews/rusquant) |
+| Голосования Государственной думы - сбор и анализ | [Duma](https://github.com/quantviews/Duma) |
 | Рейтинг стран по эффективности противостояния COVID-19 | [covid-ranking](https://github.com/quantviews/covid-ranking) |
 
-Репозиторий `Duma` — тот самый, на котором выросла серия постов про работу Госдумы
+Репозиторий `Duma` - тот самый, на котором выросла серия постов про работу Госдумы
 в [архиве блога](posts.qmd).
 
-Сводная таблица по всем проектам — в [каталоге проектов](projects/index.qmd).
+Сводная таблица по всем проектам - в [каталоге проектов](projects/index.qmd).

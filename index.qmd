@@ -1,5 +1,5 @@
 ---
-pagetitle: "quantviews — Марсель Салихов"
+pagetitle: "quantviews - Марсель Салихов"
 page-layout: full
 listing:
   - id: recent-posts
