@@ -215,6 +215,28 @@ td, th {
   margin-right: 0.8rem;
 }
 
+/* Category chips on listing entries. Note this is `.listing-category` - the
+   rule above is the sidebar filter, a different element. */
+div.quarto-post .listing-categories .listing-category,
+.quarto-grid-item .listing-categories .listing-category,
+.listing-categories .listing-category {
+  border: none;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  margin-right: 0.85rem;
+  margin-bottom: 0.2rem;
+  color: #64748B;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.listing-categories {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
 #TOC {
   font-size: 0.86rem;
 }
