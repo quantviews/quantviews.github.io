@@ -12,7 +12,7 @@
 <generator>quarto-1.10.18</generator>
 <lastBuildDate>Tue, 05 May 2026 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>Зачем нужен quantviews</title>
+  <title>Про этот сайт: зачем он и как устроен</title>
   <dc:creator>Марсель Салихов</dc:creator>
   <link>https://quantviews.github.io/posts/2026-05-05-first-post/</link>
   <description><![CDATA[ 
@@ -21,64 +21,130 @@
 
 
 
-<section id="идея" class="level2">
-<h2 class="anchored" data-anchor-id="идея">Идея</h2>
-<p>quantviews - это личная площадка для публикации аналитических заметок, методологических материалов и технических решений.</p>
-</section>
-<section id="основные-направления" class="level2">
-<h2 class="anchored" data-anchor-id="основные-направления">Основные направления</h2>
+<p>Этот блог я завёл в апреле 2012 года на Blogspot. Писал про статистику ДТП, результаты голосований в Госдуме, пенсионную реформу, хитрости построения графиков в R и Excel. Потом писал всё реже, а к концу 2018-го перестал совсем: рабочих текстов стало много, а сил на ещё один канал — нет.</p>
+<p>Сейчас блог вернулся, уже на своём домене и на другом движке. Заодно я перетащил сюда весь архив. Ниже — зачем мне это и что выяснилось по дороге.</p>
+<section id="зачем-отдельная-площадка" class="level2">
+<h2 class="anchored" data-anchor-id="зачем-отдельная-площадка">Зачем отдельная площадка</h2>
+<p>У меня есть места, где выходят рабочие тексты: <a href="https://fief.ru/">сайт ИЭФ</a>, комментарии в СМИ, презентации на конференциях. Всё это — форматы с чужими рамками: объём, дедлайн, редактура, тема, которая интересна редакции.</p>
+<p>Личный сайт нужен для того, что в эти рамки не влезает:</p>
 <ul>
-<li>экономика и отраслевые рынки;</li>
-<li>данные и визуализация;</li>
-<li>финансовая аналитика;</li>
-<li>BI-инфраструктура;</li>
-<li>методологии индексов и расчетных показателей.</li>
+<li>заметки, которые слишком короткие для статьи и слишком длинные для поста в канале;</li>
+<li>методологические разборы — как именно считается индикатор и почему именно так;</li>
+<li>технические записи про инструменты: DuckDB, Superset, Quarto, R, Python;</li>
+<li>ссылки на <a href="../../projects/models.html">количественные модели</a>, которые мы делаем в ИЭФ, — с человеческим описанием, а не одной строкой в каталоге.</li>
 </ul>
+<p>Плюс чисто утилитарная задача: иметь одно место, куда можно дать ссылку, когда спрашивают «а где почитать, чем вы занимаетесь».</p>
 </section>
-<section id="пример-кода" class="level2">
-<h2 class="anchored" data-anchor-id="пример-кода">Пример кода</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+<section id="что-уцелело-из-архива" class="level2">
+<h2 class="anchored" data-anchor-id="что-уцелело-из-архива">Что уцелело из архива</h2>
+<p>Сорок два поста с 2012 по 2018 год. Распределение по годам говорит само за себя: 13 постов в 2012-м, 19 в 2013-м, а дальше единицы.</p>
+<p>Перечитывать собственные тексты десятилетней давности — занятие отрезвляющее. Часть постарела ожидаемо: разборы конкретных законопроектов интересны теперь разве что как слепок времени. Часть держится лучше, чем я думал, — например, история про то, <a href="../../posts/2017-03-03-pochemu-nam-kazhetsya-chto-ceny-rastut-bystree-inflyacii/">почему нам кажется, что цены растут быстрее инфляции</a>, или <a href="../../posts/2013-02-09-pro-bezopasnost-na-dorogah-ch-2-naskolko-raznye-strany/">разбор аварийности на дорогах</a> с межстрановыми сопоставлениями.</p>
+<p>Я ничего не переписывал и не подчищал задним числом. Тексты остались как были, включая прогнозы, которые не сбылись.</p>
+</section>
+<section id="что-ломается-при-переезде" class="level2">
+<h2 class="anchored" data-anchor-id="что-ломается-при-переезде">Что ломается при переезде</h2>
+<p>Вот это оказалось самой поучительной частью, поэтому остановлюсь подробнее. Если соберётесь вытаскивать свой блог с чужой платформы — имейте в виду.</p>
+<p><strong>Картинки живут не у вас.</strong> Все графики в старых постах лежали на <code>blogger.googleusercontent.com</code>. Пока блог на Blogspot, это незаметно. После переезда у вас сайт, который при каждом открытии ходит за картинками на инфраструктуру Google, и работает он ровно до тех пор, пока Google не решит иначе. Шестьдесят два изображения я выкачал и положил рядом с постами.</p>
+<p><strong>Часть картинок вернуть уже нельзя.</strong> Графики к трём колонкам, которые я писал для Slon, лежали на слоновском хостинге. Slon стал Republic, файлы не отдаются. Интерактивные визуализации по НПФ были собраны на Tableau Public — сервис их не хранит. Archive.org в нужный момент лежал и возвращал 429. Три поста, от которых без графиков остаётся пересказ чужой статьи, я удалил; в одном посте про пенсионные фонды вместо визуализаций теперь стоит пометка, что их больше нет.</p>
+<p>Мораль простая и неоригинальная: если материал вам дорог, файлы должны лежать у вас.</p>
+<p><strong>Экспорт даёт грязный текст.</strong> Blogspot отдаёт HTML, конвертер превращает его в Markdown, и в тексте остаются следы: ссылки, склеенные со следующим словом, потому что пробел уехал внутрь скобок; заголовок, проглотивший целый абзац и утащивший его в оглавление; якоря комментариев из Word, ведущие на <code>file:///G:/Dropbox/...</code> — то есть прямо на мой диск. Описания постов автоматика собрала из начала текста вместе с разметкой, и в анонсах красовалось что-то вроде «Первая часть(http://quantviews.blogspot.ru/…)».</p>
+<p><strong>Кириллица в адресах.</strong> Blogspot делал адреса из заголовков, так что на выходе получились директории вида <code>посты/про-безопасность-на-дорогах-ч-2/</code>. Работает, но в мессенджере такая ссылка разворачивается в полсотни процентов и знаков. Я перевёл все адреса на латиницу, а на старые повесил редиректы — они уже были проиндексированы, и ронять их нельзя.</p>
+</section>
+<section id="как-всё-устроено-сейчас" class="level2">
+<h2 class="anchored" data-anchor-id="как-всё-устроено-сейчас">Как всё устроено сейчас</h2>
+<p>Сайт собран на <a href="https://quarto.org">Quarto</a> — той же системе, в которой я делаю отчёты и презентации, так что отдельный движок изучать не пришлось. Исходники — обычные Markdown-файлы, пост это папка:</p>
+<pre><code>posts/2026-09-19-nazvanie-posta/
+  index.qmd       # текст и метаданные
+  images/         # картинки лежат рядом с текстом</code></pre>
+<p>Метаданные — в начале файла:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><span class="pp" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+font-style: inherit;">---</span></span>
+<span id="cb2-2"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">as</span> pd</span>
-<span id="cb1-2"></span>
-<span id="cb1-3">df <span class="op" style="color: #5E5E5E;
+font-style: inherit;">title</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-style: inherit;">=</span> pd.DataFrame({</span>
-<span id="cb1-4">    <span class="st" style="color: #20794D;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">"area"</span>: [<span class="st" style="color: #20794D;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Economics"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">"Заголовок"</span></span>
+<span id="cb2-3"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">"Finance"</span>, <span class="st" style="color: #20794D;
+font-style: inherit;">date</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-style: inherit;">"Data"</span>, <span class="st" style="color: #20794D;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">"BI"</span>],</span>
-<span id="cb1-5">    <span class="st" style="color: #20794D;
+font-style: inherit;"> 2026-09-19</span></span>
+<span id="cb2-4"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">"priority"</span>: [<span class="dv" style="color: #AD0000;
+font-style: inherit;">author</span><span class="kw" style="color: #003B4F;
 background-color: null;
-font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">4</span>, <span class="dv" style="color: #AD0000;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+font-style: inherit;">"Марсель Салихов"</span></span>
+<span id="cb2-5"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">4</span>]</span>
-<span id="cb1-6">})</span>
-<span id="cb1-7"></span>
-<span id="cb1-8">df</span></code></pre></div></div>
+font-style: inherit;">categories</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">[</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"макроэкономика"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"нефть"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">]</span></span>
+<span id="cb2-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">description</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Одно предложение для листинга и для анонса."</span></span>
+<span id="cb2-7"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span></code></pre></div></div>
+<p>Публикация: <code>git push</code> в основную ветку, дальше GitHub Actions собирает сайт и выкладывает на GitHub Pages. Отдельное действие видит, что добавился новый пост, и отправляет анонс в <a href="https://t.me/quantviews"><span class="citation" data-cites="quantviews">@quantviews</span></a> — ровно поэтому описание в метаданных стоит писать по-человечески.</p>
+<p>Выполнение кода внутри постов отключено намеренно. Расчёты живут в своих репозиториях, сюда попадают результаты. Иначе сборка сайта начинает зависеть от того, доступен ли сегодня очередной источник данных.</p>
+</section>
+<section id="про-оформление" class="level2">
+<h2 class="anchored" data-anchor-id="про-оформление">Про оформление</h2>
+<p>Ориентир — сайт социолога <a href="https://kieranhealy.org/">Кирана Хили</a>: почти нет рамок и плашек, структуру держат воздух и типографика. Отличие одно — у него текст с засечками, у меня без.</p>
+<p>Практический смысл тут не в эстетике. Каждая рамка, плашка и подложка — это шум, который читатель разбирает прежде, чем добраться до текста. На странице с графиками и таблицами такого шума и так хватает.</p>
+</section>
+<section id="что-дальше" class="level2">
+<h2 class="anchored" data-anchor-id="что-дальше">Что дальше</h2>
+<p>Разделы <a href="../../courses.html">«Курсы»</a> и <a href="../../notes.html">«Технические заметки»</a> пока стоят пустыми — там оглавление без содержимого. Это честная заявка, а не готовый материал.</p>
+<p>Ближайшие планы: разборы методологий по моделям ИЭФ, заметки по DuckDB и Superset из текущей работы и материалы к курсу «Количественные финансы», учебник по которому я сейчас пишу.</p>
+<p>Если наткнётесь на битую ссылку или пропавшую картинку — напишите на <a href="mailto:marcel.salikhov@gmail.com">marcel.salikhov@gmail.com</a>. После переезда такого наверняка осталось больше, чем я нашёл.</p>
 
 
 </section>
 
  ]]></description>
   <category>quarto</category>
-  <category>data</category>
-  <category>economics</category>
+  <category>инструменты</category>
+  <category>обработка данных</category>
   <guid>https://quantviews.github.io/posts/2026-05-05-first-post/</guid>
   <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
 </item>
