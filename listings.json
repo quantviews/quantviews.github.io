@@ -11,7 +11,7 @@
     ]
   },
   {
-    "listing": "/posts.html",
+    "listing": "/index.html",
     "items": [
       "/posts/2026-05-05-first-post/index.html",
       "/posts/2018-08-08-ozhidaemaya-prodolzhitelnost-zhizni-kakova-moya-veroyatnost/index.html",
@@ -33,10 +33,7 @@
       "/posts/2013-06-15-rezultaty-golosovaniya-dumy-po-anti-piratskomu-zakonu-p/index.html",
       "/posts/2013-06-13-raspisanie-podmoskovnyh-elektrichek-na-diagramme-mare-ma/index.html",
       "/posts/2013-06-12-zakon-ob-oskorblenii-chuvstv-veruyuschih-rezultaty-golosov/index.html",
-      "/posts/2013-05-06-statya-dlya-slona-skelety-v-shkafu-otchetnost-surgutnefte/index.html",
-      "/posts/2013-04-24-statya-dlya-slona-rosneft-ugrozhaet-gazpromu-pozhaluy/index.html",
       "/posts/2013-04-16-rezultaty-golosovaniya-v-gosudarstvennoy-dume-v-2012-go/index.html",
-      "/posts/2013-04-16-statya-dlya-slona-neft-urals-menshe-100-est-li-povod-d/index.html",
       "/posts/2013-04-11-rezultaty-golosovaniya-po-zakonoproektu-o-zaschite-chuvstv/index.html",
       "/posts/2013-03-01-rezultaty-golosovaniya-po-zakonu-207-fz/index.html",
       "/posts/2013-02-27-rabota-gosudarstvennoy-dumy-rf-v-2012-godu/index.html",
@@ -72,7 +69,7 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/posts.html",
     "items": [
       "/posts/2026-05-05-first-post/index.html",
       "/posts/2018-08-08-ozhidaemaya-prodolzhitelnost-zhizni-kakova-moya-veroyatnost/index.html",
@@ -94,10 +91,7 @@
       "/posts/2013-06-15-rezultaty-golosovaniya-dumy-po-anti-piratskomu-zakonu-p/index.html",
       "/posts/2013-06-13-raspisanie-podmoskovnyh-elektrichek-na-diagramme-mare-ma/index.html",
       "/posts/2013-06-12-zakon-ob-oskorblenii-chuvstv-veruyuschih-rezultaty-golosov/index.html",
-      "/posts/2013-05-06-statya-dlya-slona-skelety-v-shkafu-otchetnost-surgutnefte/index.html",
-      "/posts/2013-04-24-statya-dlya-slona-rosneft-ugrozhaet-gazpromu-pozhaluy/index.html",
       "/posts/2013-04-16-rezultaty-golosovaniya-v-gosudarstvennoy-dume-v-2012-go/index.html",
-      "/posts/2013-04-16-statya-dlya-slona-neft-urals-menshe-100-est-li-povod-d/index.html",
       "/posts/2013-04-11-rezultaty-golosovaniya-po-zakonoproektu-o-zaschite-chuvstv/index.html",
       "/posts/2013-03-01-rezultaty-golosovaniya-po-zakonu-207-fz/index.html",
       "/posts/2013-02-27-rabota-gosudarstvennoy-dumy-rf-v-2012-godu/index.html",
