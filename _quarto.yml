@@ -37,7 +37,7 @@ website:
         href: posts.qmd
       - text: "Проекты"
         href: projects.qmd
-      - text: "Курсы"
+      - text: "Преподавание"
         href: courses.qmd
       - text: "Выступления"
         href: talks.qmd
