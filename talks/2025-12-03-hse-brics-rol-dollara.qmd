@@ -1,5 +1,7 @@
 ---
 title: "Смена якоря? Будущее роли доллара глазами мирового большинства"
+image: /assets/covers/2025-12-03-hse-brics-rol-dollara.png
+image-alt: "Титульный слайд выступления"
 date: 2025-12-03
 subtitle: "НИУ ВШЭ · XIII конференция по мировой экономике"
 categories: [talk, global-economy, brics, dollar]

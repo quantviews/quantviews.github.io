@@ -1,5 +1,7 @@
 ---
 title: "Стратегическая автономия ЕС в энергетике: реальность или фикция?"
+image: /assets/covers/2024-04-24-strategicheskaya-avtonomiya-es.png
+image-alt: "Титульный слайд выступления"
 date: 2024-04-24
 subtitle: "Центр экономической экспертизы ИГМУ НИУ ВШЭ · Москва"
 categories: [talk, energy, eu, gas]

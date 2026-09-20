@@ -1,5 +1,7 @@
 ---
 title: "Нефтесервис в России - как помочь помощнику отрасли?"
+image: /assets/covers/2025-10-16-ren-nefteservis.png
+image-alt: "Титульный слайд выступления"
 date: 2025-10-16
 subtitle: "Российская энергетическая неделя · деловая программа"
 categories: [talk, energy, oil, oilfield-services]

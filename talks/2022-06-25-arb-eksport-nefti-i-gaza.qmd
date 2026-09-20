@@ -1,5 +1,7 @@
 ---
 title: "Перспективы экспорта российских нефти и газа в условиях санкционного давления"
+image: /assets/covers/2022-06-25-arb-eksport-nefti-i-gaza.png
+image-alt: "Титульный слайд выступления"
 date: 2022-06-25
 subtitle: "Ассоциация российских банков · рабочий завтрак"
 categories: [talk, energy, oil, gas, sanctions]

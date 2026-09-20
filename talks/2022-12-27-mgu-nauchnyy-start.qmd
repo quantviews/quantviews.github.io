@@ -1,5 +1,7 @@
 ---
 title: "Научный старт: семинар об исследовательской карьере"
+image: /assets/covers/2022-12-27-mgu-nauchnyy-start.png
+image-alt: "Титульный слайд выступления"
 date: 2022-12-27
 subtitle: "Экономический факультет МГУ · Москва"
 categories: [talk, research, career]

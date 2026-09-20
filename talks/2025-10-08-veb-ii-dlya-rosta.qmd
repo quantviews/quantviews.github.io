@@ -1,5 +1,7 @@
 ---
 title: "ИИ для роста: что будет дальше"
+image: /assets/covers/2025-10-08-veb-ii-dlya-rosta.png
+image-alt: "Титульный слайд выступления"
 date: 2025-10-08
 subtitle: "Клуб молодых экономистов ВЭБ.РФ"
 categories: [talk, ai, economics, productivity]

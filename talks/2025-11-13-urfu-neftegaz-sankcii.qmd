@@ -1,5 +1,7 @@
 ---
 title: "Развитие нефтегазового сектора России в условиях санкций"
+image: /assets/covers/2025-11-13-urfu-neftegaz-sankcii.png
+image-alt: "Титульный слайд выступления"
 date: 2025-11-13
 subtitle: "УрФУ, Екатеринбург · «Российские регионы в фокусе перемен»"
 categories: [talk, energy, oil, sanctions, oilfield-services]

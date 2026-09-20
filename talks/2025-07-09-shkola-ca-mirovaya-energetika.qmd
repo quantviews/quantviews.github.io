@@ -1,5 +1,7 @@
 ---
 title: "Основные тенденции и вызовы в мировой энергетике"
+image: /assets/covers/2025-07-09-shkola-ca-mirovaya-energetika.png
+image-alt: "Титульный слайд выступления"
 date: 2025-07-09
 subtitle: "Школа по Центральной Азии · Москва"
 categories: [talk, energy, global-markets]

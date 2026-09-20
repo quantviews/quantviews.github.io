@@ -1,5 +1,7 @@
 ---
 title: "«Зелёная повестка» в Центральной Азии: ВИЭ, АЭС и трансграничная водная дипломатия"
+image: /assets/covers/2025-07-11-shkola-ca-zelenaya-povestka.png
+image-alt: "Титульный слайд выступления"
 date: 2025-07-11
 subtitle: "Школа по Центральной Азии · Иссык-Куль"
 categories: [talk, energy, central-asia, renewables, nuclear]

@@ -1,5 +1,7 @@
 ---
 title: "Что ждёт нефтегазовый сектор РФ?"
+image: /assets/covers/2024-11-05-urfu-chto-zhdet-neftegaz.png
+image-alt: "Титульный слайд выступления"
 date: 2024-11-05
 subtitle: "УрФУ, Екатеринбург · «Российские регионы в фокусе перемен»"
 categories: [talk, energy, oil, gas, regions]

@@ -1,5 +1,7 @@
 ---
 title: "Будущее российских нефтегазовых рынков и индустрий: адаптация к новым вызовам"
+image: /assets/covers/2024-12-04-tyumen-gubernatorskie-chteniya.png
+image-alt: "Титульный слайд выступления"
 date: 2024-12-04
 subtitle: "Губернаторские чтения · Тюмень"
 categories: [talk, energy, oil, gas, regions]

@@ -1,5 +1,7 @@
 ---
 title: "Опыт России в предотвращении энергетических кризисов: безопасность, эффективность, диверсификация"
+image: /assets/covers/2024-12-17-tehran-energy-crises.png
+image-alt: "Титульный слайд выступления"
 date: 2024-12-17
 subtitle: "10th Iranian Petroleum and Energy Club Congress · Тегеран"
 categories: [talk, energy, security, iran]

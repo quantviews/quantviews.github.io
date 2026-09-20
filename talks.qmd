@@ -7,7 +7,7 @@ listing:
   sort: "date desc"
   type: grid
   grid-columns: 3
-  image-height: "180px"
+  image-height: "170px"
   fields: [image, date, title, subtitle, description]
   date-format: "D MMMM YYYY"
   filter-ui: false

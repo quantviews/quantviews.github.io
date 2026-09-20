@@ -1,5 +1,7 @@
 ---
 title: "Ядерная энергетика и переход к экологически чистым источникам"
+image: /assets/covers/2025-10-20-primakov-yadernaya-energetika.png
+image-alt: "Титульный слайд выступления"
 date: 2025-10-20
 subtitle: "Центр Примакова, Москва · «Мирный атом: диалог доверия и партнёрства»"
 categories: [talk, energy, nuclear, electricity]

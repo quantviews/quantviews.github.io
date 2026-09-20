@@ -1,5 +1,7 @@
 ---
 title: "Выступление: Энергорынки и макроэкономическая динамика"
+image: /assets/covers/2026-04-18-energy-forum.png
+image-alt: "Титульный слайд выступления"
 date: 2026-04-18
 subtitle: "Отраслевой форум по энергетике"
 categories: [talk, energy, macroeconomics]

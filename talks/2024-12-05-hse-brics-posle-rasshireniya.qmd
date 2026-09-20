@@ -1,5 +1,7 @@
 ---
 title: "Голос мирового большинства: БРИКС через год после расширения"
+image: /assets/covers/2024-12-05-hse-brics-posle-rasshireniya.png
+image-alt: "Титульный слайд выступления"
 date: 2024-12-05
 subtitle: "НИУ ВШЭ · XII конференция по мировой экономике"
 categories: [talk, global-economy, brics]

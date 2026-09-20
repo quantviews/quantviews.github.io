@@ -1,5 +1,7 @@
 ---
 title: "Технологический суверенитет в газовой отрасли: реальный опыт компаний"
+image: /assets/covers/2024-10-10-tehnologicheskiy-suverenitet-gaz.png
+image-alt: "Титульный слайд выступления"
 date: 2024-10-10
 subtitle: "Центр экономической экспертизы ИГМУ НИУ ВШЭ"
 categories: [talk, energy, gas, technology, import-substitution]

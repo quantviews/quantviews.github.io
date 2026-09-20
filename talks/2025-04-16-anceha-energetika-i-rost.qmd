@@ -1,5 +1,7 @@
 ---
 title: "Энергетический сектор как фактор устойчивости и ограничений экономического роста России"
+image: /assets/covers/2025-04-16-anceha-energetika-i-rost.png
+image-alt: "Титульный слайд выступления"
 date: 2025-04-16
 subtitle: "АНЦЭА · круглый стол"
 categories: [talk, energy, macroeconomics]
