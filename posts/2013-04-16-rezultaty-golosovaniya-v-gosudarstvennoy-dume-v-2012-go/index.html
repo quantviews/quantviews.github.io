@@ -28,6 +28,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -448,47 +483,46 @@ ul.task-list li input[type="checkbox"] {
 Тот же график только с фамилиями - на кластерах они сливаются, но по выделяющимся точкам легко определить фамилию:</p>
 <p><img src="images/08-mds-2012-names.png" class="img-fluid"></p>
 <p>Вот исходный код для MDS-кластеризации:</p>
-<pre><code># Многомерное шкалирование для анализа результатов голосования в ГД РФ за 2012 года 
-[require](http://inside-r.org/r-doc/base/require)(reshape2)
-[require](http://inside-r.org/r-doc/base/require)([ggplot2](http://inside-r.org/packages/cran/ggplot2))
-# Функция, траснформирующая количественные коды голосования в факторы 
-SimplifyVotes &lt;- [function](http://inside-r.org/r-doc/base/function)(result){
-  res.q &lt;- [vector](http://inside-r.org/r-doc/base/vector)([length](http://inside-r.org/r-doc/base/length) = [length](http://inside-r.org/r-doc/base/length)(result))
-  res.q &lt;- [ifelse](http://inside-r.org/r-doc/base/ifelse)(result == 'за', 1, res.q)
-  res.q &lt;- [ifelse](http://inside-r.org/r-doc/base/ifelse)(result == 'возд', 0, res.q)
-  res.q &lt;- [ifelse](http://inside-r.org/r-doc/base/ifelse)(result == 'не голосовал', -1, res.q)
-  res.q &lt;- [ifelse](http://inside-r.org/r-doc/base/ifelse)(result == 'против', -1, res.q)
-  [return](http://inside-r.org/r-doc/base/return)(res.q)
-}
-
-#загрузить данные 
-all.votes &lt;- [read.csv](http://inside-r.org/r-doc/utils/read.csv)([file](http://inside-r.org/r-doc/base/file)='data4export/votes2012.csv')
-laws.2012 &lt;- [read.csv](http://inside-r.org/r-doc/utils/read.csv)([file](http://inside-r.org/r-doc/base/file)='data4export/laws2012.csv')
-depDuma &lt;- [read.csv](http://inside-r.org/r-doc/utils/read.csv)([file](http://inside-r.org/r-doc/base/file) = 'data/DeputatDuma.csv', stringsAsFactors = FALSE)
-
-all.votes$res.q &lt;- SimplifyVotes(all.votes$result)
-v.unique &lt;- unique.data.frame(all.votes) #почему то есть повторения в исходных данных - убираем их
-
-rollcall &lt;- dcast([data](http://inside-r.org/r-doc/utils/data) = v.unique[, [c](http://inside-r.org/r-doc/base/c)('id', 'url','res.q')], id ~ [url](http://inside-r.org/r-doc/base/url), fun.aggregate= [sum](http://inside-r.org/r-doc/base/sum))
-[row.names](http://inside-r.org/r-doc/base/row.names)(rollcall) &lt;- rollcall$id #присвоить названия столбцам 
-rollcall &lt;- rollcall[, -1] #убрать из матрицы коды депутатов 
-rollcall &lt;- [as.matrix](http://inside-r.org/r-doc/base/as.matrix)(rollcall) 
-
-rollcall.dist &lt;- [dist](http://inside-r.org/r-doc/stats/dist)(rollcall %*% [t](http://inside-r.org/r-doc/base/t)(rollcall)) #рассчитать матрицу расстояний 
-rollcall.mds &lt;- [as.data.frame](http://inside-r.org/r-doc/base/as.data.frame)([cmdscale](http://inside-r.org/r-doc/stats/cmdscale)(rollcall.dist,k=2)) # провести кластеризацию 
-
-[names](http://inside-r.org/r-doc/base/names)(rollcall.mds) &lt;- [c](http://inside-r.org/r-doc/base/c)('x', 'y')
-rollcall.mds$id &lt;- [row.names](http://inside-r.org/r-doc/base/row.names)(rollcall)
-sname &lt;- [strsplit](http://inside-r.org/r-doc/base/strsplit)([as.character](http://inside-r.org/r-doc/base/as.character)(depDuma$name), ' ') # добавить к матрице фамилии депутатов 
-depDuma$sname &lt;- [sapply](http://inside-r.org/r-doc/base/sapply)(sname, [function](http://inside-r.org/r-doc/base/function)(x){ paste0(x[[1]], ' ', [substr](http://inside-r.org/r-doc/base/substr)(x[[2]],1,1),'.', [substr](http://inside-r.org/r-doc/base/substr)(x[[3]],1,1),'.')})
-rollcall.mds &lt;- [merge](http://inside-r.org/r-doc/base/merge)(rollcall.mds, depDuma, [by](http://inside-r.org/r-doc/base/by) = 'id') 
-# построить график с помощью ggplot2 
-
-p &lt;- [ggplot](http://inside-r.org/packages/cran/ggplot)([data](http://inside-r.org/r-doc/utils/data) = [subset](http://inside-r.org/r-doc/base/subset)(rollcall.mds), aes(x=x, y=y, [group](http://inside-r.org/r-doc/grDevices/group) = [party](http://inside-r.org/packages/cran/party)))+scale_size([range](http://inside-r.org/r-doc/base/range)=[c](http://inside-r.org/r-doc/base/c)(2,2))
-p+geom_jitter(aes(color = [party](http://inside-r.org/packages/cran/party)))+ief.theme+
-  scale_colour_manual(name = '', values = [c](http://inside-r.org/r-doc/base/c)('ЕР' = '#4d6b8d', 'КПРФ' = '#bf0d0d', 
-                                            'ЛДПР' = '#fad000', 'СР' = '#e6871d' ))+</code></pre>
-<p><a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Многомерное шкалирование для анализа результатов голосования в ГД РФ за 2012 года</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(reshape2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Функция, траснформирующая количественные коды голосования в факторы</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>SimplifyVotes <span class="ot">&lt;-</span> <span class="cf">function</span>(result){</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  res.q <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="fu">length</span>(result))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  res.q <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(result <span class="sc">==</span> <span class="st">'за'</span>, <span class="dv">1</span>, res.q)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  res.q <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(result <span class="sc">==</span> <span class="st">'возд'</span>, <span class="dv">0</span>, res.q)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  res.q <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(result <span class="sc">==</span> <span class="st">'не голосовал'</span>, <span class="sc">-</span><span class="dv">1</span>, res.q)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  res.q <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(result <span class="sc">==</span> <span class="st">'против'</span>, <span class="sc">-</span><span class="dv">1</span>, res.q)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(res.q)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#загрузить данные</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>all.votes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">'data4export/votes2012.csv'</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>laws<span class="fl">.2012</span> <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">'data4export/laws2012.csv'</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>depDuma <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'data/DeputatDuma.csv'</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>all.votes<span class="sc">$</span>res.q <span class="ot">&lt;-</span> <span class="fu">SimplifyVotes</span>(all.votes<span class="sc">$</span>result)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>v.unique <span class="ot">&lt;-</span> <span class="fu">unique.data.frame</span>(all.votes) <span class="co">#почему то есть повторения в исходных данных - убираем их</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>rollcall <span class="ot">&lt;-</span> <span class="fu">dcast</span>(<span class="at">data =</span> v.unique, [<span class="fu">c</span>(<span class="st">'id'</span>, <span class="st">'url'</span>,<span class="st">'res.q'</span>)], id <span class="sc">~</span> url, <span class="at">fun.aggregate=</span> sum)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(rollcall) <span class="ot">&lt;-</span> rollcall<span class="sc">$</span>id <span class="co">#присвоить названия столбцам</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>rollcall <span class="ot">&lt;-</span> rollcall[, <span class="sc">-</span><span class="dv">1</span>] <span class="co">#убрать из матрицы коды депутатов</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>rollcall <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(rollcall)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>rollcall.dist <span class="ot">&lt;-</span> <span class="fu">dist</span>(rollcall <span class="sc">%*%</span> <span class="fu">t</span>(rollcall)) <span class="co">#рассчитать матрицу расстояний</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>rollcall.mds <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cmdscale</span>(rollcall.dist,<span class="at">k=</span><span class="dv">2</span>)) <span class="co"># провести кластеризацию</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(rollcall.mds) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'x'</span>, <span class="st">'y'</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>rollcall.mds<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="fu">row.names</span>(rollcall)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>sname <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(<span class="fu">as.character</span>(depDuma<span class="sc">$</span>name), <span class="st">' '</span>) <span class="co"># добавить к матрице фамилии депутатов</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>depDuma<span class="sc">$</span>sname <span class="ot">&lt;-</span> <span class="fu">sapply</span>(sname, <span class="cf">function</span>(x){ <span class="fu">paste0</span>(x[[<span class="dv">1</span>]], <span class="st">' '</span>, <span class="fu">substr</span>(x[[<span class="dv">2</span>]],<span class="dv">1</span>,<span class="dv">1</span>),<span class="st">'.'</span>, <span class="fu">substr</span>(x[[<span class="dv">3</span>]],<span class="dv">1</span>,<span class="dv">1</span>),<span class="st">'.'</span>)})</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>rollcall.mds <span class="ot">&lt;-</span> <span class="fu">merge</span>(rollcall.mds, depDuma, <span class="at">by =</span> <span class="st">'id'</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># построить график с помощью ggplot2</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(rollcall.mds), <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">group =</span> party))<span class="sc">+</span><span class="fu">scale_size</span>(<span class="at">range=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>p<span class="sc">+</span><span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">color =</span> party))<span class="sc">+</span>ief.theme<span class="sc">+</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">name =</span> <span class="st">''</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">'ЕР'</span> <span class="ot">=</span> <span class="st">'#4d6b8d'</span>, <span class="st">'КПРФ'</span> <span class="ot">=</span> <span class="st">'#bf0d0d'</span>,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'ЛДПР'</span> <span class="ot">=</span> <span class="st">'#fad000'</span>, <span class="st">'СР'</span> <span class="ot">=</span> <span class="st">'#e6871d'</span> ))<span class="sc">+</span></span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Полные коды доступны в <a href="https://github.com/quantviews/Duma">репозитарии</a> на github - правда в черновом пока виде.</p>
 
 

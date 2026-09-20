@@ -28,6 +28,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -435,76 +470,106 @@ ul.task-list li input[type="checkbox"] {
 Это мой второй опыт самостоятельного рисования в d3 (первый - карты хороплет для РФ). Поэтому я основывался на готовом примере Майка, но несколько видоизменил его для своих данных и дополнил дополнительными интерактивными элементами.<br>
 Вариант с этими “плюшечками” занимает около 300 строк кода, но вполне возможно, потому что я использовал не самые оптимальные конструкции.</p>
 <p>Основная “рабочая” функция преобразует матрицу поезда-станции и преобразует ее в JS-объект. На основе этого объекта собственно и строится вся графическая составляющая.</p>
-<pre><code>function type(d, i) {
-
-  // Extract the stations from the "stop|*" columns.
-  if (!i) for (var k in d) {
-    if (/^stop\|/.test(k)) {
-      var p = k.split("|");
-      stations.push({
-        key: k,
-        name: p[1],
-        distance: +p[2],
-        zone: +p[3]
-      });
-    }
-  }
-
-  return {
-    number: d.number,
-    type: d.type,
-    direction: d.direction,
-    stops: stations</code></pre>
-<p>.map(function(s) { return {station: s, time: parseTime(d[s.key])}; }) .filter(function(s) { return s.time!= null; }) };</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">type</span>(d<span class="op">,</span> i) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Extract the stations from the "stop|*" columns.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>i) <span class="cf">for</span> (<span class="kw">var</span> k <span class="kw">in</span> d) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="ss">/</span><span class="sc">^</span><span class="ss">stop</span><span class="sc">\|</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(k)) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> p <span class="op">=</span> k<span class="op">.</span><span class="fu">split</span>(<span class="st">"|"</span>)<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      stations<span class="op">.</span><span class="fu">push</span>({</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">key</span><span class="op">:</span> k<span class="op">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">name</span><span class="op">:</span> p[<span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">distance</span><span class="op">:</span> <span class="op">+</span>p[<span class="dv">2</span>]<span class="op">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">zone</span><span class="op">:</span> <span class="op">+</span>p[<span class="dv">3</span>]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">number</span><span class="op">:</span> d<span class="op">.</span><span class="at">number</span><span class="op">,</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">type</span><span class="op">:</span> d<span class="op">.</span><span class="at">type</span><span class="op">,</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">direction</span><span class="op">:</span> d<span class="op">.</span><span class="at">direction</span><span class="op">,</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">stops</span><span class="op">:</span> stations</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">map</span>(<span class="kw">function</span>(s) { <span class="cf">return</span> {<span class="dt">station</span><span class="op">:</span> s<span class="op">,</span> <span class="dt">time</span><span class="op">:</span> <span class="fu">parseTime</span>(d[s<span class="op">.</span><span class="at">key</span>])}<span class="op">;</span> })</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(s) { <span class="cf">return</span> s<span class="op">.</span><span class="at">time</span><span class="op">!=</span> <span class="kw">null</span><span class="op">;</span> })</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="информационное-окно" class="level4">
 <h4 class="anchored" data-anchor-id="информационное-окно">Информационное окно</h4>
 <p>В дополнении примеру Майка я добавил еще всплывающее окошко, которое появляется при наведении мышкой на любую круг - станцию. Делается это с помощью простого event-listener, реагирующего на mouseover.</p>
-<pre><code>train.selectAll("circle")</code></pre>
-<p>.data(function(d) { return d.stops; }) .enter().append(“circle”) .attr(“transform”, function(d) { return “translate(” + x(d.time) + “,” + y(d.station.distance) + “)”; }) .attr(“r”, 3) .on(“mouseover”, function(d) { var xPosition = x(d.time)+margin.left + margin.right; var yPosition = y(d.station.distance);</p>
-<pre><code>      d3.select("#tooltip")</code></pre>
-<p>.style(“left”, xPosition + “px”) .style(“top”, yPosition + “px”)<br>
-.select(“#stations”) .text(d.station.name); d3.select(“#tooltip”) .select(“#time”) .text(formatTime(d.time)); d3.select(“#tooltip”).classed(“hidden”, false);</p>
-<pre><code>            })</code></pre>
-<p>.on(“mouseout”, function() { d3.select(“#tooltip”).classed(“hidden”, true); });</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>train<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">data</span>(<span class="kw">function</span>(d) { <span class="cf">return</span> d<span class="op">.</span><span class="at">stops</span><span class="op">;</span> })</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">enter</span>()<span class="op">.</span><span class="fu">append</span>(<span class="st">"circle"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="kw">function</span>(d) { <span class="cf">return</span> <span class="st">"translate("</span> <span class="op">+</span> <span class="fu">x</span>(d<span class="op">.</span><span class="at">time</span>) <span class="op">+</span> <span class="st">","</span> <span class="op">+</span> <span class="fu">y</span>(d<span class="op">.</span><span class="at">station</span><span class="op">.</span><span class="at">distance</span>) <span class="op">+</span> <span class="st">")"</span><span class="op">;</span> })</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> <span class="dv">3</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">on</span>(<span class="st">"mouseover"</span><span class="op">,</span> <span class="kw">function</span>(d) {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">var</span> xPosition <span class="op">=</span> <span class="fu">x</span>(d<span class="op">.</span><span class="at">time</span>)<span class="op">+</span>margin<span class="op">.</span><span class="at">left</span> <span class="op">+</span> margin<span class="op">.</span><span class="at">right</span><span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">var</span> yPosition <span class="op">=</span> <span class="fu">y</span>(d<span class="op">.</span><span class="at">station</span><span class="op">.</span><span class="at">distance</span>)<span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      d3<span class="op">.</span><span class="fu">select</span>(<span class="st">"#tooltip"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">style</span>(<span class="st">"left"</span><span class="op">,</span> xPosition <span class="op">+</span> <span class="st">"px"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">style</span>(<span class="st">"top"</span><span class="op">,</span> yPosition <span class="op">+</span> <span class="st">"px"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">select</span>(<span class="st">"#stations"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">text</span>(d<span class="op">.</span><span class="at">station</span><span class="op">.</span><span class="at">name</span>)<span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      d3<span class="op">.</span><span class="fu">select</span>(<span class="st">"#tooltip"</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">select</span>(<span class="st">"#time"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">text</span>(<span class="fu">formatTime</span>(d<span class="op">.</span><span class="at">time</span>))<span class="op">;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      d3<span class="op">.</span><span class="fu">select</span>(<span class="st">"#tooltip"</span>)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            })</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">on</span>(<span class="st">"mouseout"</span><span class="op">,</span>  <span class="kw">function</span>() {</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>                    d3<span class="op">.</span><span class="fu">select</span>(<span class="st">"#tooltip"</span>)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                          })<span class="op">;</span></span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Соответственно объект tooltip то появляется и наполняется информационным содержанием (название станции и время прибытия поезда на эту станцию), то исчезает.</p>
 </section>
 <section id="выбор-направления" class="level4">
 <h4 class="anchored" data-anchor-id="выбор-направления">Выбор направления</h4>
 <p>В исходном примере Майка отображается только одно направление, я же хотел, чтобы была возможность посмотреть оба направления одновременно, а также по отдельности. Это делается с помощью отдельной формы и функции, которая реагирует на изменение этой формы.</p>
-<pre><code>d3.selectAll("input[name=f_direction]")</code></pre>
-<p>.on(“change”, function(){ cur_direction = this.id; if (this.id == ‘moscow’){ d3.selectAll(“.moscow”).classed(“hidden”, false); d3.selectAll(“.oblast”).classed(“hidden”, true); } if (this.id == ‘oblast’){ d3.selectAll(“.moscow”).classed(“hidden”, true); d3.selectAll(“.oblast”).classed(“hidden”, false); } })</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"input[name=f_direction]"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">on</span>(<span class="st">"change"</span><span class="op">,</span> <span class="kw">function</span>(){</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    cur_direction <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">id</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">id</span> <span class="op">==</span> <span class="st">'moscow'</span>){</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".moscow"</span>)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".oblast"</span>)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>           }</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">id</span> <span class="op">==</span> <span class="st">'oblast'</span>){</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".moscow"</span>)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".oblast"</span>)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>           }</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  })</span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Соответственно все объекта класса “oblast” или “moscow” показываются, либо скрываются от зрителя. Переменная cur_direction нужна для того, чтобы правильно реагировать на выбор для недели, когда направление уже выбрано.</p>
 </section>
 <section id="выбор-дня-недели" class="level4">
 <h4 class="anchored" data-anchor-id="выбор-дня-недели">Выбор дня недели</h4>
 <p>Исходные данные имеют для каждого поезда его тип: ежедневно, по выходным, по рабочим, кроме суббот, кроме воскресений, отменен. Но пользователя на самом деле интересует какие поезда идут в конкретный день, поэтому я решил целесообразнее предоставить выбор для недели и в зависимости от этого рисовать нужные поезда. Соответственно, поезд, который ходит в режим “кроме воскресений” не будет отображаться в при выборе воскресенья. При выборе субботы или воскресенья также не будут показываться электрички, которые ходят по рабочим дням.</p>
 <p>Реализация этой логики сделана топорным if:) Отмененные электрички (красным цветом) должны отображаться при любом раскладе</p>
-<pre><code>d3.selectAll("input[name=type_train]")</code></pre>
-<p>.on(“change”, function(){</p>
-<pre><code>      if (this.id == 'working'){
-        d3.selectAll(".daily"+"."+cur_direction).classed("hidden", false);
-        d3.selectAll(".working"+"."+cur_direction).classed("hidden", false);
-        d3.selectAll(".weekend"+"."+cur_direction).classed("hidden", true);
-        d3.selectAll(".ex_saturday"+"."+cur_direction).classed("hidden", true);
-        d3.selectAll(".ex_sunday"+"."+cur_direction).classed("hidden", true);
-      }
-      if (this.id == 'saturday'){
-        d3.selectAll(".daily"+"."+cur_direction).classed("hidden", false);
-        d3.selectAll(".working"+"."+cur_direction).classed("hidden", true);
-        d3.selectAll(".weekend"+"."+cur_direction).classed("hidden", false);
-        d3.selectAll(".ex_saturday"+"."+cur_direction).classed("hidden", true);
-        d3.selectAll(".ex_sunday"+"."+cur_direction).classed("hidden", false);
-      }  
-
-      if (this.id == 'sunday'){
-        d3.selectAll(".daily"+"."+cur_direction).classed("hidden", false);
-        d3.selectAll(".working"+"."+cur_direction).classed("hidden", true);
-        d3.selectAll(".weekend"+"."+cur_direction).classed("hidden", false);
-        d3.selectAll(".ex_saturday"+"."+cur_direction).classed("hidden", false);
-        d3.selectAll(".ex_sunday"+"."+cur_direction).classed("hidden", true);
-      }  
-  })</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"input[name=type_train]"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">on</span>(<span class="st">"change"</span><span class="op">,</span> <span class="kw">function</span>(){</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">id</span> <span class="op">==</span> <span class="st">'working'</span>){</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".daily"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".working"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".weekend"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".ex_saturday"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".ex_sunday"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">id</span> <span class="op">==</span> <span class="st">'saturday'</span>){</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".daily"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".working"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".weekend"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".ex_saturday"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".ex_sunday"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">id</span> <span class="op">==</span> <span class="st">'sunday'</span>){</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".daily"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".working"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".weekend"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".ex_saturday"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        d3<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">".ex_sunday"</span><span class="op">+</span><span class="st">"."</span><span class="op">+</span>cur_direction)<span class="op">.</span><span class="fu">classed</span>(<span class="st">"hidden"</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  })</span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Вот вроде бы и все. Буду рад услышать любые комментарии по оптимальном представления расписания и на сколько это вообще удобно. Как я понимаю, люди, которые ездят на электричках помнят расписание в пределах нужного часа-двух наизусть и в принципе не слишком нуждаются в графической визуализации. Я, к примеру, езжу на электричках изредка, и оно мне кажется удобным.</p>
 
 
