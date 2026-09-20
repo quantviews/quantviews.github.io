@@ -59,16 +59,6 @@
     ]
   },
   {
-    "listing": "/media.html",
-    "items": [
-      "/media/2026-06-18-versiya-tehnologicheskoe-liderstvo.html",
-      "/media/2026-05-01-business-online-neft-150.html",
-      "/media/2026-04-09-izvestiya-persidsky-zaliv.html",
-      "/media/2026-03-12-media-comment.html",
-      "/media/2025-10-01-tek-tok-federalnyy-byudzhet-2026.html"
-    ]
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/posts/2026-05-05-first-post/index.html",
@@ -114,6 +104,17 @@
       "/posts/2012-05-02-nechetkoe-sravnenie-strok-fuzzy-string-match-v-excel-s-p/index.html",
       "/posts/2012-04-26-makros-excel-dlya-preobrazovaniya-tablic-v-vid-prigodnyy/index.html",
       "/posts/2012-04-25-kazhdyy-iz-nas-mozhet-prognozirovat-kurs-rublya-luchshe-chem/index.html"
+    ]
+  },
+  {
+    "listing": "/media.html",
+    "items": [
+      "/media/2026-09-16-veb-rynok-i-mobilizaciya.html",
+      "/media/2026-06-18-versiya-tehnologicheskoe-liderstvo.html",
+      "/media/2026-05-01-business-online-neft-150.html",
+      "/media/2026-04-09-izvestiya-persidsky-zaliv.html",
+      "/media/2026-03-12-media-comment.html",
+      "/media/2025-10-01-tek-tok-federalnyy-byudzhet-2026.html"
     ]
   }
 ]
