@@ -90,6 +90,10 @@ format:
     include-in-header:
       - text: |
           <meta name="yandex-verification" content="4a520f9610b63692" />
+    # counter goes at the start of <body>: its <noscript> carries a <div>,
+    # which is not valid inside <head>
+    include-before-body:
+      - assets/metrika.html
     grid:
       body-width: 700px
       sidebar-width: 220px
