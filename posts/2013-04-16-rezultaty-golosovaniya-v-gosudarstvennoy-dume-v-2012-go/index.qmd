@@ -106,49 +106,51 @@ _Я[выложил](https://drive.google.com/folderview?id=0BwmSbblXaJ73OURJczJF
 
   
   
-    # Многомерное шкалирование для анализа результатов голосования в ГД РФ за 2012 года 
-    [require](http://inside-r.org/r-doc/base/require)(reshape2)
-    [require](http://inside-r.org/r-doc/base/require)([ggplot2](http://inside-r.org/packages/cran/ggplot2))
-    # Функция, траснформирующая количественные коды голосования в факторы 
-    SimplifyVotes <- [function](http://inside-r.org/r-doc/base/function)(result){
-      res.q <- [vector](http://inside-r.org/r-doc/base/vector)([length](http://inside-r.org/r-doc/base/length) = [length](http://inside-r.org/r-doc/base/length)(result))
-      res.q <- [ifelse](http://inside-r.org/r-doc/base/ifelse)(result == 'за', 1, res.q)
-      res.q <- [ifelse](http://inside-r.org/r-doc/base/ifelse)(result == 'возд', 0, res.q)
-      res.q <- [ifelse](http://inside-r.org/r-doc/base/ifelse)(result == 'не голосовал', -1, res.q)
-      res.q <- [ifelse](http://inside-r.org/r-doc/base/ifelse)(result == 'против', -1, res.q)
-      [return](http://inside-r.org/r-doc/base/return)(res.q)
-    }
-  
-    #загрузить данные 
-    all.votes <- [read.csv](http://inside-r.org/r-doc/utils/read.csv)([file](http://inside-r.org/r-doc/base/file)='data4export/votes2012.csv')
-    laws.2012 <- [read.csv](http://inside-r.org/r-doc/utils/read.csv)([file](http://inside-r.org/r-doc/base/file)='data4export/laws2012.csv')
-    depDuma <- [read.csv](http://inside-r.org/r-doc/utils/read.csv)([file](http://inside-r.org/r-doc/base/file) = 'data/DeputatDuma.csv', stringsAsFactors = FALSE)
-  
-    all.votes$res.q <- SimplifyVotes(all.votes$result)
-    v.unique <- unique.data.frame(all.votes) #почему то есть повторения в исходных данных - убираем их
-  
-    rollcall <- dcast([data](http://inside-r.org/r-doc/utils/data) = v.unique[, [c](http://inside-r.org/r-doc/base/c)('id', 'url','res.q')], id ~ [url](http://inside-r.org/r-doc/base/url), fun.aggregate= [sum](http://inside-r.org/r-doc/base/sum))
-    [row.names](http://inside-r.org/r-doc/base/row.names)(rollcall) <- rollcall$id #присвоить названия столбцам 
-    rollcall <- rollcall[, -1] #убрать из матрицы коды депутатов 
-    rollcall <- [as.matrix](http://inside-r.org/r-doc/base/as.matrix)(rollcall) 
-  
-    rollcall.dist <- [dist](http://inside-r.org/r-doc/stats/dist)(rollcall %*% [t](http://inside-r.org/r-doc/base/t)(rollcall)) #рассчитать матрицу расстояний 
-    rollcall.mds <- [as.data.frame](http://inside-r.org/r-doc/base/as.data.frame)([cmdscale](http://inside-r.org/r-doc/stats/cmdscale)(rollcall.dist,k=2)) # провести кластеризацию 
-  
-    [names](http://inside-r.org/r-doc/base/names)(rollcall.mds) <- [c](http://inside-r.org/r-doc/base/c)('x', 'y')
-    rollcall.mds$id <- [row.names](http://inside-r.org/r-doc/base/row.names)(rollcall)
-    sname <- [strsplit](http://inside-r.org/r-doc/base/strsplit)([as.character](http://inside-r.org/r-doc/base/as.character)(depDuma$name), ' ') # добавить к матрице фамилии депутатов 
-    depDuma$sname <- [sapply](http://inside-r.org/r-doc/base/sapply)(sname, [function](http://inside-r.org/r-doc/base/function)(x){ paste0(x[[1]], ' ', [substr](http://inside-r.org/r-doc/base/substr)(x[[2]],1,1),'.', [substr](http://inside-r.org/r-doc/base/substr)(x[[3]],1,1),'.')})
-    rollcall.mds <- [merge](http://inside-r.org/r-doc/base/merge)(rollcall.mds, depDuma, [by](http://inside-r.org/r-doc/base/by) = 'id') 
-    # построить график с помощью ggplot2 
-  
-    p <- [ggplot](http://inside-r.org/packages/cran/ggplot)([data](http://inside-r.org/r-doc/utils/data) = [subset](http://inside-r.org/r-doc/base/subset)(rollcall.mds), aes(x=x, y=y, [group](http://inside-r.org/r-doc/grDevices/group) = [party](http://inside-r.org/packages/cran/party)))+scale_size([range](http://inside-r.org/r-doc/base/range)=[c](http://inside-r.org/r-doc/base/c)(2,2))
-    p+geom_jitter(aes(color = [party](http://inside-r.org/packages/cran/party)))+ief.theme+
-      scale_colour_manual(name = '', values = [c](http://inside-r.org/r-doc/base/c)('ЕР' = '#4d6b8d', 'КПРФ' = '#bf0d0d', 
-                                                'ЛДПР' = '#fad000', 'СР' = '#e6871d' ))+
+```r
+# Многомерное шкалирование для анализа результатов голосования в ГД РФ за 2012 года
+require(reshape2)
+require(ggplot2)
+# Функция, траснформирующая количественные коды голосования в факторы
+SimplifyVotes <- function(result){
+  res.q <- vector(length = length(result))
+  res.q <- ifelse(result == 'за', 1, res.q)
+  res.q <- ifelse(result == 'возд', 0, res.q)
+  res.q <- ifelse(result == 'не голосовал', -1, res.q)
+  res.q <- ifelse(result == 'против', -1, res.q)
+  return(res.q)
+}
+
+#загрузить данные
+all.votes <- read.csv(file='data4export/votes2012.csv')
+laws.2012 <- read.csv(file='data4export/laws2012.csv')
+depDuma <- read.csv(file = 'data/DeputatDuma.csv', stringsAsFactors = FALSE)
+
+all.votes$res.q <- SimplifyVotes(all.votes$result)
+v.unique <- unique.data.frame(all.votes) #почему то есть повторения в исходных данных - убираем их
+
+rollcall <- dcast(data = v.unique, [c('id', 'url','res.q')], id ~ url, fun.aggregate= sum)
+row.names(rollcall) <- rollcall$id #присвоить названия столбцам
+rollcall <- rollcall[, -1] #убрать из матрицы коды депутатов
+rollcall <- as.matrix(rollcall)
+
+rollcall.dist <- dist(rollcall %*% t(rollcall)) #рассчитать матрицу расстояний
+rollcall.mds <- as.data.frame(cmdscale(rollcall.dist,k=2)) # провести кластеризацию
+
+names(rollcall.mds) <- c('x', 'y')
+rollcall.mds$id <- row.names(rollcall)
+sname <- strsplit(as.character(depDuma$name), ' ') # добавить к матрице фамилии депутатов
+depDuma$sname <- sapply(sname, function(x){ paste0(x[[1]], ' ', substr(x[[2]],1,1),'.', substr(x[[3]],1,1),'.')})
+rollcall.mds <- merge(rollcall.mds, depDuma, by = 'id')
+# построить график с помощью ggplot2
+
+p <- ggplot(data = subset(rollcall.mds), aes(x=x, y=y, group = party))+scale_size(range=c(2,2))
+p+geom_jitter(aes(color = party))+ief.theme+
+  scale_colour_manual(name = '', values = c('ЕР' = '#4d6b8d', 'КПРФ' = '#bf0d0d',
+                                            'ЛДПР' = '#fad000', 'СР' = '#e6871d' ))+
+```
   
 
-[Created by Pretty R at inside-R.org](http://www.inside-r.org/pretty-r "Created by Pretty R at inside-R.org")  
+  
   
   
 Полные коды доступны в [репозитарии](https://github.com/quantviews/Duma) на  github - правда в черновом пока виде.

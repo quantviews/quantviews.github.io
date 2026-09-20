@@ -89,29 +89,31 @@ aliases:
 
   
   
-    function type(d, i) {
-  
-      // Extract the stations from the "stop|*" columns.
-      if (!i) for (var k in d) {
-        if (/^stop\|/.test(k)) {
-          var p = k.split("|");
-          stations.push({
-            key: k,
-            name: p[1],
-            distance: +p[2],
-            zone: +p[3]
-          });
-        }
-      }
-  
-      return {
-        number: d.number,
-        type: d.type,
-        direction: d.direction,
-        stops: stations
+```js
+function type(d, i) {
+
+  // Extract the stations from the "stop|*" columns.
+  if (!i) for (var k in d) {
+    if (/^stop\|/.test(k)) {
+      var p = k.split("|");
+      stations.push({
+        key: k,
+        name: p[1],
+        distance: +p[2],
+        zone: +p[3]
+      });
+    }
+  }
+
+  return {
+    number: d.number,
+    type: d.type,
+    direction: d.direction,
+    stops: stations
 .map(function(s) { return {station: s, time: parseTime(d[s.key])}; })
 .filter(function(s) { return s.time!= null; })
-      };
+  };
+```
 
   
 
@@ -123,30 +125,32 @@ aliases:
 
   
   
-    train.selectAll("circle")
+```js
+train.selectAll("circle")
 .data(function(d) { return d.stops; })
 .enter().append("circle")
 .attr("transform", function(d) { return "translate(" + x(d.time) + "," + y(d.station.distance) + ")"; })
 .attr("r", 3)
-.on("mouseover", function(d) { 
-                      var xPosition = x(d.time)+margin.left + margin.right;
-                      var yPosition = y(d.station.distance);
-  
-          d3.select("#tooltip")
+.on("mouseover", function(d) {
+                  var xPosition = x(d.time)+margin.left + margin.right;
+                  var yPosition = y(d.station.distance);
+
+      d3.select("#tooltip")
 .style("left", xPosition + "px")
-.style("top", yPosition + "px")  
+.style("top", yPosition + "px")
 .select("#stations")
 .text(d.station.name);
-          d3.select("#tooltip")
+      d3.select("#tooltip")
 .select("#time")
 .text(formatTime(d.time));
-          d3.select("#tooltip").classed("hidden", false);
-  
-                })
-  
+      d3.select("#tooltip").classed("hidden", false);
+
+            })
+
 .on("mouseout",  function() {
-                        d3.select("#tooltip").classed("hidden", true);
-                              });
+                    d3.select("#tooltip").classed("hidden", true);
+                          });
+```
   
   
 
@@ -163,18 +167,20 @@ aliases:
 
   
   
-    d3.selectAll("input[name=f_direction]")
+```js
+d3.selectAll("input[name=f_direction]")
 .on("change", function(){
-        cur_direction = this.id;
-          if (this.id == 'moscow'){
-            d3.selectAll(".moscow").classed("hidden", false);
-            d3.selectAll(".oblast").classed("hidden", true);
-               }
-          if (this.id == 'oblast'){
-            d3.selectAll(".moscow").classed("hidden", true);
-            d3.selectAll(".oblast").classed("hidden", false);
-               }
-      })
+    cur_direction = this.id;
+      if (this.id == 'moscow'){
+        d3.selectAll(".moscow").classed("hidden", false);
+        d3.selectAll(".oblast").classed("hidden", true);
+           }
+      if (this.id == 'oblast'){
+        d3.selectAll(".moscow").classed("hidden", true);
+        d3.selectAll(".oblast").classed("hidden", false);
+           }
+  })
+```
   
 
   
@@ -191,32 +197,34 @@ aliases:
 Реализация этой логики сделана топорным if:) Отмененные электрички (красным цветом) должны отображаться при любом раскладе
   
   
-    d3.selectAll("input[name=type_train]")
+```js
+d3.selectAll("input[name=type_train]")
 .on("change", function(){
-  
-          if (this.id == 'working'){
-            d3.selectAll(".daily"+"."+cur_direction).classed("hidden", false);
-            d3.selectAll(".working"+"."+cur_direction).classed("hidden", false);
-            d3.selectAll(".weekend"+"."+cur_direction).classed("hidden", true);
-            d3.selectAll(".ex_saturday"+"."+cur_direction).classed("hidden", true);
-            d3.selectAll(".ex_sunday"+"."+cur_direction).classed("hidden", true);
-          }
-          if (this.id == 'saturday'){
-            d3.selectAll(".daily"+"."+cur_direction).classed("hidden", false);
-            d3.selectAll(".working"+"."+cur_direction).classed("hidden", true);
-            d3.selectAll(".weekend"+"."+cur_direction).classed("hidden", false);
-            d3.selectAll(".ex_saturday"+"."+cur_direction).classed("hidden", true);
-            d3.selectAll(".ex_sunday"+"."+cur_direction).classed("hidden", false);
-          }  
-  
-          if (this.id == 'sunday'){
-            d3.selectAll(".daily"+"."+cur_direction).classed("hidden", false);
-            d3.selectAll(".working"+"."+cur_direction).classed("hidden", true);
-            d3.selectAll(".weekend"+"."+cur_direction).classed("hidden", false);
-            d3.selectAll(".ex_saturday"+"."+cur_direction).classed("hidden", false);
-            d3.selectAll(".ex_sunday"+"."+cur_direction).classed("hidden", true);
-          }  
-      })
+
+      if (this.id == 'working'){
+        d3.selectAll(".daily"+"."+cur_direction).classed("hidden", false);
+        d3.selectAll(".working"+"."+cur_direction).classed("hidden", false);
+        d3.selectAll(".weekend"+"."+cur_direction).classed("hidden", true);
+        d3.selectAll(".ex_saturday"+"."+cur_direction).classed("hidden", true);
+        d3.selectAll(".ex_sunday"+"."+cur_direction).classed("hidden", true);
+      }
+      if (this.id == 'saturday'){
+        d3.selectAll(".daily"+"."+cur_direction).classed("hidden", false);
+        d3.selectAll(".working"+"."+cur_direction).classed("hidden", true);
+        d3.selectAll(".weekend"+"."+cur_direction).classed("hidden", false);
+        d3.selectAll(".ex_saturday"+"."+cur_direction).classed("hidden", true);
+        d3.selectAll(".ex_sunday"+"."+cur_direction).classed("hidden", false);
+      }
+
+      if (this.id == 'sunday'){
+        d3.selectAll(".daily"+"."+cur_direction).classed("hidden", false);
+        d3.selectAll(".working"+"."+cur_direction).classed("hidden", true);
+        d3.selectAll(".weekend"+"."+cur_direction).classed("hidden", false);
+        d3.selectAll(".ex_saturday"+"."+cur_direction).classed("hidden", false);
+        d3.selectAll(".ex_sunday"+"."+cur_direction).classed("hidden", true);
+      }
+  })
+```
   
 
   
