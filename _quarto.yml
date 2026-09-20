@@ -64,7 +64,7 @@ website:
         aria-label: "RSS"
 
   page-footer:
-    left: "© 2026 quantviews"
+    left: "© 2026 quantviews · [Данные и конфиденциальность](/privacy.html)"
     center: "Экономика · Данные · Финансы · Аналитические системы"
     right:
       - icon: telegram
