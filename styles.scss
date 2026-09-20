@@ -28,12 +28,15 @@ h1 {
 h2 {
   margin-top: 2.4rem;
   padding-bottom: 0.3rem;
-  font-size: 1.22rem;
+  font-size: 1.35rem;
   border-bottom: 1px solid rgba(15, 23, 42, 0.07);
 }
 
+/* The theme ships h3 at 1.45rem, above the h2 override below it, which
+   inverts the hierarchy on any page that uses both. */
 h3 {
-  margin-top: 1.2rem;
+  margin-top: 1.7rem;
+  font-size: 1.12rem;
 }
 
 p, li {

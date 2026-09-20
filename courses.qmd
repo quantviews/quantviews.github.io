@@ -8,7 +8,7 @@ page-layout: full
 ссылки ведут на опубликованные версии и репозитории.
 :::
 
-## Учебник
+## Учебник {.qv-section-label}
 
 ::: {.qv-project-card}
 ### Количественные финансы
@@ -17,11 +17,11 @@ page-layout: full
 по мере готовности.
 
 ::: {.qv-project-meta}
-[Читать](https://quantviews.github.io/quant-finance-book/) · [Исходники](https://github.com/quantviews/quant-finance-book) · <span class="qv-status">В работе</span>
+[Читать](https://quantviews.github.io/quant-finance-book/) · [Исходники](https://github.com/quantviews/quant-finance-book) · <span class="qv-status qv-status-wip">В работе</span>
 :::
 :::
 
-## Количественные финансы
+## Количественные финансы {.qv-section-label}
 
 ::: {.qv-project-card}
 ### НИУ ВШЭ, факультет мировой экономики и мировой политики
@@ -47,7 +47,7 @@ Computational Finance для студентов Высшей школы мене
 :::
 :::
 
-## Финансовые рынки и институты
+## Финансовые рынки и институты {.qv-section-label}
 
 ::: {.qv-project-card}
 ### НИУ ВШЭ, бакалавриат
@@ -60,7 +60,7 @@ Computational Finance для студентов Высшей школы мене
 :::
 :::
 
-## BI и Superset
+## BI и Superset {.qv-section-label}
 
 ::: {.qv-project-card}
 ### МГИМО
@@ -69,6 +69,6 @@ Computational Finance для студентов Высшей школы мене
 Материалы готовятся к публикации.
 
 ::: {.qv-project-meta}
-<span class="qv-status">В подготовке</span>
+<span class="qv-status qv-status-wip">В подготовке</span>
 :::
 :::

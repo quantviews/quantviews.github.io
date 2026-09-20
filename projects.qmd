@@ -7,7 +7,7 @@ page-layout: full
 Аналитические сервисы, дата-инфраструктура и исследовательские прототипы.
 :::
 
-## Действующие проекты
+## Действующие проекты {.qv-section-label}
 
 ::: {.qv-project-card}
 ### Количественные модели ИЭФ
@@ -49,7 +49,7 @@ page-layout: full
 :::
 :::
 
-## В разработке
+## В разработке {.qv-section-label}
 
 ::: {.qv-project-card}
 ### Макроэкономический обзорный дашборд
@@ -57,7 +57,7 @@ page-layout: full
 Панель мониторинга по инфляции, ВВП, ставкам и рынку труда.
 
 ::: {.qv-project-meta}
-<span class="qv-status">В разработке</span> · DuckDB, Superset, Quarto
+<span class="qv-status qv-status-wip">В разработке</span> · DuckDB, Superset, Quarto
 :::
 :::
 
@@ -67,11 +67,11 @@ page-layout: full
 Прототип методологии составного индикатора по отраслевым метрикам.
 
 ::: {.qv-project-meta}
-<span class="qv-status">Черновик</span> · Python, pandas, statsmodels
+<span class="qv-status qv-status-wip">Черновик</span> · Python, pandas, statsmodels
 :::
 :::
 
-## Данные и инструменты
+## Данные и инструменты {.qv-section-label}
 
 Небольшие открытые проекты - обёртки над источниками данных и разборы отдельных
 наборов. Почти все выросли из рабочих задач: понадобилось один раз, пригодилось ещё
