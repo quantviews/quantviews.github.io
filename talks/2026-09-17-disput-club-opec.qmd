@@ -3,8 +3,6 @@ title: "Будущее ОПЕК/ОПЕК+: что это значит для Р�
 date: 2026-09-17
 subtitle: "Диспут-клуб АНЦЭА · экономический факультет МГУ"
 categories: [talk, energy, oil, opec]
-image: /assets/covers/talk-default.svg
-image-alt: "Обложка выступления quantviews"
 description: "Диспут о перспективах ОПЕК+ после выхода ОАЭ и о том, что участие в сделке даёт России в горизонте ближайших лет."
 ---
 

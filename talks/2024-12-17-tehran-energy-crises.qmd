@@ -1,0 +1,17 @@
+---
+title: "Опыт России в предотвращении энергетических кризисов: безопасность, эффективность, диверсификация"
+date: 2024-12-17
+subtitle: "10th Iranian Petroleum and Energy Club Congress · Тегеран"
+categories: [talk, energy, security, iran]
+description: "Доклад на 10-м конгрессе Iranian Petroleum and Energy Club. Слайды на английском."
+---
+
+## Контекст
+
+Доклад на 10-м конгрессе Iranian Petroleum and Energy Club. Слайды на английском.
+
+Дата: 17 декабря 2024 г., Тегеран.
+
+## Материалы
+
+Презентация: [скачать PDF](/assets/publications/2024-12-17-tehran-energy-crises.pdf)
