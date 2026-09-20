@@ -9,6 +9,8 @@ project:
     - "!.venv/**"
     - "!renv/**"
     - "!node_modules/**"
+  resources:
+    - googlecfe30a6a36e14165.html
 
 execute:
   enabled: false
