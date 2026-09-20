@@ -25,12 +25,14 @@ website:
 
   page-navigation: true
 
+  # The image path has to be absolute: a relative one is resolved against the
+  # page's own directory, so every page but the homepage pointed at a 404.
+  # No description here either, or it overrides each page's own.
   open-graph:
-    image: assets/img/salikhov-marcel-styled-picture.png
-    description: "Экономика, данные, финансы и аналитические системы"
+    image: https://quantviews.github.io/assets/img/salikhov-marcel-styled-picture.png
 
   twitter-card:
-    image: assets/img/salikhov-marcel-styled-picture.png
+    image: https://quantviews.github.io/assets/img/salikhov-marcel-styled-picture.png
 
   navbar:
     title: "quantviews"
