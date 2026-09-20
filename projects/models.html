@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-9b13294eb98a7ccc9837366643235be5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c18548ff7116a812ce3f5f64d8714165.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-a6325f89cdd1de9a2c4bca94a3b42040.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-c18548ff7116a812ce3f5f64d8714165.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f9bf9dd855e203b78b1af62392d414ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e4a434bb921bc528e2c046928b55af48.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f9bf9dd855e203b78b1af62392d414ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -378,8 +378,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="qv-editorial-intro">
 <p>Прогнозные и мониторинговые модели, которые я разрабатываю и поддерживаю в Институте энергетики и финансов. Расчёты - на R, интерактивные версии - на Shiny, графики - через highcharter; данные выгружаются в xls/csv. Всё открыто и доступно по ссылке на первоисточник: <a href="https://models.fief.ru/">models.fief.ru</a>.</p>
 </div>
-<section id="макроэкономика" class="level2">
-<h2 class="anchored" data-anchor-id="макроэкономика">Макроэкономика</h2>
+<section id="макроэкономика" class="level2 qv-section-label">
+<h2 class="qv-section-label anchored" data-anchor-id="макроэкономика">Макроэкономика</h2>
 <section id="деловой-цикл-и-дневной-ввп" class="level3 qv-project-card">
 <h3 class="anchored" data-anchor-id="деловой-цикл-и-дневной-ввп">Деловой цикл и дневной ВВП</h3>
 <p>Nowcast для оперативного мониторинга делового цикла в России. Модель в духе Aruoba, Diebold, Scotti (2008) и индекса ADS ФРБ Филадельфии: смешивает ряды разной частоты - дневные (волатильность на Мосбирже, остаточная волатильность рубля без нефтяной компоненты), месячные (деловая и потребительская уверенность, промышленное производство, грузооборот, кредит) и квартальный индекс физического объёма ВВП. На выходе - дневной фактор делового цикла и дневная оценка ВВП.</p>
@@ -395,8 +395,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="энергетика" class="level2">
-<h2 class="anchored" data-anchor-id="энергетика">Энергетика</h2>
+<section id="энергетика" class="level2 qv-section-label">
+<h2 class="qv-section-label anchored" data-anchor-id="энергетика">Энергетика</h2>
 <section id="краткосрочный-прогноз-цен-на-нефть" class="level3 qv-project-card">
 <h3 class="anchored" data-anchor-id="краткосрочный-прогноз-цен-на-нефть">Краткосрочный прогноз цен на нефть</h3>
 <p>Прогноз на 1–12 месяцев: ансамбль из 23 моделей в семи группах - простые AR, фьючерсная кривая, процентные ставки, сырьевые валюты (CAD, AUD), индексы CRB, машинное обучение (lasso, ridge, random forest, boosted trees) и EIA STEO. Помимо прогноза показывает историческое out-of-sample качество и сценарные шоки по добыче (традиционной и сланцевой) и запасам США.</p>
@@ -419,8 +419,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="финансы" class="level2">
-<h2 class="anchored" data-anchor-id="финансы">Финансы</h2>
+<section id="финансы" class="level2 qv-section-label">
+<h2 class="qv-section-label anchored" data-anchor-id="финансы">Финансы</h2>
 <section id="факторы-доходностей-российского-рынка-акций" class="level3 qv-project-card">
 <h3 class="anchored" data-anchor-id="факторы-доходностей-российского-рынка-акций">Факторы доходностей российского рынка акций</h3>
 <p>Факторные модели доходностей акций на Мосбирже через портфели, реплицирующие факторы SMB, HML, Momentum и Reversal по методологии Фамы и Френча. Расчёт на фактических ценах примерно 120 бумаг с учётом дивидендов, исторических bid-ask спредов и брокерской комиссии (настраиваемый параметр, по умолчанию 5 б.п.). Показывает out-of-sample динамику факторных портфелей, метрики риск-доходность и веса во времени.</p>
@@ -436,8 +436,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="топливо" class="level2">
-<h2 class="anchored" data-anchor-id="топливо">Топливо</h2>
+<section id="топливо" class="level2 qv-section-label">
+<h2 class="qv-section-label anchored" data-anchor-id="топливо">Топливо</h2>
 <section id="заправка-по-маршруту" class="level3 qv-project-card">
 <h3 class="anchored" data-anchor-id="заправка-по-маршруту">Заправка по маршруту</h3>
 <p>Маршрут A→B с подбором АЗС по пути - с учётом запаса хода и свежих статусов доступности топлива по картам T-Bank, Сбера и Альфы. Практический слой поверх мониторинга доступности бензина по стране.</p>
@@ -460,8 +460,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="дашборды" class="level2">
-<h2 class="anchored" data-anchor-id="дашборды">Дашборды</h2>
+<section id="дашборды" class="level2 qv-section-label">
+<h2 class="qv-section-label anchored" data-anchor-id="дашборды">Дашборды</h2>
 <section id="запасы-нефти-в-сша" class="level3 qv-project-card">
 <h3 class="anchored" data-anchor-id="запасы-нефти-в-сша">Запасы нефти в США</h3>
 <p>Динамика запасов сырой нефти и нефтепродуктов по данным EIA.</p>

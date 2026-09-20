@@ -173,25 +173,48 @@
   margin: 0 0.5rem;
 }
 
+/* Catalogue entries: the name carries the weight, the group heading above it
+   steps back to a quiet label so the two stop competing. */
+/* Quarto puts a heading's class on the wrapping <section> too, so this must be
+   scoped to the h2 or the whole group inherits the label's uppercase styling. */
+h2.qv-section-label {
+  margin-top: 2.8rem;
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+}
+
 .qv-project-card {
   margin: 0;
-  padding: 1.15rem 0;
+  padding: 1.45rem 0;
   border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .qv-project-card:first-of-type {
   border-top: none;
-  padding-top: 0.4rem;
 }
 
 .qv-project-card h3 {
   margin-top: 0;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #0F172A;
+}
+
+.qv-project-card > p {
+  max-width: 70ch;
 }
 
 .qv-project-meta {
-  margin-top: 0.5rem;
-  font-size: 0.86rem;
+  margin-top: 0.7rem;
+  font-size: 0.84rem;
   color: #64748B;
 }
 
@@ -199,8 +222,31 @@
   margin-bottom: 0;
 }
 
+/* Status reads as a token rather than another word in the line */
 .qv-status {
-  color: #475569;
+  color: #334155;
+  font-weight: 600;
+}
+
+.qv-status::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background: #334155;
+  vertical-align: 0.08em;
+}
+
+.qv-status-wip {
+  color: #64748B;
+  font-weight: 400;
+}
+
+.qv-status-wip::before {
+  background: none;
+  box-shadow: inset 0 0 0 1px #94A3B8;
 }
 
 .qv-editorial-intro {
