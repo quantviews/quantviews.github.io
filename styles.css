@@ -100,6 +100,25 @@
   line-height: 1.6;
 }
 
+/* Small label in front of a meta line, e.g. "Работа" */
+.qv-meta-label {
+  display: inline-block;
+  margin-right: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94A3B8;
+}
+
+.qv-hero-meta p {
+  margin-bottom: 0.35rem;
+}
+
+.qv-hero-meta p:last-child {
+  margin-bottom: 0;
+}
+
 .qv-card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
