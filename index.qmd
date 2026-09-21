@@ -23,9 +23,11 @@ listing:
 Экономика, данные, финансы и аналитические системы.
 
 ::: {.qv-hero-meta}
-[Институт энергетики и финансов](https://fief.ru/about/our-team/our-team_experts/salikhov-marsel-robertovich/) · [НИУ ВШЭ](https://www.hse.ru/org/persons/26780297/) · создатель [rustata.ru](https://rustata.ru)
+[Работа]{.qv-meta-label} [Институт энергетики и финансов](https://fief.ru/about/our-team/our-team_experts/salikhov-marsel-robertovich/) · [НИУ ВШЭ](https://www.hse.ru/org/persons/26780297/)
 
-Пишу учебник по курсу «Количественные финансы».
+Создатель [rustata.ru](https://rustata.ru): поиск по экономической статистике РФ.
+
+Пишу [учебник по курсу «Количественные финансы»](https://quantviews.github.io/quant-finance-book/).
 :::
 :::
 :::

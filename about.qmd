@@ -13,7 +13,7 @@ quantviews - личная площадка для публикации анал�
 Меня зовут Салихов Марсель. Свыше 20 лет опыта работы в аналитике. Создатель проекта [rustata.ru](https://rustata.ru) - поиска по экономической статистике РФ.
 
 ::: {.qv-hero-meta}
-[Институт энергетики и финансов](https://fief.ru/about/our-team/our-team_experts/salikhov-marsel-robertovich/) · [НИУ ВШЭ](https://www.hse.ru/org/persons/26780297/)
+[Работа]{.qv-meta-label} [Институт энергетики и финансов](https://fief.ru/about/our-team/our-team_experts/salikhov-marsel-robertovich/) · [НИУ ВШЭ](https://www.hse.ru/org/persons/26780297/)
 :::
 
 Этот сайт одновременно и профессиональная витрина, и личный блог: здесь публикуются как исследовательские материалы, так и короткие рабочие заметки по аналитическим инструментам.
