@@ -186,6 +186,16 @@
   font-weight: 400;
 }
 
+a.qv-badge {
+  color: #475569;
+  text-decoration: none;
+}
+
+a.qv-badge:hover {
+  color: #0F172A;
+  text-decoration: underline;
+}
+
 .qv-badge:not(:last-of-type)::after {
   content: "·";
   color: #CBD5E1;
