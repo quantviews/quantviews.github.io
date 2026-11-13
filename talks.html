@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -41,18 +41,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ee0d825c001f130fb265e92dcb17fa1f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-86a2d7ae3330a5c8f2af512998a51a4c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ee0d825c001f130fb265e92dcb17fa1f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0d03878fed8da18bf6c52072959b97e8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4c32c6d34817a83bec6f7f8287961574.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0d03878fed8da18bf6c52072959b97e8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-66be436480f94773e70336d2f1774375.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1ab0351f954be20d7c2bfca024efe443.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-66be436480f94773e70336d2f1774375.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9b94e53af479e70441248f2c6feffdeb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-6c5dd4f29ae29f830879702977bd0b06.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9b94e53af479e70441248f2c6feffdeb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,12 +104,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 <style>html{ scroll-behavior: smooth; }</style>
 <meta name="yandex-verification" content="4a520f9610b63692">
@@ -152,7 +147,7 @@ window.Quarto = {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -175,6 +170,7 @@ window.Quarto = {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -204,13 +200,19 @@ window.Quarto = {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -304,6 +306,7 @@ window.Quarto = {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -318,7 +321,7 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Сайт">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
@@ -329,8 +332,7 @@ window.Quarto = {
     <span class="navbar-title">quantviews</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Поиск"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Переключить навигацию" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Переключить навигацию" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -388,8 +390,9 @@ window.Quarto = {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Переключить темный режим"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Переключить темный режим" aria-label="Переключить темный режим"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Поиск"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -399,7 +402,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content" tabindex="-1">
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -439,8 +442,32 @@ window.Quarto = {
 </div>
 <div id="listing-talks-list" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ2xuZw==" data-listing-date-sort="1791936000000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="144">
-<a href="./talks/2026-10-14-hse-eksport-nefti-gaza-2035.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ2xuZyUyQ29pbGZpZWxkLXNlcnZpY2Vz" data-listing-date-sort="1794441600000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="159">
+<a href="./talks/2026-11-12-urfu-neftegaz.html" class="quarto-grid-link no-external-icon">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./assets/covers/2026-11-12-urfu-neftegaz.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд доклада об экспорте нефти и газа из России">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Экспорт нефти и газа из России: ограничения роста и последствия для инвестиций в регионах
+</h5>
+<div class="card-subtitle listing-subtitle">
+УрФУ, Екатеринбург · «Российские регионы в фокусе перемен»
+</div>
+<div class="card-text listing-description">
+<p>Ограничения нефтегазового экспорта, конкуренция на мировых рынках и последствия для региональных инвестиций, нефтесервиса и производства оборудования.</p>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+12 ноября 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ2xuZw==" data-listing-date-sort="1791936000000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="144">
+<a href="./talks/2026-10-14-hse-eksport-nefti-gaza-2035.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2026-10-14-hse-eksport-nefti-gaza-2035.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд доклада «Российский экспорт нефти и газа до 2035 года»">
@@ -452,7 +479,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 ЦКЕМИ НИУ ВШЭ · Круглый стол по мировой торговле и энергетике
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Как мировой спрос, конкуренция поставщиков и внутренние ограничения влияют на объемы российского экспорта нефти и газа, экспортные доходы и отдачу на инвестиции.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -463,8 +490,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="dGFsayUyQ2VuZXJneSUyQ2dhcyUyQ2xuZw==" data-listing-date-sort="1791849600000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
-<a href="./talks/2026-10-13-rudn-gazovaya-vzaimozavisimost.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="dGFsayUyQ2VuZXJneSUyQ2dhcyUyQ2xuZw==" data-listing-date-sort="1791849600000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
+<a href="./talks/2026-10-13-rudn-gazovaya-vzaimozavisimost.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2026-10-13-rudn-gazovaya-vzaimozavisimost.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд доклада «Газовая взаимозависимость»">
@@ -476,7 +503,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 РУДН · «Актуальные проблемы глобальной экономики»
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Как СПГ связывает региональные рынки, почему диверсификация не устраняет риски поставок и от чего зависят перспективы российского газового экспорта.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -487,8 +514,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ29wZWMlMkN0aGVzZXM=" data-listing-date-sort="1789603200000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2246">
-<a href="./talks/2026-09-17-disput-club-opec.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="3" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ29wZWMlMkN0aGVzZXM=" data-listing-date-sort="1789603200000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2246">
+<a href="./talks/2026-09-17-disput-club-opec.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2026-09-17-disput-club-opec.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -500,7 +527,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Диспут-клуб АНЦЭА · экономический факультет МГУ
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Диспут о перспективах ОПЕК+ после выхода ОАЭ и развёрнутые тезисы выступления: чем картель физически способен управлять, во что его существование обходится России и какое…</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -511,8 +538,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="dGFsayUyQ2VuZXJneSUyQ21hY3JvZWNvbm9taWNz" data-listing-date-sort="1776470400000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="43">
-<a href="./talks/2026-04-18-energy-forum.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="4" data-categories="dGFsayUyQ2VuZXJneSUyQ21hY3JvZWNvbm9taWNz" data-listing-date-sort="1776470400000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="43">
+<a href="./talks/2026-04-18-energy-forum.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2026-04-18-energy-forum.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -524,7 +551,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Отраслевой форум по энергетике
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Краткий конспект выступления на отраслевой конференции.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -535,8 +562,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbA==" data-listing-date-sort="1770681600000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
-<a href="./talks/2026-02-10-neft-posle-venezuely.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="5" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbA==" data-listing-date-sort="1770681600000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<a href="./talks/2026-02-10-neft-posle-venezuely.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2026-02-10-neft-posle-venezuely.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -548,7 +575,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Публичная лекция · Noodome (ИЭФ)
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Лекция на платформе Noodome о последствиях венесуэльского кризиса для российских нефтяных рынков.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -559,8 +586,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="dGFsayUyQ2dsb2JhbC1lY29ub215JTJDYnJpY3MlMkNkb2xsYXI=" data-listing-date-sort="1764720000000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="35">
-<a href="./talks/2025-12-03-hse-brics-rol-dollara.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="6" data-categories="dGFsayUyQ2dsb2JhbC1lY29ub215JTJDYnJpY3MlMkNkb2xsYXI=" data-listing-date-sort="1764720000000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="35">
+<a href="./talks/2025-12-03-hse-brics-rol-dollara.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-12-03-hse-brics-rol-dollara.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -572,7 +599,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 НИУ ВШЭ · XIII конференция по мировой экономике
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Доклад на XIII ежегодной конференции по мировой экономике «BRICS and Rethinking the Global Economic Order» на факультете мировой экономики и мировой политики НИУ ВШЭ. Слайды…</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -583,8 +610,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ3NhbmN0aW9ucyUyQ29pbGZpZWxkLXNlcnZpY2Vz" data-listing-date-sort="1762992000000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="353">
-<a href="./talks/2025-11-13-urfu-neftegaz-sankcii.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="7" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ3NhbmN0aW9ucyUyQ29pbGZpZWxkLXNlcnZpY2Vz" data-listing-date-sort="1762992000000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="353">
+<a href="./talks/2025-11-13-urfu-neftegaz-sankcii.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-11-13-urfu-neftegaz-sankcii.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -596,7 +623,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 УрФУ, Екатеринбург · «Российские регионы в фокусе перемен»
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Как санкции меняют нефтегазовый сектор: экспорт падает быстрее добычи, дисконт становится ценой адаптации, а отрасль разворачивается к эксплуатационному бурению, локализации…</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -607,8 +634,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="7" data-categories="dGFsayUyQ2VuZXJneSUyQ251Y2xlYXIlMkNlbGVjdHJpY2l0eQ==" data-listing-date-sort="1760918400000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="369">
-<a href="./talks/2025-10-20-primakov-yadernaya-energetika.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="8" data-categories="dGFsayUyQ2VuZXJneSUyQ251Y2xlYXIlMkNlbGVjdHJpY2l0eQ==" data-listing-date-sort="1760918400000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="369">
+<a href="./talks/2025-10-20-primakov-yadernaya-energetika.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-10-20-primakov-yadernaya-energetika.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -620,7 +647,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Центр Примакова, Москва · «Мирный атом: диалог доверия и партнёрства»
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Мировое атомное строительство входит в новую фазу, а российская Генсхема до 2042 года делает ставку на АЭС. Что показывает модельное сопоставление вариантов развития…</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -631,8 +658,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="8" data-categories="dGFsayUyQ2VuZXJneSUyQ2dlb3BvbGl0aWNzJTJDZ2xvYmFsLW1hcmtldHM=" data-listing-date-sort="1760572800000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="19">
-<a href="./talks/2025-10-16-ren-karta-mira-energetiki.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="9" data-categories="dGFsayUyQ2VuZXJneSUyQ2dlb3BvbGl0aWNzJTJDZ2xvYmFsLW1hcmtldHM=" data-listing-date-sort="1760572800000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="19">
+<a href="./talks/2025-10-16-ren-karta-mira-energetiki.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-10-16-ren-karta-mira-energetiki.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -644,7 +671,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Российская энергетическая неделя · деловая программа
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Сессия деловой программы РЭН о фрагментации мировых энергетических рынков и переходе от глобальных связей к региональным блокам.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -655,8 +682,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="9" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ29pbGZpZWxkLXNlcnZpY2Vz" data-listing-date-sort="1760572800000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-<a href="./talks/2025-10-16-ren-nefteservis.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="10" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ29pbGZpZWxkLXNlcnZpY2Vz" data-listing-date-sort="1760572800000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
+<a href="./talks/2025-10-16-ren-nefteservis.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-10-16-ren-nefteservis.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -668,7 +695,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Российская энергетическая неделя · деловая программа
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Сессия деловой программы РЭН о состоянии российского нефтесервиса и мерах поддержки отрасли.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -679,8 +706,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="10" data-categories="dGFsayUyQ2FpJTJDZWNvbm9taWNzJTJDcHJvZHVjdGl2aXR5" data-listing-date-sort="1759881600000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
-<a href="./talks/2025-10-08-veb-ii-dlya-rosta.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="11" data-categories="dGFsayUyQ2FpJTJDZWNvbm9taWNzJTJDcHJvZHVjdGl2aXR5" data-listing-date-sort="1759881600000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
+<a href="./talks/2025-10-08-veb-ii-dlya-rosta.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-10-08-veb-ii-dlya-rosta.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -692,7 +719,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Клуб молодых экономистов ВЭБ.РФ
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Встреча Клуба молодых экономистов ВЭБ.РФ об экономических эффектах искусственного интеллекта: производительность, технологическая открытость и глобальное неравенство.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -703,8 +730,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="11" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcw==" data-listing-date-sort="1756512000000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
-<a href="./talks/2025-08-30-arb-globalnye-energorynki.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="12" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcw==" data-listing-date-sort="1756512000000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
+<a href="./talks/2025-08-30-arb-globalnye-energorynki.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-08-30-arb-globalnye-energorynki.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -716,7 +743,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Ассоциация российских банков · рабочий завтрак
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Выступление на рабочем завтраке Ассоциации российских банков.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -727,8 +754,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="12" data-categories="dGFsayUyQ2VuZXJneSUyQ2NlbnRyYWwtYXNpYSUyQ3JlbmV3YWJsZXMlMkNudWNsZWFy" data-listing-date-sort="1752192000000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
-<a href="./talks/2025-07-11-shkola-ca-zelenaya-povestka.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="13" data-categories="dGFsayUyQ2VuZXJneSUyQ2NlbnRyYWwtYXNpYSUyQ3JlbmV3YWJsZXMlMkNudWNsZWFy" data-listing-date-sort="1752192000000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
+<a href="./talks/2025-07-11-shkola-ca-zelenaya-povestka.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-07-11-shkola-ca-zelenaya-povestka.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -740,7 +767,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Школа по Центральной Азии · Иссык-Куль
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Лекция в рамках Школы по Центральной Азии.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -751,8 +778,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="13" data-categories="dGFsayUyQ2VuZXJneSUyQ2dsb2JhbC1tYXJrZXRz" data-listing-date-sort="1752019200000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="21">
-<a href="./talks/2025-07-09-shkola-ca-mirovaya-energetika.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="14" data-categories="dGFsayUyQ2VuZXJneSUyQ2dsb2JhbC1tYXJrZXRz" data-listing-date-sort="1752019200000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="21">
+<a href="./talks/2025-07-09-shkola-ca-mirovaya-energetika.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-07-09-shkola-ca-mirovaya-energetika.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -764,7 +791,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Школа по Центральной Азии · Москва
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Лекция в рамках Школы по Центральной Азии: историческая ретроспектива, текущая повестка и прогнозы.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -775,8 +802,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="14" data-categories="dGFsayUyQ2VuZXJneSUyQ21hY3JvZWNvbm9taWNz" data-listing-date-sort="1744761600000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
-<a href="./talks/2025-04-16-anceha-energetika-i-rost.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="15" data-categories="dGFsayUyQ2VuZXJneSUyQ21hY3JvZWNvbm9taWNz" data-listing-date-sort="1744761600000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
+<a href="./talks/2025-04-16-anceha-energetika-i-rost.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-04-16-anceha-energetika-i-rost.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -788,7 +815,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 АНЦЭА · круглый стол
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Выступление на круглом столе «Влияние ключевых факторов на экономический рост и структурную трансформацию российской экономики».</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -799,8 +826,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="15" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3NhbmN0aW9ucw==" data-listing-date-sort="1739836800000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20">
-<a href="./talks/2025-02-18-neftegazovye-rynki-adaptaciya.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="16" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3NhbmN0aW9ucw==" data-listing-date-sort="1739836800000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20">
+<a href="./talks/2025-02-18-neftegazovye-rynki-adaptaciya.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2025-02-18-neftegazovye-rynki-adaptaciya.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -812,7 +839,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Москва
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Доклад о том, как нефтегазовый сектор приспосабливается к санкционным и ценовым ограничениям.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -823,8 +850,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="16" data-categories="dGFsayUyQ2VuZXJneSUyQ3NlY3VyaXR5JTJDaXJhbg==" data-listing-date-sort="1734393600000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20">
-<a href="./talks/2024-12-17-tehran-energy-crises.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="17" data-categories="dGFsayUyQ2VuZXJneSUyQ3NlY3VyaXR5JTJDaXJhbg==" data-listing-date-sort="1734393600000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20">
+<a href="./talks/2024-12-17-tehran-energy-crises.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="./assets/covers/2024-12-17-tehran-energy-crises.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -836,7 +863,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 10th Iranian Petroleum and Energy Club Congress · Тегеран
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Доклад на 10-м конгрессе Iranian Petroleum and Energy Club. Слайды на английском.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -847,11 +874,11 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="17" data-categories="dGFsayUyQ2dsb2JhbC1lY29ub215JTJDYnJpY3M=" data-listing-date-sort="1733356800000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
-<a href="./talks/2024-12-05-hse-brics-posle-rasshireniya.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="18" data-categories="dGFsayUyQ2dsb2JhbC1lY29ub215JTJDYnJpY3M=" data-listing-date-sort="1733356800000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
+<a href="./talks/2024-12-05-hse-brics-posle-rasshireniya.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./assets/covers/2024-12-05-hse-brics-posle-rasshireniya.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
+<img loading="lazy" data-src="./assets/covers/2024-12-05-hse-brics-posle-rasshireniya.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -860,7 +887,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 НИУ ВШЭ · XII конференция по мировой экономике
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Доклад на XII ежегодной конференции по мировой экономике «Challenges of catch-up: Emerging countries in the global economy». Слайды на английском.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -871,8 +898,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="18" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3JlZ2lvbnM=" data-listing-date-sort="1733270400000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
-<a href="./talks/2024-12-04-tyumen-gubernatorskie-chteniya.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="19" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3JlZ2lvbnM=" data-listing-date-sort="1733270400000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<a href="./talks/2024-12-04-tyumen-gubernatorskie-chteniya.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" data-src="./assets/covers/2024-12-04-tyumen-gubernatorskie-chteniya.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -884,7 +911,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Губернаторские чтения · Тюмень
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Выступление на Губернаторских чтениях.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -895,8 +922,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="19" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3JlZ2lvbnM=" data-listing-date-sort="1730764800000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20">
-<a href="./talks/2024-11-05-urfu-chto-zhdet-neftegaz.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="20" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3JlZ2lvbnM=" data-listing-date-sort="1730764800000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20">
+<a href="./talks/2024-11-05-urfu-chto-zhdet-neftegaz.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" data-src="./assets/covers/2024-11-05-urfu-chto-zhdet-neftegaz.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -908,7 +935,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 УрФУ, Екатеринбург · «Российские регионы в фокусе перемен»
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Выступление на конференции «Российские регионы в фокусе перемен» в Уральском федеральном университете.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -919,8 +946,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="20" data-categories="dGFsayUyQ2VuZXJneSUyQ2dhcyUyQ3RlY2hub2xvZ3klMkNpbXBvcnQtc3Vic3RpdHV0aW9u" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
-<a href="./talks/2024-10-10-tehnologicheskiy-suverenitet-gaz.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="21" data-categories="dGFsayUyQ2VuZXJneSUyQ2dhcyUyQ3RlY2hub2xvZ3klMkNpbXBvcnQtc3Vic3RpdHV0aW9u" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
+<a href="./talks/2024-10-10-tehnologicheskiy-suverenitet-gaz.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" data-src="./assets/covers/2024-10-10-tehnologicheskiy-suverenitet-gaz.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -932,7 +959,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Центр экономической экспертизы ИГМУ НИУ ВШЭ
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Разбор того, как газовая отрасль замещает импортные технологии и где это удаётся, а где нет.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -943,8 +970,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="21" data-categories="dGFsayUyQ2VuZXJneSUyQ2V1JTJDZ2Fz" data-listing-date-sort="1713916800000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
-<a href="./talks/2024-04-24-strategicheskaya-avtonomiya-es.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="22" data-categories="dGFsayUyQ2VuZXJneSUyQ2V1JTJDZ2Fz" data-listing-date-sort="1713916800000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
+<a href="./talks/2024-04-24-strategicheskaya-avtonomiya-es.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" data-src="./assets/covers/2024-04-24-strategicheskaya-avtonomiya-es.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -956,7 +983,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Центр экономической экспертизы ИГМУ НИУ ВШЭ · Москва
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Выступление о том, насколько реальна энергетическая автономия Евросоюза.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -967,8 +994,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="22" data-categories="dGFsayUyQ2dsb2JhbC1lY29ub215JTJDaW5mbGF0aW9uJTJDZGVidA==" data-listing-date-sort="1701216000000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<a href="./talks/2023-11-29-hse-inflyaciya-dolg-rost.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="23" data-categories="dGFsayUyQ2dsb2JhbC1lY29ub215JTJDaW5mbGF0aW9uJTJDZGVidA==" data-listing-date-sort="1701216000000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
+<a href="./talks/2023-11-29-hse-inflyaciya-dolg-rost.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" data-src="./assets/covers/2023-11-29-hse-inflyaciya-dolg-rost.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -980,7 +1007,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 НИУ ВШЭ · XI конференция по мировой экономике
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Доклад на XI ежегодной конференции по мировой экономике «Re-balancing of the world economy: in search of new models for global development». Слайды на английском.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -991,8 +1018,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="23" data-categories="dGFsayUyQ3Jlc2VhcmNoJTJDY2FyZWVy" data-listing-date-sort="1672099200000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-<a href="./talks/2022-12-27-mgu-nauchnyy-start.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="24" data-categories="dGFsayUyQ3Jlc2VhcmNoJTJDY2FyZWVy" data-listing-date-sort="1672099200000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
+<a href="./talks/2022-12-27-mgu-nauchnyy-start.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" data-src="./assets/covers/2022-12-27-mgu-nauchnyy-start.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -1004,7 +1031,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Экономический факультет МГУ · Москва
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Семинар для студентов экономического факультета МГУ об исследовательской карьере.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -1015,8 +1042,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="24" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3NhbmN0aW9ucw==" data-listing-date-sort="1665705600000" data-listing-file-modified-sort="1792138182779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-<a href="./talks/2022-10-14-anceha-eksport-nefti-i-gaza.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="25" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3NhbmN0aW9ucw==" data-listing-date-sort="1665705600000" data-listing-file-modified-sort="1794551135525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
+<a href="./talks/2022-10-14-anceha-eksport-nefti-i-gaza.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" data-src="./assets/covers/2022-10-14-anceha-eksport-nefti-i-gaza.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -1028,7 +1055,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 АНЦЭА · ежегодная конференция
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Доклад на ежегодной конференции Ассоциации независимых центров экономического анализа.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -1039,8 +1066,8 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="25" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3NhbmN0aW9ucw==" data-listing-date-sort="1656115200000" data-listing-file-modified-sort="1792138182778" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
-<a href="./talks/2022-06-25-arb-eksport-nefti-i-gaza.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="26" data-categories="dGFsayUyQ2VuZXJneSUyQ29pbCUyQ2dhcyUyQ3NhbmN0aW9ucw==" data-listing-date-sort="1656115200000" data-listing-file-modified-sort="1794551135524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
+<a href="./talks/2022-06-25-arb-eksport-nefti-i-gaza.html" class="quarto-grid-link no-external-icon">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" data-src="./assets/covers/2022-06-25-arb-eksport-nefti-i-gaza.png" class="thumbnail-image card-img" style="height: 170px;" alt="Титульный слайд выступления">
@@ -1052,7 +1079,7 @@ window.Quarto = {
 <div class="card-subtitle listing-subtitle">
 Ассоциация российских банков · рабочий завтрак
 </div>
-<div class="card-text listing-description delink">
+<div class="card-text listing-description">
 <p>Выступление на рабочем завтраке Ассоциации российских банков - первая оценка того, что санкции означают для экспортных потоков.</p>
 </div>
 <div class="card-attribution card-text-small end">
@@ -1078,15 +1105,50 @@ window.Quarto = {
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Переключить темный режим");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Переключить темный режим");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -1161,11 +1223,30 @@ window.Quarto = {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("https:\/\/quantviews\.github\.io");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1179,8 +1260,70 @@ window.Quarto = {
             if (link.getAttribute("rel") === null) {
               link.setAttribute("rel", "noopener");
             }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1194,6 +1337,7 @@ window.Quarto = {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1356,44 +1500,54 @@ window.Quarto = {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1491,6 +1645,9 @@ window.Quarto = {
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Прокручиваемый код","output":"Прокручиваемый вывод"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">
